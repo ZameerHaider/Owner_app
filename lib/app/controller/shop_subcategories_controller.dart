@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -13,8 +5,7 @@ import 'package:ultimate_salon_owner_flutter/app/backend/models/sub_categories_m
 import 'package:ultimate_salon_owner_flutter/app/backend/parse/shop_subcategories_parse.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/create_products_controller.dart';
 
-class ShopSubCategoriesController extends GetxController
-    implements GetxService {
+class ShopSubCategoriesController extends GetxController implements GetxService {
   final ShopSubCategoriesParser parser;
 
   List<SubCategoriesModel> _subCateList = <SubCategoriesModel>[];
@@ -60,8 +51,7 @@ class ShopSubCategoriesController extends GetxController
 
   void saveSubCate(String id) {
     selectedSubCate = id;
-    var name =
-        _subCateList.firstWhere((element) => element.id.toString() == id).name;
+    var name = _subCateList.firstWhere((element) => element.id.toString() == id).name;
     selectedSubCateName = name as String;
     debugPrint('selected subcategories');
     update();
@@ -70,8 +60,7 @@ class ShopSubCategoriesController extends GetxController
   void saveAndClose() {
     debugPrint(selectedSubCate.toString());
     debugPrint(selectedSubCateName.toString());
-    Get.find<CreateProductsController>()
-        .onSaveSubCate(selectedSubCate, selectedSubCateName);
+    Get.find<CreateProductsController>().onSaveSubCate(selectedSubCate, selectedSubCateName);
     onBack();
   }
 

@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,15 +15,7 @@ class AddSlotController extends GetxController implements GetxService {
 
   String dayName = 'Sunday'.tr;
 
-  List<String> dayList = [
-    'Sunday'.tr,
-    'Monday'.tr,
-    'Tuesday'.tr,
-    'Wednesday'.tr,
-    'Thursday'.tr,
-    'Friday'.tr,
-    'Saturday'.tr
-  ];
+  List<String> dayList = ['Sunday'.tr, 'Monday'.tr, 'Tuesday'.tr, 'Wednesday'.tr, 'Thursday'.tr, 'Friday'.tr, 'Saturday'.tr];
   String openTime = '';
   String closeTime = '';
 
@@ -83,34 +67,18 @@ class AddSlotController extends GetxController implements GetxService {
   Future<void> openTimePicker() async {
     var context = Get.context as BuildContext;
     TimeOfDay initialTime = TimeOfDay.now();
-    TimeOfDay? pickedTime = await showTimePicker(
-        context: context,
-        initialTime: initialTime,
-        initialEntryMode: TimePickerEntryMode.input);
-    openTime = Jiffy({
-      "year": 2020,
-      "month": 10,
-      "day": 19,
-      "hour": pickedTime!.hour,
-      "minute": pickedTime.minute
-    }).format("hh:mm a").toString();
+    TimeOfDay? pickedTime = await showTimePicker(context: context, initialTime: initialTime, initialEntryMode: TimePickerEntryMode.input);
+    openTime =
+        Jiffy.parseFromMap({Unit.year: 2020, Unit.month: 10, Unit.day: 19, Unit.hour: pickedTime!.hour, Unit.minute: pickedTime.minute}).format(pattern: "hh:mm a").toString();
     update();
   }
 
   Future<void> closeTimePicker() async {
     var context = Get.context as BuildContext;
     TimeOfDay initialTime = TimeOfDay.now();
-    TimeOfDay? pickedTime = await showTimePicker(
-        context: context,
-        initialTime: initialTime,
-        initialEntryMode: TimePickerEntryMode.input);
-    closeTime = Jiffy({
-      "year": 2020,
-      "month": 10,
-      "day": 19,
-      "hour": pickedTime!.hour,
-      "minute": pickedTime.minute
-    }).format("hh:mm a").toString();
+    TimeOfDay? pickedTime = await showTimePicker(context: context, initialTime: initialTime, initialEntryMode: TimePickerEntryMode.input);
+    closeTime =
+        Jiffy.parseFromMap({Unit.year: 2020, Unit.month: 10, Unit.day: 19, Unit.hour: pickedTime!.hour, Unit.minute: pickedTime.minute}).format(pattern: "hh:mm a").toString();
     update();
   }
 
@@ -119,8 +87,7 @@ class AddSlotController extends GetxController implements GetxService {
       showToast('Please select time');
       return;
     }
-    var isExist = _slotList.where((element) =>
-        element.startTime == openTime && element.endTime == closeTime);
+    var isExist = _slotList.where((element) => element.startTime == openTime && element.endTime == closeTime);
     if (isExist.isNotEmpty) {
       showToast('Already exist');
       return;
@@ -169,11 +136,7 @@ class AddSlotController extends GetxController implements GetxService {
       ),
       barrierDismissible: false,
     );
-    var param = {
-      "uid": parser.getUID(),
-      "week_id": dayList.indexOf(dayName),
-      "slots": jsonEncode(slotList)
-    };
+    var param = {"uid": parser.getUID(), "week_id": dayList.indexOf(dayName), "slots": jsonEncode(slotList)};
     Response response = await parser.onCreateTimeSlot(param);
     Get.back();
     if (response.statusCode == 200) {
@@ -220,11 +183,7 @@ class AddSlotController extends GetxController implements GetxService {
       barrierDismissible: false,
     );
 
-    var param = {
-      "id": slotId,
-      "week_id": dayList.indexOf(dayName),
-      "slots": jsonEncode(slotList)
-    };
+    var param = {"id": slotId, "week_id": dayList.indexOf(dayName), "slots": jsonEncode(slotList)};
     Response response = await parser.onUpdateSlots(param);
     Get.back();
     if (response.statusCode == 200) {

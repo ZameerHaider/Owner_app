@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
@@ -132,9 +124,7 @@ class SignUpController extends GetxController implements GetxService {
 
   void selectFromGallery(String kind) async {
     debugPrint(kind);
-    final pickedFile = await ImagePicker().pickImage(
-        source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera,
-        imageQuality: 25);
+    final pickedFile = await ImagePicker().pickImage(source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera, imageQuality: 25);
     debugPrint(pickedFile.toString());
     if (pickedFile != null) {
       Get.dialog(
@@ -283,13 +273,11 @@ class SignUpController extends GetxController implements GetxService {
                   children: [
                     Text(
                       'We have sent verification code on'.tr,
-                      style:
-                          const TextStyle(fontSize: 12, fontFamily: 'medium'),
+                      style: const TextStyle(fontSize: 12, fontFamily: 'medium'),
                     ),
                     Text(
                       text,
-                      style:
-                          const TextStyle(fontSize: 12, fontFamily: 'medium'),
+                      style: const TextStyle(fontSize: 12, fontFamily: 'medium'),
                     ),
                     const SizedBox(
                       height: 10,
@@ -340,8 +328,7 @@ class SignUpController extends GetxController implements GetxService {
                               )
                             : Text(
                                 'Verify'.tr,
-                                style: const TextStyle(
-                                    fontFamily: 'regular', fontSize: 16),
+                                style: const TextStyle(fontFamily: 'regular', fontSize: 16),
                               ))),
               )
             ],
@@ -437,21 +424,14 @@ class SignUpController extends GetxController implements GetxService {
             ],
           ),
           barrierDismissible: false);
-      var param = {
-        'country_code': countryCodeMobile,
-        'mobile': mobileTextEditor.text
-      };
+      var param = {'country_code': countryCodeMobile, 'mobile': mobileTextEditor.text};
       Response response = await parser.checkPhoneExist(param);
       Get.back();
       if (response.statusCode == 200) {
         Map<String, dynamic> myMap = Map<String, dynamic>.from(response.body);
         if (myMap['data'] != '' && myMap['data'] == true) {
           FocusManager.instance.primaryFocus?.unfocus();
-          Get.toNamed(AppRouter.getFirebaseAuthRoutes(), arguments: [
-            countryCodeMobile,
-            mobileTextEditor.text,
-            'register'
-          ]);
+          Get.toNamed(AppRouter.getFirebaseAuthRoutes(), arguments: [countryCodeMobile, mobileTextEditor.text, 'register']);
         } else {
           showToast('Something went wrong while signup'.tr);
         }
@@ -479,10 +459,7 @@ class SignUpController extends GetxController implements GetxService {
       update();
     } else {
       debugPrint('sms');
-      var param = {
-        'country_code': countryCodeMobile,
-        'mobile': mobileTextEditor.text
-      };
+      var param = {'country_code': countryCodeMobile, 'mobile': mobileTextEditor.text};
       Response response = await parser.verifyPhone(param);
       if (response.statusCode == 200) {
         Map<String, dynamic> myMap = Map<String, dynamic>.from(response.body);
@@ -520,10 +497,7 @@ class SignUpController extends GetxController implements GetxService {
 
   void sendSMS() {
     var context = Get.context as BuildContext;
-    openOTPModal(
-        context,
-        countryCodeMobile.toString() + mobileTextEditor.text.toString(),
-        'mobile');
+    openOTPModal(context, countryCodeMobile.toString() + mobileTextEditor.text.toString(), 'mobile');
   }
 
   void togglePasswordBtn() {
@@ -539,8 +513,7 @@ class SignUpController extends GetxController implements GetxService {
   void onCategoriesList() {
     debugPrint('open category');
     Get.delete<RegisterCategoriesController>(force: true);
-    Get.toNamed(AppRouter.getRegisterCategoriesRoutes(),
-        arguments: [_servedCategoriesList]);
+    Get.toNamed(AppRouter.getRegisterCategoriesRoutes(), arguments: [_servedCategoriesList]);
   }
 
   void onCityChanged(CityModal city) {
@@ -674,8 +647,7 @@ class SignUpController extends GetxController implements GetxService {
                     },
                     child: Text(
                       'Okay'.tr,
-                      style: const TextStyle(
-                          color: ThemeProvider.appColor, fontFamily: 'bold'),
+                      style: const TextStyle(color: ThemeProvider.appColor, fontFamily: 'bold'),
                     ),
                   )
                 ],

@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,17 +23,7 @@ class OrderDetailsController extends GetxController implements GetxService {
 
   bool apiCalled = false;
 
-  List<String> paymentName = [
-    'NA'.tr,
-    'COD'.tr,
-    'Stripe'.tr,
-    'PayPal'.tr,
-    'Paytm'.tr,
-    'Razorpay'.tr,
-    'Instamojo'.tr,
-    'Paystack'.tr,
-    'Flutterwave'.tr
-  ];
+  List<String> paymentName = ['NA'.tr, 'COD'.tr, 'Stripe'.tr, 'PayPal'.tr, 'Paytm'.tr, 'Razorpay'.tr, 'Instamojo'.tr, 'Paystack'.tr, 'Flutterwave'.tr];
 
   List<String> selectStatus = ['Ongoing'.tr, 'Completed'.tr, 'Delayed'.tr];
   String orderStatus = '';
@@ -56,8 +38,7 @@ class OrderDetailsController extends GetxController implements GetxService {
     currencySide = parser.getCurrencySide();
     currencySymbol = parser.getCurrencySymbol();
     debugPrint('appointment id --> $id');
-    invoiceURL =
-        '${parser.apiService.appBaseUrl}${AppConstants.getAppointmentInvoice}$id&token=${parser.getToken()}';
+    invoiceURL = '${parser.apiService.appBaseUrl}${AppConstants.getAppointmentInvoice}$id&token=${parser.getToken()}';
     getAppointmentDetails();
     debugPrint(id.toString());
   }
@@ -122,11 +103,7 @@ class OrderDetailsController extends GetxController implements GetxService {
     if (response.statusCode == 200) {
       // back//
       successToast('Status Updated'.tr);
-      var notificationParam = {
-        "id": appointmentInfo.uid,
-        "title": "New Notificaiton".tr,
-        "message": "Your Appointment status is Changed"
-      };
+      var notificationParam = {"id": appointmentInfo.uid, "title": "New Notificaiton".tr, "message": "Your Appointment status is Changed"};
       await parser.sendNotification(notificationParam);
       Get.find<AppointmentController>().getList();
       onBack(); // list refresh
@@ -207,10 +184,7 @@ class OrderDetailsController extends GetxController implements GetxService {
             onPressed: () {
               Navigator.pop(context);
               Get.delete<ChatController>(force: true);
-              Get.toNamed(AppRouter.getChatRoute(), arguments: [
-                parser.getAdminId().toString(),
-                parser.getAdminName()
-              ]);
+              Get.toNamed(AppRouter.getChatRoute(), arguments: [parser.getAdminId().toString(), parser.getAdminName()]);
             },
           ),
           CupertinoActionSheetAction(

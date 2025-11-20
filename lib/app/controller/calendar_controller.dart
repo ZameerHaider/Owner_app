@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:math';
 
 import 'package:get/get.dart';
@@ -71,18 +63,7 @@ class CalendarsController extends GetxController implements GetxService {
         final DateTime startDate = DateTime.parse(element.day.toString());
         int limit = int.parse(element.count.toString());
         for (int i = 0; i < limit; i++) {
-          meetings.add(Meeting(
-              '',
-              '',
-              '',
-              null,
-              startDate,
-              startDate.add(Duration(hours: random.nextInt(3))),
-              colorCollection[random.nextInt(9)],
-              false,
-              '',
-              '',
-              ''));
+          meetings.add(Meeting('', '', '', null, startDate, startDate.add(Duration(hours: random.nextInt(3))), colorCollection[random.nextInt(9)], false, '', '', ''));
         }
       }
       events = MeetingDataSource(meetings);
@@ -127,17 +108,7 @@ class CalendarsController extends GetxController implements GetxService {
 
 class Meeting {
   Meeting(
-      this.eventName,
-      this.organizer,
-      this.contactID,
-      this.capacity,
-      this.from,
-      this.to,
-      this.background,
-      this.isAllDay,
-      this.startTimeZone,
-      this.endTimeZone,
-      this.recurrenceRule);
+      this.eventName, this.organizer, this.contactID, this.capacity, this.from, this.to, this.background, this.isAllDay, this.startTimeZone, this.endTimeZone, this.recurrenceRule);
 
   String eventName;
   String? organizer;

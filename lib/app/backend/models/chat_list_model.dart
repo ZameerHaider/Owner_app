@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 class ChatListModel {
   int? id;
   int? senderId;
@@ -17,16 +9,7 @@ class ChatListModel {
   int? status;
   String? updatedAt;
 
-  ChatListModel(
-      {this.id,
-      this.senderId,
-      this.roomId,
-      this.message,
-      this.messageType,
-      this.reported,
-      this.extraFields,
-      this.status,
-      this.updatedAt});
+  ChatListModel({this.id, this.senderId, this.roomId, this.message, this.messageType, this.reported, this.extraFields, this.status, this.updatedAt});
 
   ChatListModel.fromJson(Map<String, dynamic> json) {
     id = int.parse(json['id'].toString());

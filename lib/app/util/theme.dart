@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 
 const typeTheme = Typography.whiteMountainView;
@@ -22,8 +14,7 @@ class ThemeProvider {
   static const redColor = Color(0xFFFF0000);
   static const transparent = Color.fromARGB(0, 0, 0, 0);
 
-  static const titleStyle = TextStyle(
-      fontFamily: 'bold', fontSize: 14, color: ThemeProvider.whiteColor);
+  static const titleStyle = TextStyle(fontFamily: 'bold', fontSize: 14, color: ThemeProvider.whiteColor);
 }
 
 TextTheme txtTheme = Typography.whiteMountainView.copyWith(
@@ -47,12 +38,9 @@ ThemeData light = ThemeData(
     brightness: Brightness.light,
     hintColor: const Color(0xFF9F9F9F),
     cardColor: ThemeProvider.appColor,
-    textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(foregroundColor: ThemeProvider.appColor)),
+    textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(foregroundColor: ThemeProvider.appColor)),
     textTheme: txtTheme,
-    colorScheme: const ColorScheme.light(
-            primary: ThemeProvider.appColor,
-            secondary: ThemeProvider.secondaryAppColor)
+    colorScheme: const ColorScheme.light(primary: ThemeProvider.appColor, secondary: ThemeProvider.secondaryAppColor)
         .copyWith(background: const Color(0xFFF3F3F3))
         .copyWith(error: const Color(0xFFE84D4F)));
 
@@ -64,10 +52,8 @@ ThemeData dark = ThemeData(
     brightness: Brightness.dark,
     hintColor: const Color(0xFFbebebe),
     cardColor: Colors.black,
-    textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(foregroundColor: ThemeProvider.blackColor)),
+    textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom(foregroundColor: ThemeProvider.blackColor)),
     textTheme: txtTheme,
-    colorScheme: const ColorScheme.dark(
-            primary: ThemeProvider.blackColor, secondary: Color(0xFFffbd5c))
+    colorScheme: const ColorScheme.dark(primary: ThemeProvider.blackColor, secondary: Color(0xFFffbd5c))
         .copyWith(background: const Color(0xFF343636))
         .copyWith(error: const Color(0xFFdd3135)));

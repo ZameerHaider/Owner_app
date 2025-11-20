@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -15,9 +7,7 @@ import 'package:ultimate_salon_owner_flutter/app/controller/order_details_contro
 import 'package:ultimate_salon_owner_flutter/app/helper/router.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/constance.dart';
 
-class AppointmentController extends GetxController
-    with GetTickerProviderStateMixin
-    implements GetxService {
+class AppointmentController extends GetxController with GetTickerProviderStateMixin implements GetxService {
   final AppointmentParser parser;
 
   List<AppointmentModel> _appointmentList = <AppointmentModel>[];

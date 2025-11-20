@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -65,8 +57,7 @@ class SalonCategoriesController extends GetxController implements GetxService {
   void updateStatus(bool status, int id) {
     debugPrint(status.toString());
     debugPrint(id.toString());
-    var itemIndex =
-        _selectEditProfileList.indexWhere((element) => element.id == id);
+    var itemIndex = _selectEditProfileList.indexWhere((element) => element.id == id);
     _selectEditProfileList[itemIndex].isChecked = status;
     if (status == false) {
       // remove

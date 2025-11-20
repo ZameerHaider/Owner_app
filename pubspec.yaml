@@ -16,28 +16,28 @@ dependencies:
   http: ^1.1.0
   shared_preferences: ^2.2.0
   get: ^4.6.5
-  skeletons: ^0.0.3
+  skeletons_forked: ^0.0.4
   image_picker: ^1.0.0
-  syncfusion_flutter_calendar: ^22.1.37
-  jiffy: ^5.0.0
+  syncfusion_flutter_calendar: ^31.1.19
+  jiffy: ^6.4.4
   flutter_html: ^3.0.0-alpha.5
-  connectivity_plus: ^4.0.1
+  connectivity_plus: ^7.0.0
   google_nav_bar: ^5.0.6
-  syncfusion_flutter_charts: ^22.1.37
+  syncfusion_flutter_charts: ^31.1.19
   flutter_otp_text_field: ^1.1.1
   webview_flutter: ^4.2.2
   country_code_picker: ^3.0.0
   url_launcher: ^6.1.12
   country_picker: ^2.0.20
-  firebase_core: ^2.14.0
-  firebase_messaging: ^14.6.4
+  firebase_core: ^4.2.1
+  firebase_messaging: ^16.0.4
   change_app_package_name: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
 

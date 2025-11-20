@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/api.dart';
@@ -75,225 +67,93 @@ class MainBinding extends Bindings {
 
     // Parser LazyLoad
 
-    Get.lazyPut(
-        () => LoginParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => LoginParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => VerifyParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => VerifyParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => SignUpParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => SignUpParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => TabsParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => TabsParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => AppointmentParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => AppointmentParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => CalendarsParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => CalendarsParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => InboxParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => InboxParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ProfileParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ProfileParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => OrderDetailsParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => OrderDetailsParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ChatParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ChatParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => HistoryParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => HistoryParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => StylistParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => StylistParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => AddStylistParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => AddStylistParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => StylistCategoriesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => StylistCategoriesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ProfileCategoriesParse(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ProfileCategoriesParse(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => GallaryParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => GallaryParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ReviewParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ReviewParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => LanguagesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => LanguagesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ContactUsParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ContactUsParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => AppPagesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => AppPagesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => PackagesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => PackagesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => AddPackagesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => AddPackagesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => PackagesCategoriesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => PackagesCategoriesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ProductsParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ProductsParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => CreateProductsParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => CreateProductsParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ShopCategoriesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ShopCategoriesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ShopSubCategoriesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ShopSubCategoriesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => SalonCategoriesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => SalonCategoriesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => CitiesCategoriesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => CitiesCategoriesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => AddTimingParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => AddTimingParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => SlotParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => SlotParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => AddSlotParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => AddSlotParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => AddServicesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => AddServicesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ServicesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ServicesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ServicesCategorisParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ServicesCategorisParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => PackagesSpecialistParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => PackagesSpecialistParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => IndividualProfileParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => IndividualProfileParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => IndividualProfileCategoriesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => IndividualProfileCategoriesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => IndividualCitiesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => IndividualCitiesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => SplashParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => SplashParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => AnalyticsParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => AnalyticsParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => FirebaseParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => FirebaseParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => ProductOrderDetailsParse(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => ProductOrderDetailsParse(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
-    Get.lazyPut(
-        () => RegisterCategoriesParser(
-            apiService: Get.find(), sharedPreferencesManager: Get.find()),
-        fenix: true);
+    Get.lazyPut(() => RegisterCategoriesParser(apiService: Get.find(), sharedPreferencesManager: Get.find()), fenix: true);
 
     Get.lazyPut(() => TabsController(parser: Get.find()));
     Get.lazyPut(() => AppointmentController(parser: Get.find()));

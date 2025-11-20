@@ -1,14 +1,6 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skeletons/skeletons.dart';
+import 'package:skeletons_forked/skeletons_forked.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/cities_categories_controller.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
 
@@ -53,8 +45,7 @@ class _CitiesCategoriesScreen extends State<CitiesCategoriesScreen> {
                           itemBuilder: (context, i) => Column(
                             children: [
                               ListTile(
-                                visualDensity:
-                                    const VisualDensity(vertical: -4),
+                                visualDensity: const VisualDensity(vertical: -4),
                                 horizontalTitleGap: 0,
                                 leading: Radio(
                                   activeColor: ThemeProvider.appColor,
@@ -91,9 +82,7 @@ class _CitiesCategoriesScreen extends State<CitiesCategoriesScreen> {
                       child: Center(
                         child: Text(
                           'Update'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),
@@ -113,9 +102,7 @@ class _CitiesCategoriesScreen extends State<CitiesCategoriesScreen> {
                       child: Center(
                         child: Text(
                           'Cancle'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),

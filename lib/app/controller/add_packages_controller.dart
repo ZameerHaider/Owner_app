@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -298,9 +290,7 @@ class AddPackagesController extends GetxController implements GetxService {
   }
 
   void selectFromGallery(String kind) async {
-    _selectedImage = await ImagePicker().pickImage(
-        source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera,
-        imageQuality: 25);
+    _selectedImage = await ImagePicker().pickImage(source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera, imageQuality: 25);
     update();
     if (_selectedImage != null) {
       Get.dialog(
@@ -346,9 +336,7 @@ class AddPackagesController extends GetxController implements GetxService {
   }
 
   void selectFromGalleryOthers(String kind, int index) async {
-    _selectedImage = await ImagePicker().pickImage(
-        source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera,
-        imageQuality: 25);
+    _selectedImage = await ImagePicker().pickImage(source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera, imageQuality: 25);
     update();
     if (_selectedImage != null) {
       Get.dialog(
@@ -398,8 +386,7 @@ class AddPackagesController extends GetxController implements GetxService {
       debugPrint(value.toString());
       double sellPriceFinal = num.tryParse(discountTextEditor.text)!.toDouble();
       if (sellPriceFinal > 0 && value > 1) {
-        double discountPriceFinal =
-            num.tryParse(discountTextEditor.text)!.toDouble();
+        double discountPriceFinal = num.tryParse(discountTextEditor.text)!.toDouble();
         double realPrice = num.tryParse(priceTextEditor.text)!.toDouble();
         percentage(discountPriceFinal, realPrice);
       }
@@ -411,8 +398,7 @@ class AddPackagesController extends GetxController implements GetxService {
       double value = num.tryParse(input)!.toDouble();
       double realPrice = num.tryParse(priceTextEditor.text)!.toDouble();
       if (realPrice > 0 && value <= 99) {
-        double discountPriceFinal =
-            num.tryParse(discountTextEditor.text)!.toDouble();
+        double discountPriceFinal = num.tryParse(discountTextEditor.text)!.toDouble();
         percentage(discountPriceFinal, realPrice);
       }
       if (value >= 99) {
@@ -435,13 +421,11 @@ class AddPackagesController extends GetxController implements GetxService {
 
   void onSelectPackages() {
     Get.delete<PackagesCategoriesController>(force: true);
-    Get.toNamed(AppRouter.getPackagesCategoriesRoute(),
-        arguments: [selectedCategories, savedCategories]);
+    Get.toNamed(AppRouter.getPackagesCategoriesRoute(), arguments: [selectedCategories, savedCategories]);
   }
 
   void onSelectSpecialist() {
     Get.delete<PackagesSpecialistController>(force: true);
-    Get.toNamed(AppRouter.getPackagesSpecialistRoute(),
-        arguments: [selectedSpecialist, savedSpecialist]);
+    Get.toNamed(AppRouter.getPackagesSpecialistRoute(), arguments: [selectedSpecialist, savedSpecialist]);
   }
 }

@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 class SpecialistModel {
   int? id;
   int? salonUid;
@@ -16,15 +8,7 @@ class SpecialistModel {
   String? extraField;
   int? status;
 
-  SpecialistModel(
-      {this.id,
-      this.salonUid,
-      this.cateId,
-      this.firstName,
-      this.lastName,
-      this.cover,
-      this.extraField,
-      this.status});
+  SpecialistModel({this.id, this.salonUid, this.cateId, this.firstName, this.lastName, this.cover, this.extraField, this.status});
 
   SpecialistModel.fromJson(Map<String, dynamic> json) {
     id = int.parse(json['id'].toString());

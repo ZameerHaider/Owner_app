@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -49,13 +41,11 @@ class SplashController extends GetxController implements GetxService {
       if (myMap['data'] != null) {
         dynamic body = myMap["data"];
         if (body['settings'] != null && body['support'] != null) {
-          SettingsModel appSettingsInfo =
-              SettingsModel.fromJson(body['settings']);
+          SettingsModel appSettingsInfo = SettingsModel.fromJson(body['settings']);
 
           _settingsModel = appSettingsInfo;
 
-          SupportModel supportModelInfo =
-              SupportModel.fromJson(body['support']);
+          SupportModel supportModelInfo = SupportModel.fromJson(body['support']);
           _supportModel = supportModelInfo;
           parser.saveBasicInfo(
               appSettingsInfo.currencyCode,

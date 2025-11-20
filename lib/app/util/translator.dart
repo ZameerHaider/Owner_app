@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import "package:get/get.dart";
 
 class LocaleString extends Translations {
@@ -221,10 +213,8 @@ class LocaleString extends Translations {
           "Select Category": "Select Category",
           "Address": "Address",
           "Zipcode": "Zipcode",
-          "Select Latitude & Longitude from here :":
-              "Select Latitude & Longitude from here :",
-          "Please enter valid Latitude & Longitude otherwise app may not work properly.":
-              "Please enter valid Latitude & Longitude otherwise app may not work properly.",
+          "Select Latitude & Longitude from here :": "Select Latitude & Longitude from here :",
+          "Please enter valid Latitude & Longitude otherwise app may not work properly.": "Please enter valid Latitude & Longitude otherwise app may not work properly.",
           "Your Latitude": "Your Latitude",
           "Your Longitude": "Your Longitude",
           "No Internet Connection": "No Internet Connection",
@@ -279,26 +269,22 @@ class LocaleString extends Translations {
           "New Mail Request Received": "New Mail Request Received",
           "You have received new mail": "You have received new mail",
           "New Contact Details": "New Contact Details",
-          "We have received your request, we will respond on your issue soon":
-              "We have received your request, we will respond on your issue soon",
+          "We have received your request, we will respond on your issue soon": "We have received your request, we will respond on your issue soon",
           "Alert!": "Alert!",
           "Contact Information Sent": "Contact Information Sent",
           "Okay": "Okay",
           "Please select category": "Please select category",
           "Save Products": "Save Products",
           "Gallery Updated": "Gallery Updated",
-          "Please select one of the categories":
-              "Please select one of the categories",
+          "Please select one of the categories": "Please select one of the categories",
           "Categories Updated": "Categories Updated",
           "Update Salon": "Update Salon",
           "Access denied": "Access denied",
           "Something went wrong": "Something went wrong",
           "Phone Number is required": "Phone Number is required",
-          "Something went wrong while signup":
-              "Something went wrong while signup",
+          "Something went wrong while signup": "Something went wrong while signup",
           "Verification": "Verification",
-          "We have sent verification code on":
-              "We have sent verification code on",
+          "We have sent verification code on": "We have sent verification code on",
           "COD": "COD",
           "Stripe": "Stripe",
           "PayPal": "PayPal",
@@ -310,8 +296,7 @@ class LocaleString extends Translations {
           "Cancelled by user": "Cancelled by user",
           "Status Updated": "Status Updated",
           "New Notificaiton": "New Notificaiton",
-          "Your Appointment status is Changed":
-              "Your Appointment status is Changed",
+          "Your Appointment status is Changed": "Your Appointment status is Changed",
           "Choose": "Choose",
           "Complaints": "Complaints",
           "Chat": "Chat",
@@ -501,8 +486,7 @@ class LocaleString extends Translations {
           "Order Date": "आर्डर की तारीख",
           "Your Order Status": "आपकी ऑर्डर की स्थिति",
           "Products": "उत्पादों",
-          "Search for Salon, Services....":
-              "सैलून, सेवाओं के लिए खोज करें ...।",
+          "Search for Salon, Services....": "सैलून, सेवाओं के लिए खोज करें ...।",
           "Enter Salon Name": "सैलून नाम दर्ज करें",
           "Have Multiple Stylist ?": "कई स्टाइलिस्ट हैं?",
           " Reviews) ": "समीक्षा)",
@@ -545,10 +529,8 @@ class LocaleString extends Translations {
           "Select Category": "श्रेणी चुनना",
           "Address": "पता",
           "Zipcode": "पिन कोड",
-          "Select Latitude & Longitude from here :":
-              "यहाँ से अक्षांश और देशांतर का चयन करें:",
-          "Please enter valid Latitude & Longitude otherwise app may not work properly.":
-              "कृपया मान्य अक्षांश और देशांतर दर्ज करें अन्यथा ऐप ठीक से काम नहीं कर सकता है।",
+          "Select Latitude & Longitude from here :": "यहाँ से अक्षांश और देशांतर का चयन करें:",
+          "Please enter valid Latitude & Longitude otherwise app may not work properly.": "कृपया मान्य अक्षांश और देशांतर दर्ज करें अन्यथा ऐप ठीक से काम नहीं कर सकता है।",
           "Your Latitude": "आपका अक्षांश",
           "Your Longitude": "आपका देशांतर",
           "No Internet Connection": "कोई इंटरनेट कनेक्शन नहीं",
@@ -603,16 +585,14 @@ class LocaleString extends Translations {
           "New Mail Request Received": "नया मेल अनुरोध प्राप्त हुआ",
           "You have received new mail": "आपको नया मेल मिला है",
           "New Contact Details": "नया संपर्क विवरण",
-          "We have received your request, we will respond on your issue soon":
-              "हमें आपका अनुरोध मिला है, हम आपके मुद्दे पर जल्द ही जवाब देंगे",
+          "We have received your request, we will respond on your issue soon": "हमें आपका अनुरोध मिला है, हम आपके मुद्दे पर जल्द ही जवाब देंगे",
           "Alert!": "चेतावनी!",
           "Contact Information Sent": "संपर्क जानकारी भेजी",
           "Okay": "ठीक",
           "Please select category": "कृपया श्रेणी का चयन करें",
           "Save Products": "उत्पाद सहेजें",
           "Gallery Updated": "गैलरी अद्यतित",
-          "Please select one of the categories":
-              "कृपया श्रेणियों में से एक का चयन करें",
+          "Please select one of the categories": "कृपया श्रेणियों में से एक का चयन करें",
           "Categories Updated": "अद्यतित श्रेणियां",
           "Update Salon": "अद्यतन सैलून",
           "Access denied": "पहुंच अस्वीकृत",
@@ -632,8 +612,7 @@ class LocaleString extends Translations {
           "Cancelled by user": "उपयोगकर्ता द्वारा रद्द",
           "Status Updated": "अद्यतन की गई स्थिति",
           "New Notificaiton": "New notificaiton",
-          "Your Appointment status is Changed":
-              "आपकी नियुक्ति की स्थिति बदल गई है",
+          "Your Appointment status is Changed": "आपकी नियुक्ति की स्थिति बदल गई है",
           "Choose": "चुनना",
           "Complaints": "शिकायतों",
           "Chat": "बात करना",
@@ -797,8 +776,7 @@ class LocaleString extends Translations {
           "Password": "Clave",
           "Forgot Password?": "¿Has olvidado tu contraseña?",
           "LOG IN": "INICIAR SESIÓN",
-          "Don't have an Account? Sign Up":
-              "¿No tienes una cuenta? Inscribirse",
+          "Don't have an Account? Sign Up": "¿No tienes una cuenta? Inscribirse",
           "Mobile Number": "Número de teléfono móvil",
           "Appointments No #": "Citas no #",
           "Service At": "Servicio",
@@ -867,8 +845,7 @@ class LocaleString extends Translations {
           "Select Category": "selecciona una categoría",
           "Address": "Dirección",
           "Zipcode": "Código postal",
-          "Select Latitude & Longitude from here :":
-              "Seleccione Latitud y Longitud desde aquí:",
+          "Select Latitude & Longitude from here :": "Seleccione Latitud y Longitud desde aquí:",
           "Please enter valid Latitude & Longitude otherwise app may not work properly.":
               "Ingrese la latitud y longitud válidas, de lo contrario la aplicación puede no funcionar correctamente.",
           "Your Latitude": "Tu latitud",
@@ -888,8 +865,7 @@ class LocaleString extends Translations {
           "Please wait": "Espere por favor",
           "Save Packages": "Guardar paquetes",
           "packages update !": "¡Actualización de paquetes!",
-          "Discount must be less than 100":
-              "El descuento debe ser menos de 100",
+          "Discount must be less than 100": "El descuento debe ser menos de 100",
           "Services Added !": "¡Servicios agregados!",
           "services update !": "¡Actualización de servicios!",
           "Please select time": "Seleccione el tiempo",
@@ -926,26 +902,22 @@ class LocaleString extends Translations {
           "New Mail Request Received": "Nueva solicitud de correo recibida",
           "You have received new mail": "Has recibido un nuevo correo",
           "New Contact Details": "Nuevos datos de contacto",
-          "We have received your request, we will respond on your issue soon":
-              "Hemos recibido su solicitud, pronto responderemos sobre su problema.",
+          "We have received your request, we will respond on your issue soon": "Hemos recibido su solicitud, pronto responderemos sobre su problema.",
           "Alert!": "¡Alerta!",
           "Contact Information Sent": "Información de contacto enviada",
           "Okay": "De acuerdo",
           "Please select category": "Seleccione la categoría",
           "Save Products": "Guardar productos",
           "Gallery Updated": "Galería actualizada",
-          "Please select one of the categories":
-              "Seleccione una de las categorías",
+          "Please select one of the categories": "Seleccione una de las categorías",
           "Categories Updated": "Categorías actualizadas",
           "Update Salon": "Actualizar salón",
           "Access denied": "Acceso denegado",
           "Something went wrong": "Algo salió mal",
           "Phone Number is required": "Se requiere número de teléfono",
-          "Something went wrong while signup":
-              "Algo salió mal mientras se registra",
+          "Something went wrong while signup": "Algo salió mal mientras se registra",
           "Verification": "Verificación",
-          "We have sent verification code on":
-              "Hemos enviado código de verificación en",
+          "We have sent verification code on": "Hemos enviado código de verificación en",
           "COD": "BACALAO",
           "Stripe": "Raya",
           "PayPal": "Paypal",
@@ -957,8 +929,7 @@ class LocaleString extends Translations {
           "Cancelled by user": "Cancelado por usuario",
           "Status Updated": "Estado actualizado",
           "New Notificaiton": "Nuevo Notificaiton",
-          "Your Appointment status is Changed":
-              "El estado de su cita se cambia",
+          "Your Appointment status is Changed": "El estado de su cita se cambia",
           "Choose": "Elegir",
           "Complaints": "Quejas",
           "Chat": "Charlar",
@@ -1191,10 +1162,8 @@ class LocaleString extends Translations {
           "Select Category": "اختر الفئة",
           "Address": "تبوك",
           "Zipcode": "الرمز البريدي",
-          "Select Latitude & Longitude from here :":
-              "حدد خط العرض والعرض من هنا:",
-          "Please enter valid Latitude & Longitude otherwise app may not work properly.":
-              "الرجاء إدخال خط العرض والطول الصالح وإلا قد لا يعمل التطبيق بشكل صحيح.",
+          "Select Latitude & Longitude from here :": "حدد خط العرض والعرض من هنا:",
+          "Please enter valid Latitude & Longitude otherwise app may not work properly.": "الرجاء إدخال خط العرض والطول الصالح وإلا قد لا يعمل التطبيق بشكل صحيح.",
           "Your Latitude": "خط العرض الخاص بك",
           "Your Longitude": "خط الطول",
           "No Internet Connection": "لا يوجد اتصال إنترنت",
@@ -1249,8 +1218,7 @@ class LocaleString extends Translations {
           "New Mail Request Received": "تم استلام طلب البريد الجديد",
           "You have received new mail": "لقد تلقيت بريدًا جديدًا",
           "New Contact Details": "تفاصيل الاتصال الجديدة",
-          "We have received your request, we will respond on your issue soon":
-              "لقد تلقينا طلبك ، وسوف نرد على مشكلتك قريبًا",
+          "We have received your request, we will respond on your issue soon": "لقد تلقينا طلبك ، وسوف نرد على مشكلتك قريبًا",
           "Alert!": "انذار!",
           "Contact Information Sent": "معلومات الاتصال المرسلة",
           "Okay": "تمام",

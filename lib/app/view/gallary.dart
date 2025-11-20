@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -67,27 +59,21 @@ class _GallaryScreenState extends State<GallaryScreen> {
                                         onTap: () {
                                           showCupertinoModalPopup<void>(
                                             context: context,
-                                            builder: (BuildContext context) =>
-                                                CupertinoActionSheet(
+                                            builder: (BuildContext context) => CupertinoActionSheet(
                                               title: Text('Choose From'.tr),
-                                              actions: <
-                                                  CupertinoActionSheetAction>[
+                                              actions: <CupertinoActionSheetAction>[
                                                 CupertinoActionSheetAction(
                                                   isDefaultAction: true,
                                                   onPressed: () {
                                                     Navigator.pop(context);
-                                                    value
-                                                        .selectFromGalleryOthers(
-                                                            'camera');
+                                                    value.selectFromGalleryOthers('camera');
                                                   },
                                                   child: Text('Camera'.tr),
                                                 ),
                                                 CupertinoActionSheetAction(
                                                   onPressed: () {
                                                     Navigator.pop(context);
-                                                    value
-                                                        .selectFromGalleryOthers(
-                                                            'gallery');
+                                                    value.selectFromGalleryOthers('gallery');
                                                   },
                                                   child: Text('Gallery'.tr),
                                                 ),
@@ -106,20 +92,12 @@ class _GallaryScreenState extends State<GallaryScreen> {
                                           height: 100,
                                           width: 100,
                                           decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: ThemeProvider.greyColor),
-                                            borderRadius:
-                                                const BorderRadius.all(
-                                                    Radius.circular(5)),
+                                            border: Border.all(color: ThemeProvider.greyColor),
+                                            borderRadius: const BorderRadius.all(Radius.circular(5)),
                                           ),
                                           child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              const Icon(Icons.add),
-                                              const SizedBox(height: 10),
-                                              Text('Upload Image'.tr)
-                                            ],
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [const Icon(Icons.add), const SizedBox(height: 10), Text('Upload Image'.tr)],
                                           ),
                                         ),
                                       )
@@ -131,15 +109,11 @@ class _GallaryScreenState extends State<GallaryScreen> {
                                             height: 150,
                                             width: 150,
                                             child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(5.0),
+                                              borderRadius: BorderRadius.circular(5.0),
                                               child: FadeInImage(
-                                                image: NetworkImage(
-                                                    '${Environments.apiBaseURL}storage/images/${value.gallery[index].toString()}'),
-                                                placeholder: const AssetImage(
-                                                    "assets/images/placeholder.jpeg"),
-                                                imageErrorBuilder: (context,
-                                                    error, stackTrace) {
+                                                image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.gallery[index].toString()}'),
+                                                placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                                imageErrorBuilder: (context, error, stackTrace) {
                                                   return Image.asset(
                                                     'assets/images/notfound.png',
                                                     fit: BoxFit.cover,
@@ -155,8 +129,7 @@ class _GallaryScreenState extends State<GallaryScreen> {
                                           ),
                                           InkWell(
                                             onTap: () {
-                                              value.deletePhoto(
-                                                  value.gallery[index]);
+                                              value.deletePhoto(value.gallery[index]);
                                             },
                                             child: const Icon(
                                               Icons.delete,
@@ -188,8 +161,7 @@ class _GallaryScreenState extends State<GallaryScreen> {
                   children: [
                     Text(
                       'Update Images'.tr,
-                      style: const TextStyle(
-                          color: ThemeProvider.whiteColor, fontSize: 17),
+                      style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                     ),
                   ],
                 ),

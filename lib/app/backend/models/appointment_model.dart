@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 
 import 'package:jiffy/jiffy.dart';
@@ -79,15 +71,12 @@ class AppointmentModel {
     specialistId = int.parse(json['specialist_id'].toString());
     appointmentsTo = int.parse(json['appointments_to'].toString());
     if (int.parse(json['appointments_to'].toString()) == 1) {
-      AddressModel addressInfo =
-          AddressModel.fromJson(jsonDecode(json['address']));
+      AddressModel addressInfo = AddressModel.fromJson(jsonDecode(json['address']));
       address = addressInfo;
     } else {
       address = AddressModel();
     }
-    if (json.containsKey('items') &&
-        json['items'] != null &&
-        json['items'] != '') {
+    if (json.containsKey('items') && json['items'] != null && json['items'] != '') {
       var listItems = jsonDecode(json['items']);
       ServiceCartModel datas = ServiceCartModel.fromJson(listItems);
       items = datas;
@@ -103,7 +92,7 @@ class AppointmentModel {
     grandTotal = double.parse(json['grand_total'].toString());
     payMethod = int.parse(json['pay_method'].toString());
     paid = json['paid'];
-    saveDate = Jiffy(json['save_date']).yMMMMd;
+    saveDate = Jiffy.parse(json['save_date']).yMMMMd;
     slot = json['slot'];
     walletUsed = int.parse(json['wallet_used'].toString());
     walletPrice = double.parse(json['wallet_price'].toString());
@@ -112,21 +101,15 @@ class AppointmentModel {
     status = int.parse(json['status'].toString());
     createdAt = json['created_at'];
     if (json.containsKey('salonInfo')) {
-      salonInfo = json['salonInfo'] != null
-          ? SalonInfo.fromJson(json['salonInfo'])
-          : null;
+      salonInfo = json['salonInfo'] != null ? SalonInfo.fromJson(json['salonInfo']) : null;
     }
 
     if (json.containsKey('individualInfo')) {
-      individualInfo = json['individualInfo'] != null
-          ? IndividualInfo.fromJson(json['individualInfo'])
-          : null;
+      individualInfo = json['individualInfo'] != null ? IndividualInfo.fromJson(json['individualInfo']) : null;
     }
 
     if (json.containsKey('userInfo')) {
-      userInfo = json['userInfo'] != null
-          ? UserModel.fromJson(json['userInfo'])
-          : null;
+      userInfo = json['userInfo'] != null ? UserModel.fromJson(json['userInfo']) : null;
     }
   }
 

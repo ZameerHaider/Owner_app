@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/constance.dart';
@@ -17,12 +9,10 @@ class FirebaseVerificationScreen extends StatefulWidget {
   const FirebaseVerificationScreen({Key? key}) : super(key: key);
 
   @override
-  State<FirebaseVerificationScreen> createState() =>
-      _FirebaseVerificationScreenState();
+  State<FirebaseVerificationScreen> createState() => _FirebaseVerificationScreenState();
 }
 
-class _FirebaseVerificationScreenState
-    extends State<FirebaseVerificationScreen> {
+class _FirebaseVerificationScreenState extends State<FirebaseVerificationScreen> {
   bool isLoading = true;
   late final WebViewController _controller;
 
@@ -74,8 +64,7 @@ class _FirebaseVerificationScreenState
           automaticallyImplyLeading: false,
           elevation: 0.0,
           centerTitle: false,
-          title: Text('Verify your phone number'.tr,
-              style: ThemeProvider.titleStyle),
+          title: Text('Verify your phone number'.tr, style: ThemeProvider.titleStyle),
         ),
         body: Stack(
           children: <Widget>[

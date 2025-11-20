@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -44,15 +36,9 @@ class ChatController extends GetxController implements GetxService {
       Map<String, dynamic> myMap = Map<String, dynamic>.from(response.body);
       dynamic data1 = myMap["data"];
       dynamic data2 = myMap["data2"];
-      if (data1 != null &&
-          data1 != '' &&
-          data1['id'] != null &&
-          data1['id'] != '') {
+      if (data1 != null && data1 != '' && data1['id'] != null && data1['id'] != '') {
         roomId = data1['id'];
-      } else if (data2 != null &&
-          data2 != '' &&
-          data2['id'] != null &&
-          data2['id'] != '') {
+      } else if (data2 != null && data2 != '' && data2['id'] != null && data2['id'] != '') {
         roomId = data2['id'];
       }
       getChatList();
@@ -120,11 +106,7 @@ class ChatController extends GetxController implements GetxService {
     yourMessage = false;
     update();
     if (response.statusCode == 200) {
-      var notificationParam = {
-        "id": receiverId,
-        "title": 'New message received'.tr,
-        "message": message
-      };
+      var notificationParam = {"id": receiverId, "title": 'New message received'.tr, "message": message};
       await parser.sendNotification(notificationParam);
       getChatList();
     } else {
@@ -134,8 +116,7 @@ class ChatController extends GetxController implements GetxService {
   }
 
   void scrollDown() {
-    scrollController.animateTo(0,
-        duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
+    scrollController.animateTo(0, duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
     update();
   }
 }

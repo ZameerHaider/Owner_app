@@ -1,14 +1,6 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skeletons/skeletons.dart';
+import 'package:skeletons_forked/skeletons_forked.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/review_controller.dart';
 import 'package:ultimate_salon_owner_flutter/app/env.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
@@ -58,9 +50,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                     children: [
                                       Text(
                                         'All Reviews'.tr,
-                                        style: const TextStyle(
-                                            color: ThemeProvider.blackColor,
-                                            fontFamily: 'bold'),
+                                        style: const TextStyle(color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                       ),
                                     ],
                                   ),
@@ -69,43 +59,24 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                   Column(
                                     children: [
                                       Container(
-                                        margin: const EdgeInsets.symmetric(
-                                            vertical: 10),
+                                        margin: const EdgeInsets.symmetric(vertical: 10),
                                         decoration: const BoxDecoration(
-                                          border: Border(
-                                              bottom: BorderSide(
-                                                  color: ThemeProvider
-                                                      .backgroundColor),
-                                              top: BorderSide(
-                                                  color: ThemeProvider
-                                                      .backgroundColor)),
+                                          border: Border(bottom: BorderSide(color: ThemeProvider.backgroundColor), top: BorderSide(color: ThemeProvider.backgroundColor)),
                                         ),
                                         child: Column(
                                           children: [
                                             Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 10,
-                                                      vertical: 10),
+                                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                               child: Row(
                                                 children: [
                                                   ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            100),
+                                                    borderRadius: BorderRadius.circular(100),
                                                     child: SizedBox.fromSize(
-                                                      size:
-                                                          const Size.fromRadius(
-                                                              30),
+                                                      size: const Size.fromRadius(30),
                                                       child: FadeInImage(
-                                                        image: NetworkImage(
-                                                            '${Environments.apiBaseURL}storage/images/${item.user!.cover.toString()}'),
-                                                        placeholder:
-                                                            const AssetImage(
-                                                                "assets/images/placeholder.jpeg"),
-                                                        imageErrorBuilder:
-                                                            (context, error,
-                                                                stackTrace) {
+                                                        image: NetworkImage('${Environments.apiBaseURL}storage/images/${item.user!.cover.toString()}'),
+                                                        placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                                        imageErrorBuilder: (context, error, stackTrace) {
                                                           return Image.asset(
                                                             'assets/images/notfound.png',
                                                             fit: BoxFit.cover,
@@ -121,84 +92,34 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                                   ),
                                                   Expanded(
                                                     child: Padding(
-                                                      padding: const EdgeInsets
-                                                              .symmetric(
-                                                          horizontal: 10),
+                                                      padding: const EdgeInsets.symmetric(horizontal: 10),
                                                       child: Column(
                                                         children: [
                                                           Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
+                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                             children: [
                                                               SizedBox(
                                                                 width: 120,
                                                                 child: Text(
                                                                   '${item.user!.firstName} ${item.user!.lastName}',
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
-                                                                  style: const TextStyle(
-                                                                      fontSize:
-                                                                          15),
+                                                                  overflow: TextOverflow.ellipsis,
+                                                                  style: const TextStyle(fontSize: 15),
                                                                 ),
                                                               ),
                                                               Text(
-                                                                item.createdAt
-                                                                    .toString(),
-                                                                overflow:
-                                                                    TextOverflow
-                                                                        .ellipsis,
-                                                                style: const TextStyle(
-                                                                    color: ThemeProvider
-                                                                        .greyColor,
-                                                                    fontSize:
-                                                                        12),
+                                                                item.createdAt.toString(),
+                                                                overflow: TextOverflow.ellipsis,
+                                                                style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
                                                               ),
                                                             ],
                                                           ),
                                                           Row(
                                                             children: [
-                                                              Icon(Icons.star,
-                                                                  color: item.rating! >=
-                                                                          1
-                                                                      ? ThemeProvider
-                                                                          .orangeColor
-                                                                      : ThemeProvider
-                                                                          .greyColor,
-                                                                  size: 15),
-                                                              Icon(Icons.star,
-                                                                  color: item.rating! >=
-                                                                          2
-                                                                      ? ThemeProvider
-                                                                          .orangeColor
-                                                                      : ThemeProvider
-                                                                          .greyColor,
-                                                                  size: 15),
-                                                              Icon(Icons.star,
-                                                                  color: item.rating! >=
-                                                                          3
-                                                                      ? ThemeProvider
-                                                                          .orangeColor
-                                                                      : ThemeProvider
-                                                                          .greyColor,
-                                                                  size: 15),
-                                                              Icon(Icons.star,
-                                                                  color: item.rating! >=
-                                                                          4
-                                                                      ? ThemeProvider
-                                                                          .orangeColor
-                                                                      : ThemeProvider
-                                                                          .greyColor,
-                                                                  size: 15),
-                                                              Icon(Icons.star,
-                                                                  color: item.rating! >=
-                                                                          5
-                                                                      ? ThemeProvider
-                                                                          .orangeColor
-                                                                      : ThemeProvider
-                                                                          .greyColor,
-                                                                  size: 15),
+                                                              Icon(Icons.star, color: item.rating! >= 1 ? ThemeProvider.orangeColor : ThemeProvider.greyColor, size: 15),
+                                                              Icon(Icons.star, color: item.rating! >= 2 ? ThemeProvider.orangeColor : ThemeProvider.greyColor, size: 15),
+                                                              Icon(Icons.star, color: item.rating! >= 3 ? ThemeProvider.orangeColor : ThemeProvider.greyColor, size: 15),
+                                                              Icon(Icons.star, color: item.rating! >= 4 ? ThemeProvider.orangeColor : ThemeProvider.greyColor, size: 15),
+                                                              Icon(Icons.star, color: item.rating! >= 5 ? ThemeProvider.orangeColor : ThemeProvider.greyColor, size: 15),
                                                             ],
                                                           ),
                                                         ],
@@ -209,15 +130,11 @@ class _ReviewScreenState extends State<ReviewScreen> {
                                               ),
                                             ),
                                             Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 10,
-                                                      vertical: 5),
+                                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                               child: Text(
                                                 item.notes.toString(),
                                                 textAlign: TextAlign.start,
-                                                style: const TextStyle(
-                                                    fontSize: 12),
+                                                style: const TextStyle(fontSize: 12),
                                               ),
                                             ),
                                           ],

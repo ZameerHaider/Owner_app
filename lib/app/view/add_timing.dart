@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/add_timing_controller.dart';
@@ -48,9 +40,7 @@ class _AddTimingScreenState extends State<AddTimingScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100.0),
-                      border: Border.all(
-                          color: ThemeProvider.appColor,
-                          style: BorderStyle.solid),
+                      border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                     ),
                     child: DropdownButton<String>(
                       value: value.dayName,
@@ -63,15 +53,8 @@ class _AddTimingScreenState extends State<AddTimingScreen> {
                         debugPrint(newValue);
                         value.onUpdateDayName(newValue.toString());
                       },
-                      items: <String>[
-                        'Sunday'.tr,
-                        'Monday'.tr,
-                        'Tuesday'.tr,
-                        'Wednesday'.tr,
-                        'Thursday'.tr,
-                        'Friday'.tr,
-                        'Saturday'.tr
-                      ].map<DropdownMenuItem<String>>((String selected) {
+                      items: <String>['Sunday'.tr, 'Monday'.tr, 'Tuesday'.tr, 'Wednesday'.tr, 'Thursday'.tr, 'Friday'.tr, 'Saturday'.tr]
+                          .map<DropdownMenuItem<String>>((String selected) {
                         return DropdownMenuItem<String>(
                           value: selected,
                           child: Text(selected),
@@ -86,20 +69,15 @@ class _AddTimingScreenState extends State<AddTimingScreen> {
                     child: Container(
                       width: double.infinity,
                       margin: const EdgeInsets.symmetric(vertical: 10),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100.0),
-                        border: Border.all(
-                            color: ThemeProvider.appColor,
-                            style: BorderStyle.solid),
+                        border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          value.openTime == ''
-                              ? Text('Open Time'.tr)
-                              : Text(value.openTime.toString()),
+                          value.openTime == '' ? Text('Open Time'.tr) : Text(value.openTime.toString()),
                           const Icon(Icons.expand_more),
                         ],
                       ),
@@ -112,20 +90,15 @@ class _AddTimingScreenState extends State<AddTimingScreen> {
                     child: Container(
                       width: double.infinity,
                       margin: const EdgeInsets.symmetric(vertical: 10),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100.0),
-                        border: Border.all(
-                            color: ThemeProvider.appColor,
-                            style: BorderStyle.solid),
+                        border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          value.closeTime == ''
-                              ? Text('Close Time'.tr)
-                              : Text(value.closeTime.toString()),
+                          value.closeTime == '' ? Text('Close Time'.tr) : Text(value.closeTime.toString()),
                           const Icon(Icons.expand_more),
                         ],
                       ),
@@ -154,9 +127,7 @@ class _AddTimingScreenState extends State<AddTimingScreen> {
                             child: Center(
                               child: Text(
                                 'Save'.tr,
-                                style: const TextStyle(
-                                    fontFamily: 'bold',
-                                    color: ThemeProvider.whiteColor),
+                                style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                               ),
                             ),
                           )
@@ -167,9 +138,7 @@ class _AddTimingScreenState extends State<AddTimingScreen> {
                             child: Center(
                               child: Text(
                                 'Update'.tr,
-                                style: const TextStyle(
-                                    fontFamily: 'bold',
-                                    color: ThemeProvider.whiteColor),
+                                style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                               ),
                             ),
                           ),
@@ -189,9 +158,7 @@ class _AddTimingScreenState extends State<AddTimingScreen> {
                       child: Center(
                         child: Text(
                           'Cancle'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),

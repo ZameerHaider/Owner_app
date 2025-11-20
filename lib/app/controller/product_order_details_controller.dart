@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,8 +12,7 @@ import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/toast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProductOrderDetailsController extends GetxController
-    implements GetxService {
+class ProductOrderDetailsController extends GetxController implements GetxService {
   final ProductOrderDetailsParse parser;
 
   int id = 0;
@@ -33,17 +24,7 @@ class ProductOrderDetailsController extends GetxController
 
   bool apiCalled = false;
 
-  List<String> paymentName = [
-    'NA'.tr,
-    'COD'.tr,
-    'Stripe'.tr,
-    'PayPal'.tr,
-    'Paytm'.tr,
-    'Razorpay'.tr,
-    'Instamojo'.tr,
-    'Paystack'.tr,
-    'Flutterwave'.tr
-  ];
+  List<String> paymentName = ['NA'.tr, 'COD'.tr, 'Stripe'.tr, 'PayPal'.tr, 'Paytm'.tr, 'Razorpay'.tr, 'Instamojo'.tr, 'Paystack'.tr, 'Flutterwave'.tr];
 
   List<String> selectStatus = ['Ongoing'.tr, 'Completed'.tr, 'Delayed'.tr];
   String orderStatus = '';
@@ -58,8 +39,7 @@ class ProductOrderDetailsController extends GetxController
     currencySide = parser.getCurrencySide();
     currencySymbol = parser.getCurrencySymbol();
     debugPrint('appointment id --> $id');
-    invoiceURL =
-        '${parser.apiService.appBaseUrl}${AppConstants.getProductOrderInvoice}$id&token=${parser.getToken()}';
+    invoiceURL = '${parser.apiService.appBaseUrl}${AppConstants.getProductOrderInvoice}$id&token=${parser.getToken()}';
     getAppointmentDetails();
     debugPrint(id.toString());
   }
@@ -124,11 +104,7 @@ class ProductOrderDetailsController extends GetxController
     if (response.statusCode == 200) {
       // back//
       successToast('Status Updated'.tr);
-      var notificationParam = {
-        "id": productOrderDetails.uid,
-        "title": "New Notificaiton".tr,
-        "message": "Your order status is Changed".tr
-      };
+      var notificationParam = {"id": productOrderDetails.uid, "title": "New Notificaiton".tr, "message": "Your order status is Changed".tr};
       await parser.sendNotification(notificationParam);
       Get.find<HistoryController>().getList();
       onBack(); // list refresh
@@ -209,10 +185,7 @@ class ProductOrderDetailsController extends GetxController
             onPressed: () {
               Navigator.pop(context);
               Get.delete<ChatController>(force: true);
-              Get.toNamed(AppRouter.getChatRoute(), arguments: [
-                parser.getAdminId().toString(),
-                parser.getAdminName()
-              ]);
+              Get.toNamed(AppRouter.getChatRoute(), arguments: [parser.getAdminId().toString(), parser.getAdminName()]);
             },
           ),
           CupertinoActionSheetAction(

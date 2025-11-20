@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -59,9 +51,7 @@ class VerifyController extends GetxController implements GetxService {
         FocusManager.instance.primaryFocus?.unfocus();
         onEmailModal();
       } else {
-        if (myMap['data'] != '' &&
-            myMap['data'] == false &&
-            myMap['status'] == 500) {
+        if (myMap['data'] != '' && myMap['data'] == false && myMap['status'] == 500) {
           showToast(myMap['message'.tr]);
         } else {
           showToast('Something went wrong while signup'.tr);
@@ -114,13 +104,11 @@ class VerifyController extends GetxController implements GetxService {
                   children: [
                     Text(
                       'We have sent verification code on'.tr,
-                      style:
-                          const TextStyle(fontSize: 12, fontFamily: 'medium'),
+                      style: const TextStyle(fontSize: 12, fontFamily: 'medium'),
                     ),
                     Text(
                       text,
-                      style:
-                          const TextStyle(fontSize: 12, fontFamily: 'medium'),
+                      style: const TextStyle(fontSize: 12, fontFamily: 'medium'),
                     ),
                     const SizedBox(
                       height: 10,
@@ -173,8 +161,7 @@ class VerifyController extends GetxController implements GetxService {
                               )
                             : Text(
                                 'Verify'.tr,
-                                style: const TextStyle(
-                                    fontFamily: 'regular', fontSize: 16),
+                                style: const TextStyle(fontFamily: 'regular', fontSize: 16),
                               ))),
               )
             ],
@@ -249,11 +236,7 @@ class VerifyController extends GetxController implements GetxService {
 
     isLogin.value = !isLogin.value;
     update();
-    var param = {
-      'id': smsId,
-      'email': emailReset.text,
-      'password': passwordReset.text
-    };
+    var param = {'id': smsId, 'email': emailReset.text, 'password': passwordReset.text};
     Response response = await parser.updatePassword(param, tempToken);
     debugPrint(response.bodyString.toString());
     if (response.statusCode == 200) {
@@ -263,9 +246,7 @@ class VerifyController extends GetxController implements GetxService {
         successToast('Password Updated'.tr);
         onBack();
       } else {
-        if (myMap['data'] != '' &&
-            myMap['data'] == false &&
-            myMap['status'] == 500) {
+        if (myMap['data'] != '' && myMap['data'] == false && myMap['status'] == 500) {
           showToast(myMap['message'.tr]);
         } else {
           showToast('Something went wrong while signup'.tr);

@@ -1,14 +1,6 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skeletons/skeletons.dart';
+import 'package:skeletons_forked/skeletons_forked.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/stylist_categories_controller.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
 
@@ -50,11 +42,7 @@ class _StylistCategoriesScreen extends State<StylistCategoriesScreen> {
                         style: SkeletonParagraphStyle(
                           lines: 1,
                           spacing: 2,
-                          lineStyle: SkeletonLineStyle(
-                              randomLength: true,
-                              height: 20,
-                              borderRadius: BorderRadius.circular(8),
-                              minLength: MediaQuery.of(context).size.width),
+                          lineStyle: SkeletonLineStyle(randomLength: true, height: 20, borderRadius: BorderRadius.circular(8), minLength: MediaQuery.of(context).size.width),
                         ),
                       ),
                     )),
@@ -73,8 +61,7 @@ class _StylistCategoriesScreen extends State<StylistCategoriesScreen> {
                             value: item.isChecked,
                             onChanged: (status) {
                               // isChecked = value!;
-                              value.updateStatus(status!, item.id as int,
-                                  item.name.toString());
+                              value.updateStatus(status!, item.id as int, item.name.toString());
                             },
                           ),
                       ],
@@ -99,9 +86,7 @@ class _StylistCategoriesScreen extends State<StylistCategoriesScreen> {
                       child: Center(
                         child: Text(
                           'Add'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),
@@ -121,9 +106,7 @@ class _StylistCategoriesScreen extends State<StylistCategoriesScreen> {
                       child: Center(
                         child: Text(
                           'Cancel'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),

@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:ultimate_salon_owner_flutter/app/backend/api/api.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/helper/shared_pref.dart';
@@ -15,8 +7,7 @@ class SplashParser {
   final SharedPreferencesManager sharedPreferencesManager;
   final ApiService apiService;
 
-  SplashParser(
-      {required this.apiService, required this.sharedPreferencesManager});
+  SplashParser({required this.apiService, required this.sharedPreferencesManager});
 
   bool isNewUser() {
     return sharedPreferencesManager.getBool('welcome');
@@ -38,23 +29,8 @@ class SplashParser {
     return sharedPreferencesManager.getString('language') ?? 'en';
   }
 
-  void saveBasicInfo(
-      var currencyCode,
-      var currencySide,
-      var currencySymbol,
-      var smsName,
-      var verifyWith,
-      var userLogin,
-      var supportEmail,
-      var appName,
-      var shipping,
-      var shippingPrice,
-      var tax,
-      var appLogo,
-      var supportName,
-      var supportId,
-      var supportPhone,
-      var allowDistance) {
+  void saveBasicInfo(var currencyCode, var currencySide, var currencySymbol, var smsName, var verifyWith, var userLogin, var supportEmail, var appName, var shipping,
+      var shippingPrice, var tax, var appLogo, var supportName, var supportId, var supportPhone, var allowDistance) {
     sharedPreferencesManager.putString('currencyCode', currencyCode);
     sharedPreferencesManager.putString('currencySide', currencySide);
     sharedPreferencesManager.putString('currencySymbol', currencySymbol);
@@ -78,9 +54,6 @@ class SplashParser {
   }
 
   bool haveLoggedIn() {
-    return sharedPreferencesManager.getString('uid') != '' &&
-            sharedPreferencesManager.getString('uid') != null
-        ? true
-        : false;
+    return sharedPreferencesManager.getString('uid') != '' && sharedPreferencesManager.getString('uid') != null ? true : false;
   }
 }

@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,8 +46,7 @@ class _AddStylistScreenState extends State<AddStylistScreen> {
                           onTap: () {
                             showCupertinoModalPopup<void>(
                               context: context,
-                              builder: (BuildContext context) =>
-                                  CupertinoActionSheet(
+                              builder: (BuildContext context) => CupertinoActionSheet(
                                 title: Text('Choose From'.tr),
                                 actions: <CupertinoActionSheetAction>[
                                   CupertinoActionSheetAction(
@@ -89,12 +80,9 @@ class _AddStylistScreenState extends State<AddStylistScreen> {
                             child: SizedBox.fromSize(
                               size: const Size.fromRadius(60),
                               child: FadeInImage(
-                                image: NetworkImage(
-                                    '${Environments.apiBaseURL}storage/images/${value.cover}'),
-                                placeholder: const AssetImage(
-                                    "assets/images/placeholder.jpeg"),
-                                imageErrorBuilder:
-                                    (context, error, stackTrace) {
+                                image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.cover}'),
+                                placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                imageErrorBuilder: (context, error, stackTrace) {
                                   return Image.asset(
                                     'assets/images/notfound.png',
                                     fit: BoxFit.cover,
@@ -122,15 +110,11 @@ class _AddStylistScreenState extends State<AddStylistScreen> {
                           filled: true,
                           fillColor: ThemeProvider.whiteColor,
                           hintText: 'First Name'.tr,
-                          contentPadding: const EdgeInsets.only(
-                              bottom: 8.0, top: 14.0, left: 10),
+                          contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                           focusedBorder: const OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: ThemeProvider.appColor),
+                            borderSide: BorderSide(color: ThemeProvider.appColor),
                           ),
-                          enabledBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ThemeProvider.greyColor)),
+                          enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                         ),
                       ),
                     ),
@@ -145,15 +129,11 @@ class _AddStylistScreenState extends State<AddStylistScreen> {
                           filled: true,
                           fillColor: ThemeProvider.whiteColor,
                           hintText: 'Last Name'.tr,
-                          contentPadding: const EdgeInsets.only(
-                              bottom: 8.0, top: 14.0, left: 10),
+                          contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                           focusedBorder: const OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: ThemeProvider.appColor),
+                            borderSide: BorderSide(color: ThemeProvider.appColor),
                           ),
-                          enabledBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ThemeProvider.greyColor)),
+                          enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                         ),
                       ),
                     ),
@@ -163,46 +143,34 @@ class _AddStylistScreenState extends State<AddStylistScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
-                        border: Border.all(
-                            color: Colors.grey, style: BorderStyle.solid),
+                        border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                       ),
                       child: InkWell(
                         onTap: () {
                           value.onSelectStylist();
                         },
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10.0, vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               value.savedCategories.isEmpty
-                                  ? Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                          Text(
-                                            'Select Categories'.tr,
-                                            style:
-                                                const TextStyle(fontSize: 17),
-                                          ),
-                                        ])
+                                  ? Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                                      Text(
+                                        'Select Categories'.tr,
+                                        style: const TextStyle(fontSize: 17),
+                                      ),
+                                    ])
                                   : Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: List.generate(
                                         value.savedCategories.length,
                                         (name) => Column(
                                           children: [
                                             Text(
-                                              value.savedCategories[name]
-                                                  .toString(),
-                                              style:
-                                                  const TextStyle(fontSize: 17),
+                                              value.savedCategories[name].toString(),
+                                              style: const TextStyle(fontSize: 17),
                                             ),
                                           ],
                                         ),
@@ -238,8 +206,7 @@ class _AddStylistScreenState extends State<AddStylistScreen> {
                         children: [
                           Text(
                             'SUBMIT'.tr,
-                            style: const TextStyle(
-                                color: ThemeProvider.whiteColor, fontSize: 17),
+                            style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                           ),
                         ],
                       ),
@@ -263,8 +230,7 @@ class _AddStylistScreenState extends State<AddStylistScreen> {
                         children: [
                           Text(
                             'UPDATE'.tr,
-                            style: const TextStyle(
-                                color: ThemeProvider.whiteColor, fontSize: 17),
+                            style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                           ),
                         ],
                       ),

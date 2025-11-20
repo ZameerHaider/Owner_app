@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -120,8 +112,7 @@ class CreateProductsController extends GetxController implements GetxService {
       CategoryModel cateData = CategoryModel.fromJson(myMap['cateInfo']);
       selectedCateName = cateData.name.toString();
 
-      SubCategoriesModel subCateData =
-          SubCategoriesModel.fromJson(myMap['subCateInfo']);
+      SubCategoriesModel subCateData = SubCategoriesModel.fromJson(myMap['subCateInfo']);
       selectedSubName = subCateData.name.toString();
 
       var images = jsonDecode(_productsInfo.images.toString());
@@ -141,10 +132,7 @@ class CreateProductsController extends GetxController implements GetxService {
   }
 
   Future<void> updateProduct() async {
-    if (productNameTextEditor.text == '' ||
-        productNameTextEditor.text.isEmpty ||
-        productsPriceTextEditor.text == '' ||
-        productsPriceTextEditor.text.isEmpty) {
+    if (productNameTextEditor.text == '' || productNameTextEditor.text.isEmpty || productsPriceTextEditor.text == '' || productsPriceTextEditor.text.isEmpty) {
       showToast('All fields are required!');
       return;
     }
@@ -199,7 +187,7 @@ class CreateProductsController extends GetxController implements GetxService {
       "ml": inML == true ? mlTextEditor.text : 0,
       "in_offer": inOffers == true ? 1 : 0,
       "in_stock": inStock == true ? 1 : 0,
-      "exp_date": Jiffy(expDate).format('yyyy-MM-dd').toString(),
+      "exp_date": Jiffy.parseFromDateTime(expDate).format(pattern: 'yyyy-MM-dd').toString(),
       "rating": 0,
       "total_rating": 0,
     };
@@ -220,8 +208,7 @@ class CreateProductsController extends GetxController implements GetxService {
 
   void onShopCategories() {
     Get.delete<ShopCategoriesController>(force: true);
-    Get.toNamed(AppRouter.getShopCategoriesRoute(),
-        arguments: [selectedCateId]);
+    Get.toNamed(AppRouter.getShopCategoriesRoute(), arguments: [selectedCateId]);
   }
 
   void onShopSubCategories() {
@@ -230,8 +217,7 @@ class CreateProductsController extends GetxController implements GetxService {
       return;
     }
     Get.delete<ShopSubCategoriesController>(force: true);
-    Get.toNamed(AppRouter.getShopSubCategoriesRoute(),
-        arguments: [selectedCateId]);
+    Get.toNamed(AppRouter.getShopSubCategoriesRoute(), arguments: [selectedCateId]);
   }
 
   void updateinGrams(bool status) {
@@ -296,10 +282,7 @@ class CreateProductsController extends GetxController implements GetxService {
   }
 
   Future<void> saveProducts() async {
-    if (productNameTextEditor.text == '' ||
-        productNameTextEditor.text.isEmpty ||
-        productsPriceTextEditor.text == '' ||
-        productsPriceTextEditor.text.isEmpty) {
+    if (productNameTextEditor.text == '' || productNameTextEditor.text.isEmpty || productsPriceTextEditor.text == '' || productsPriceTextEditor.text.isEmpty) {
       showToast('All fields are required!');
       return;
     }
@@ -354,7 +337,7 @@ class CreateProductsController extends GetxController implements GetxService {
       "ml": inML == true ? mlTextEditor.text : 0,
       "in_offer": inOffers == true ? 1 : 0,
       "in_stock": inStock == true ? 1 : 0,
-      "exp_date": Jiffy(expDate).format('yyyy-MM-dd').toString(),
+      "exp_date": Jiffy.parseFromDateTime(expDate).format(pattern: 'yyyy-MM-dd').toString(),
       "rating": 0,
       "total_rating": 0,
     };
@@ -379,10 +362,8 @@ class CreateProductsController extends GetxController implements GetxService {
       debugPrint(value.toString());
       double sellPriceFinal = num.tryParse(discountTextEditor.text)!.toDouble();
       if (sellPriceFinal > 0 && value > 1) {
-        double discountPriceFinal =
-            num.tryParse(discountTextEditor.text)!.toDouble();
-        double realPrice =
-            num.tryParse(productsPriceTextEditor.text)!.toDouble();
+        double discountPriceFinal = num.tryParse(discountTextEditor.text)!.toDouble();
+        double realPrice = num.tryParse(productsPriceTextEditor.text)!.toDouble();
         percentage(discountPriceFinal, realPrice);
       }
     }
@@ -393,8 +374,7 @@ class CreateProductsController extends GetxController implements GetxService {
       double value = num.tryParse(input)!.toDouble();
       double realPrice = num.tryParse(productsPriceTextEditor.text)!.toDouble();
       if (realPrice > 0 && value <= 99) {
-        double discountPriceFinal =
-            num.tryParse(discountTextEditor.text)!.toDouble();
+        double discountPriceFinal = num.tryParse(discountTextEditor.text)!.toDouble();
         percentage(discountPriceFinal, realPrice);
       }
       if (value >= 99) {
@@ -417,9 +397,7 @@ class CreateProductsController extends GetxController implements GetxService {
   }
 
   void selectFromGallery(String kind) async {
-    _selectedImage = await ImagePicker().pickImage(
-        source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera,
-        imageQuality: 25);
+    _selectedImage = await ImagePicker().pickImage(source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera, imageQuality: 25);
     update();
     if (_selectedImage != null) {
       Get.dialog(
@@ -465,9 +443,7 @@ class CreateProductsController extends GetxController implements GetxService {
   }
 
   void selectFromGalleryOthers(String kind, int index) async {
-    _selectedImage = await ImagePicker().pickImage(
-        source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera,
-        imageQuality: 25);
+    _selectedImage = await ImagePicker().pickImage(source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera, imageQuality: 25);
     update();
     if (_selectedImage != null) {
       Get.dialog(
@@ -527,8 +503,7 @@ class CreateProductsController extends GetxController implements GetxService {
         return Theme(
           data: Theme.of(context).copyWith(
             colorScheme: ColorScheme.light(
-              primary: ThemeProvider.appColor
-                  .withOpacity(0.7), // header background color
+              primary: ThemeProvider.appColor.withOpacity(0.7), // header background color
               onPrimary: ThemeProvider.whiteColor, // header text color
               onSurface: ThemeProvider.blackColor, // body text color
             ),
@@ -543,7 +518,7 @@ class CreateProductsController extends GetxController implements GetxService {
       },
     );
     newDate != null ? expDate = newDate : expDate;
-    debugPrint(Jiffy(expDate).format('yyyy-MM-dd'));
+    debugPrint(Jiffy.parseFromDateTime(expDate).format(pattern: 'yyyy-MM-dd'));
     update();
   }
 }

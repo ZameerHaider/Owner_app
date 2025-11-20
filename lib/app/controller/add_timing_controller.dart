@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
@@ -21,15 +13,7 @@ class AddTimingController extends GetxController implements GetxService {
 
   bool userType = true;
 
-  List<String> dayList = [
-    'Sunday'.tr,
-    'Monday'.tr,
-    'Tuesday'.tr,
-    'Wednesday'.tr,
-    'Thursday'.tr,
-    'Friday'.tr,
-    'Saturday'.tr
-  ];
+  List<String> dayList = ['Sunday'.tr, 'Monday'.tr, 'Tuesday'.tr, 'Wednesday'.tr, 'Thursday'.tr, 'Friday'.tr, 'Saturday'.tr];
   String openTime = '';
   String closeTime = '';
 
@@ -53,34 +37,16 @@ class AddTimingController extends GetxController implements GetxService {
   Future<void> openTimePicker() async {
     var context = Get.context as BuildContext;
     TimeOfDay initialTime = TimeOfDay.now();
-    TimeOfDay? pickedTime = await showTimePicker(
-        context: context,
-        initialTime: initialTime,
-        initialEntryMode: TimePickerEntryMode.input);
-    openTime = Jiffy({
-      "year": 2020,
-      "month": 10,
-      "day": 19,
-      "hour": pickedTime!.hour,
-      "minute": pickedTime.minute
-    }).format("H:mm").toString();
+    TimeOfDay? pickedTime = await showTimePicker(context: context, initialTime: initialTime, initialEntryMode: TimePickerEntryMode.input);
+    openTime = Jiffy.parseFromMap({Unit.year: 2020, Unit.month: 10, Unit.day: 19, Unit.hour: pickedTime!.hour, Unit.minute: pickedTime.minute}).format(pattern: "H:mm").toString();
     update();
   }
 
   Future<void> closeTimePicker() async {
     var context = Get.context as BuildContext;
     TimeOfDay initialTime = TimeOfDay.now();
-    TimeOfDay? pickedTime = await showTimePicker(
-        context: context,
-        initialTime: initialTime,
-        initialEntryMode: TimePickerEntryMode.input);
-    closeTime = Jiffy({
-      "year": 2020,
-      "month": 10,
-      "day": 19,
-      "hour": pickedTime!.hour,
-      "minute": pickedTime.minute
-    }).format("H:mm").toString();
+    TimeOfDay? pickedTime = await showTimePicker(context: context, initialTime: initialTime, initialEntryMode: TimePickerEntryMode.input);
+    closeTime = Jiffy.parseFromMap({Unit.year: 2020, Unit.month: 10, Unit.day: 19, Unit.hour: pickedTime!.hour, Unit.minute: pickedTime.minute}).format(pattern: "H:mm").toString();
     update();
   }
 
@@ -98,8 +64,7 @@ class AddTimingController extends GetxController implements GetxService {
       if (exist.isNotEmpty) {
         showToast('Already added');
       } else {
-        Get.find<ProfileCategoriesController>()
-            .onSaveTime(index, openTime, closeTime);
+        Get.find<ProfileCategoriesController>().onSaveTime(index, openTime, closeTime);
         onBack();
       }
     } else {
@@ -115,8 +80,7 @@ class AddTimingController extends GetxController implements GetxService {
       if (exist.isNotEmpty) {
         showToast('Already added');
       } else {
-        Get.find<IndividualProfileController>()
-            .onSaveTime(index, openTime, closeTime);
+        Get.find<IndividualProfileController>().onSaveTime(index, openTime, closeTime);
         onBack();
       }
     }
@@ -136,8 +100,7 @@ class AddTimingController extends GetxController implements GetxService {
       }
       var index = dayList.indexOf(dayName);
 
-      Get.find<ProfileCategoriesController>()
-          .updateTime(index, openTime, closeTime);
+      Get.find<ProfileCategoriesController>().updateTime(index, openTime, closeTime);
       onBack();
     } else {
       debugPrint('for individual');
@@ -147,8 +110,7 @@ class AddTimingController extends GetxController implements GetxService {
       }
       var index = dayList.indexOf(dayName);
 
-      Get.find<IndividualProfileController>()
-          .updateTime(index, openTime, closeTime);
+      Get.find<IndividualProfileController>().updateTime(index, openTime, closeTime);
       onBack();
     }
   }

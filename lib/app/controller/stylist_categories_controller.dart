@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -13,8 +5,7 @@ import 'package:ultimate_salon_owner_flutter/app/backend/models/add_profile_mode
 import 'package:ultimate_salon_owner_flutter/app/backend/parse/stylist_categories_parse.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/add_stylist_controller.dart';
 
-class StylistCategoriesController extends GetxController
-    implements GetxService {
+class StylistCategoriesController extends GetxController implements GetxService {
   final StylistCategoriesParser parser;
 
   bool apiCalled = false;
@@ -66,8 +57,7 @@ class StylistCategoriesController extends GetxController
   void updateStatus(bool status, int id, String name) {
     debugPrint(status.toString());
     debugPrint(id.toString());
-    var itemIndex =
-        _selectEditProfileList.indexWhere((element) => element.id == id);
+    var itemIndex = _selectEditProfileList.indexWhere((element) => element.id == id);
     _selectEditProfileList[itemIndex].isChecked = status;
     if (status == false) {
       // remove
@@ -83,8 +73,7 @@ class StylistCategoriesController extends GetxController
   }
 
   Future<void> onAdd() async {
-    Get.find<AddStylistController>()
-        .onSaveCategory(selectedCategories.join(','), selectedCateName);
+    Get.find<AddStylistController>().onSaveCategory(selectedCategories.join(','), selectedCateName);
     var context = Get.context as BuildContext;
     Navigator.of(context).pop(true);
   }

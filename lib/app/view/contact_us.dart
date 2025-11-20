@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/contact_us_controller.dart';
@@ -26,8 +18,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
         return Scaffold(
           backgroundColor: ThemeProvider.whiteColor,
           bottomNavigationBar: Padding(
-            padding: const EdgeInsets.only(
-                top: 40.0, bottom: 20, left: 20, right: 20),
+            padding: const EdgeInsets.only(top: 40.0, bottom: 20, left: 20, right: 20),
             child: InkWell(
               onTap: () {
                 value.saveContacts();
@@ -45,10 +36,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                           )
                         : Text(
                             'Submit'.tr,
-                            style: const TextStyle(
-                                color: ThemeProvider.whiteColor,
-                                fontSize: 17,
-                                fontFamily: 'bold'),
+                            style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17, fontFamily: 'bold'),
                           ),
                   ],
                 ),
@@ -88,20 +76,14 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   controller: value.nameContact,
                                   decoration: InputDecoration(
                                     hintText: 'Full Name'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.appColor,
-                                        fontSize: 15),
+                                    hintStyle: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                     filled: true,
                                     fillColor: Colors.white,
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0),
                                     focusedBorder: const UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: const UnderlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
+                                    enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                                   ),
                                 ),
                               ),
@@ -114,20 +96,14 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   controller: value.emailContanct,
                                   decoration: InputDecoration(
                                     hintText: 'Email Address'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.appColor,
-                                        fontSize: 15),
+                                    hintStyle: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                     filled: true,
                                     fillColor: Colors.white,
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0),
                                     focusedBorder: const UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: const UnderlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
+                                    enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                                   ),
                                 ),
                               ),
@@ -141,20 +117,14 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                                   controller: value.messageContanct,
                                   decoration: InputDecoration(
                                     hintText: 'Message'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.appColor,
-                                        fontSize: 15),
+                                    hintStyle: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                     filled: true,
                                     fillColor: Colors.white,
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0),
                                     focusedBorder: const UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: const UnderlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
+                                    enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                                   ),
                                 ),
                               ),

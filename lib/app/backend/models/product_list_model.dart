@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 class ProductsListModel {
   int? id;
   int? freelacerId;
@@ -110,9 +102,7 @@ class ProductsListModel {
     totalRating = int.parse(json['total_rating'].toString());
     status = int.parse(json['status'].toString());
     extraField = json['extra_field'];
-    if (json['quantity'] != null &&
-        json['quantity'] != 0 &&
-        json['quantity'] != '') {
+    if (json['quantity'] != null && json['quantity'] != 0 && json['quantity'] != '') {
       quantity = int.parse(json['quantity'].toString());
     } else {
       quantity = 0;

@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -27,13 +19,12 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final Connectivity _connectivity = Connectivity();
-  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  late StreamSubscription<List<ConnectivityResult>> _connectivitySubscription;
   @override
   void initState() {
     super.initState();
     initConnectivity();
-    _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
     Get.find<SplashController>().initSharedData();
     _routing();
   }
@@ -51,17 +42,9 @@ class _SplashScreenState extends State<SplashScreen> {
           var locale = Get.find<SplashController>().getLanguageCode();
           Get.updateLocale(Locale(locale));
         } else {
-          var locale =
-              Get.find<SplashController>().defaultLanguage.languageCode != '' &&
-                      Get.find<SplashController>()
-                              .defaultLanguage
-                              .languageCode !=
-                          ''
-                  ? Locale(Get.find<SplashController>()
-                      .defaultLanguage
-                      .languageCode
-                      .toString())
-                  : Locale('en'.tr);
+          var locale = Get.find<SplashController>().defaultLanguage.languageCode != '' && Get.find<SplashController>().defaultLanguage.languageCode != ''
+              ? Locale(Get.find<SplashController>().defaultLanguage.languageCode.toString())
+              : Locale('en'.tr);
           Get.updateLocale(locale);
         }
 
@@ -84,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> initConnectivity() async {
-    late ConnectivityResult result;
+    late List<ConnectivityResult> result;
     try {
       result = await _connectivity.checkConnectivity();
     } on PlatformException catch (e) {
@@ -97,9 +80,8 @@ class _SplashScreenState extends State<SplashScreen> {
     return _updateConnectionStatus(result);
   }
 
-  Future<void> _updateConnectionStatus(ConnectivityResult result) async {
-    bool isNotConnected = result != ConnectivityResult.wifi &&
-        result != ConnectivityResult.mobile;
+  Future<void> _updateConnectionStatus(List<ConnectivityResult> result) async {
+    bool isNotConnected = !result.contains(ConnectivityResult.wifi) && result.contains(ConnectivityResult.mobile);
     if (isNotConnected) {
       showToast('No Internet Connection'.tr);
     }
@@ -132,8 +114,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Center(
               child: Text(
                 Environments.appName,
-                style: TextStyle(
-                    color: ThemeProvider.whiteColor, fontFamily: 'bold'),
+                style: TextStyle(color: ThemeProvider.whiteColor, fontFamily: 'bold'),
               ),
             ), //CircularAvatar
           ),
@@ -150,8 +131,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Center(
               child: Text(
                 'Developed By '.tr + Environments.companyName,
-                style: const TextStyle(
-                    color: ThemeProvider.whiteColor, fontFamily: 'bold'),
+                style: const TextStyle(color: ThemeProvider.whiteColor, fontFamily: 'bold'),
               ),
             ),
           ),

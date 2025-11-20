@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -92,9 +84,7 @@ class GallaryController extends GetxController implements GetxService {
   }
 
   void selectFromGalleryOthers(String kind) async {
-    _selectedImage = await ImagePicker().pickImage(
-        source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera,
-        imageQuality: 25);
+    _selectedImage = await ImagePicker().pickImage(source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera, imageQuality: 25);
     update();
     if (_selectedImage != null) {
       Get.dialog(
@@ -175,10 +165,7 @@ class GallaryController extends GetxController implements GetxService {
       );
       gallery = gallery.where((element) => element != '').toList();
 
-      var body = {
-        "id": profileInfo.id,
-        "images": gallery.isEmpty ? 'NA' : jsonEncode(gallery)
-      };
+      var body = {"id": profileInfo.id, "images": gallery.isEmpty ? 'NA' : jsonEncode(gallery)};
       debugPrint(body.toString());
       Response response = await parser.updateSalon(body);
       Get.back();
@@ -220,10 +207,7 @@ class GallaryController extends GetxController implements GetxService {
       );
       gallery = gallery.where((element) => element != '').toList();
 
-      var body = {
-        "id": individualInfo.id,
-        "images": gallery.isEmpty ? 'NA' : jsonEncode(gallery)
-      };
+      var body = {"id": individualInfo.id, "images": gallery.isEmpty ? 'NA' : jsonEncode(gallery)};
       debugPrint(body.toString());
       Response response = await parser.individualUpdate(body);
       Get.back();

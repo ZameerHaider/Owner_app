@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiffy/jiffy.dart';
@@ -42,8 +34,8 @@ class AnalyticsController extends GetxController implements GetxService {
   bool monthlyApiCalledProducts = false; // products
   bool yearlyApiCalledProducts = false; // products
 
-  int monthName = Jiffy().month;
-  int monthNameProducts = Jiffy().month; // products
+  int monthName = Jiffy.now().month;
+  int monthNameProducts = Jiffy.now().month; // products
   List<AnalyticsModel> _list = <AnalyticsModel>[];
   List<AnalyticsModel> get list => _list;
 
@@ -53,18 +45,14 @@ class AnalyticsController extends GetxController implements GetxService {
   List<MonthAnalyticsModel> _monthList = <MonthAnalyticsModel>[];
   List<MonthAnalyticsModel> get monthList => _monthList;
 
-  List<MonthAnalyticsModel> _monthListProducts =
-      <MonthAnalyticsModel>[]; // products
-  List<MonthAnalyticsModel> get monthListProducts =>
-      _monthListProducts; // products
+  List<MonthAnalyticsModel> _monthListProducts = <MonthAnalyticsModel>[]; // products
+  List<MonthAnalyticsModel> get monthListProducts => _monthListProducts; // products
 
   List<YearlyAnalyticsModel> _yearlyList = <YearlyAnalyticsModel>[];
   List<YearlyAnalyticsModel> get yearlyList => _yearlyList;
 
-  List<YearlyAnalyticsModel> _yearlyListProducts =
-      <YearlyAnalyticsModel>[]; // products
-  List<YearlyAnalyticsModel> get yearlyListProducts =>
-      _yearlyListProducts; // products
+  List<YearlyAnalyticsModel> _yearlyListProducts = <YearlyAnalyticsModel>[]; // products
+  List<YearlyAnalyticsModel> get yearlyListProducts => _yearlyListProducts; // products
 
   List<double> _chartTotal = <double>[];
   List<double> get chartTotal => _chartTotal;
@@ -76,15 +64,13 @@ class AnalyticsController extends GetxController implements GetxService {
   List<double> get chartMonthTotal => _chartMonthTotal;
 
   List<double> _chartMonthTotalProducts = <double>[]; // products
-  List<double> get chartMonthTotalProducts =>
-      _chartMonthTotalProducts; // products
+  List<double> get chartMonthTotalProducts => _chartMonthTotalProducts; // products
 
   List<double> _chartYearlyTotal = <double>[];
   List<double> get chartYearlyTotal => _chartYearlyTotal;
 
   List<double> _chartYearlyTotalProducts = <double>[]; // products
-  List<double> get chartYearlyTotalProducts =>
-      _chartYearlyTotalProducts; // products
+  List<double> get chartYearlyTotalProducts => _chartYearlyTotalProducts; // products
 
   String totalPrice = '';
   String averagePrice = '';
@@ -104,9 +90,9 @@ class AnalyticsController extends GetxController implements GetxService {
   String totalPriceYearlyProducts = ''; // products
   String averagePriceYearlyProducts = ''; // products
 
-  int currenyYear = Jiffy().year;
+  int currenyYear = Jiffy.now().year;
 
-  int currenyYearProducts = Jiffy().year; // products
+  int currenyYearProducts = Jiffy.now().year; // products
 
   List<String> monthsListNames = [
     'January'.tr,
@@ -128,7 +114,7 @@ class AnalyticsController extends GetxController implements GetxService {
     List<String> months = [];
     for (int i = from; i <= to; i++) {
       DateTime dateTime = DateTime(pickerYear, i, 1);
-      months.add('${Jiffy(dateTime).MMM} $pickerYear');
+      months.add('${Jiffy.parseFromDateTime(dateTime).MMM} $pickerYear');
     }
     return months;
   }
@@ -195,8 +181,7 @@ class AnalyticsController extends GetxController implements GetxService {
     debugPrint(monthNameProducts.toString());
     _listProducts = [];
     _chartTotalProducts = [];
-    Response response =
-        await parser.getStatsProducts(monthNameProducts, pickerYearProducts);
+    Response response = await parser.getStatsProducts(monthNameProducts, pickerYearProducts);
     dailyApiCalledProducts = true;
     if (response.statusCode == 200) {
       Map<String, dynamic> myMap = Map<String, dynamic>.from(response.body);
@@ -267,8 +252,7 @@ class AnalyticsController extends GetxController implements GetxService {
     _monthListProducts = [];
     _chartMonthTotalProducts = [];
     update();
-    Response response =
-        await parser.getMonthsStatusProducts(currenyYearProducts);
+    Response response = await parser.getMonthsStatusProducts(currenyYearProducts);
     monthlyApiCalledProducts = true;
     if (response.statusCode == 200) {
       Map<String, dynamic> myMap = Map<String, dynamic>.from(response.body);

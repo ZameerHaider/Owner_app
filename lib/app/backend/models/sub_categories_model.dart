@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 class SubCategoriesModel {
   int? id;
   String? name;
@@ -14,13 +6,7 @@ class SubCategoriesModel {
   String? extraField;
   int? status;
 
-  SubCategoriesModel(
-      {this.id,
-      this.name,
-      this.cover,
-      this.cateId,
-      this.extraField,
-      this.status});
+  SubCategoriesModel({this.id, this.name, this.cover, this.cateId, this.extraField, this.status});
 
   SubCategoriesModel.fromJson(Map<String, dynamic> json) {
     id = int.parse(json['id'].toString());

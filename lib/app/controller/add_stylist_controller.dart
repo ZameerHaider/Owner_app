@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -139,9 +131,7 @@ class AddStylistController extends GetxController implements GetxService {
   }
 
   void selectFromGallery(String kind) async {
-    _selectedImage = await ImagePicker().pickImage(
-        source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera,
-        imageQuality: 25);
+    _selectedImage = await ImagePicker().pickImage(source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera, imageQuality: 25);
     update();
     if (_selectedImage != null) {
       Get.dialog(
@@ -213,13 +203,7 @@ class AddStylistController extends GetxController implements GetxService {
       barrierDismissible: false,
     );
 
-    var body = {
-      "cate_id": selectedCategories,
-      "cover": cover,
-      "first_name": firstNameTextEditor.text,
-      "last_name": lastNameTextEditor.text,
-      "id": salonId
-    };
+    var body = {"cate_id": selectedCategories, "cover": cover, "first_name": firstNameTextEditor.text, "last_name": lastNameTextEditor.text, "id": salonId};
     var response = await parser.onUpdateService(body);
     Get.back();
     if (response.statusCode == 200) {
@@ -246,7 +230,6 @@ class AddStylistController extends GetxController implements GetxService {
 
   void onSelectStylist() {
     Get.delete<StylistCategoriesController>(force: true);
-    Get.toNamed(AppRouter.getStylistCategoriesRoute(),
-        arguments: [selectedCategories]);
+    Get.toNamed(AppRouter.getStylistCategoriesRoute(), arguments: [selectedCategories]);
   }
 }

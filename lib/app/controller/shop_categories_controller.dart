@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -43,8 +35,7 @@ class ShopCategoriesController extends GetxController implements GetxService {
       var body = myMap['data'];
       _productsList = [];
       body.forEach((data) {
-        ProductsCategoriesModel product =
-            ProductsCategoriesModel.fromJson(data);
+        ProductsCategoriesModel product = ProductsCategoriesModel.fromJson(data);
         _productsList.add(product);
       });
       debugPrint(productList.length.toString());
@@ -56,8 +47,7 @@ class ShopCategoriesController extends GetxController implements GetxService {
 
   void saveProductsCate(String id) {
     selectedProducts = id;
-    var name =
-        _productsList.firstWhere((element) => element.id.toString() == id).name;
+    var name = _productsList.firstWhere((element) => element.id.toString() == id).name;
     selectedProductsName = name as String;
     debugPrint(selectedProducts = id);
     update();
@@ -66,8 +56,7 @@ class ShopCategoriesController extends GetxController implements GetxService {
   void saveAndClose() {
     debugPrint(selectedProducts.toString());
     debugPrint(selectedProductsName.toString());
-    Get.find<CreateProductsController>()
-        .onSaveproductCate(selectedProducts, selectedProductsName);
+    Get.find<CreateProductsController>().onSaveproductCate(selectedProducts, selectedProductsName);
     onBack();
   }
 

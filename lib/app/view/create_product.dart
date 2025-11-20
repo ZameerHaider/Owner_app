@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,9 +26,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
             elevation: 0,
             toolbarHeight: 50,
             title: Text(
-              value.type == 'create'
-                  ? 'Create Products'.tr
-                  : 'Update Products'.tr,
+              value.type == 'create' ? 'Create Products'.tr : 'Update Products'.tr,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.start,
               style: ThemeProvider.titleStyle,
@@ -52,8 +42,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                           onTap: () {
                             showCupertinoModalPopup<void>(
                               context: context,
-                              builder: (BuildContext context) =>
-                                  CupertinoActionSheet(
+                              builder: (BuildContext context) => CupertinoActionSheet(
                                 title: Text('Choose From'.tr),
                                 actions: <CupertinoActionSheetAction>[
                                   CupertinoActionSheetAction(
@@ -87,12 +76,9 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                             child: SizedBox.fromSize(
                               size: const Size.fromRadius(70),
                               child: FadeInImage(
-                                image: NetworkImage(
-                                    '${Environments.apiBaseURL}storage/images/${value.cover}'),
-                                placeholder: const AssetImage(
-                                    "assets/images/placeholder.jpeg"),
-                                imageErrorBuilder:
-                                    (context, error, stackTrace) {
+                                image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.cover}'),
+                                placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                imageErrorBuilder: (context, error, stackTrace) {
                                   return Image.asset(
                                     'assets/images/notfound.png',
                                     fit: BoxFit.cover,
@@ -112,38 +98,30 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5.0),
-                              border: Border.all(
-                                  color: Colors.grey, style: BorderStyle.solid),
+                              border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                             ),
                             child: InkWell(
                               onTap: () {
                                 value.onShopCategories();
                               },
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10.0, vertical: 10),
+                                padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'Categories'.tr,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.greyColor,
-                                          fontSize: 14),
+                                      style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 14),
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         value.selectedCateName == ''
                                             ? Text(
                                                 'Select Categories'.tr,
-                                                style: const TextStyle(
-                                                    fontSize: 17),
+                                                style: const TextStyle(fontSize: 17),
                                               )
-                                            : Text(value.selectedCateName,
-                                                style: const TextStyle(
-                                                    fontSize: 17)),
+                                            : Text(value.selectedCateName, style: const TextStyle(fontSize: 17)),
                                         const Icon(
                                           Icons.expand_more,
                                           color: ThemeProvider.greyColor,
@@ -161,39 +139,32 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5.0),
-                              border: Border.all(
-                                  color: Colors.grey, style: BorderStyle.solid),
+                              border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                             ),
                             child: InkWell(
                               onTap: () {
                                 value.onShopSubCategories();
                               },
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10.0, vertical: 10),
+                                padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'Select Subcategories'.tr,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.greyColor,
-                                          fontSize: 14),
+                                      style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 14),
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         value.selectedSubName == ''
                                             ? Text(
                                                 'Sub Categories'.tr,
-                                                style: const TextStyle(
-                                                    fontSize: 17),
+                                                style: const TextStyle(fontSize: 17),
                                               )
                                             : Text(
                                                 value.selectedSubName,
-                                                style: const TextStyle(
-                                                    fontSize: 17),
+                                                style: const TextStyle(fontSize: 17),
                                               ),
                                         const Icon(
                                           Icons.expand_more,
@@ -217,15 +188,11 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 filled: true,
                                 fillColor: ThemeProvider.whiteColor,
                                 hintText: 'Products Name'.tr,
-                                contentPadding: const EdgeInsets.only(
-                                    bottom: 8.0, top: 14.0, left: 10),
+                                contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                                 focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: ThemeProvider.appColor),
+                                  borderSide: BorderSide(color: ThemeProvider.appColor),
                                 ),
-                                enabledBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: ThemeProvider.greyColor)),
+                                enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                               ),
                             ),
                           ),
@@ -243,15 +210,11 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 filled: true,
                                 fillColor: ThemeProvider.whiteColor,
                                 hintText: 'Products Price'.tr,
-                                contentPadding: const EdgeInsets.only(
-                                    bottom: 8.0, top: 14.0, left: 10),
+                                contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                                 focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: ThemeProvider.appColor),
+                                  borderSide: BorderSide(color: ThemeProvider.appColor),
                                 ),
-                                enabledBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: ThemeProvider.greyColor)),
+                                enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                               ),
                             ),
                           ),
@@ -269,15 +232,11 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 filled: true,
                                 fillColor: ThemeProvider.whiteColor,
                                 hintText: 'Discount %'.tr,
-                                contentPadding: const EdgeInsets.only(
-                                    bottom: 8.0, top: 14.0, left: 10),
+                                contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                                 focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: ThemeProvider.appColor),
+                                  borderSide: BorderSide(color: ThemeProvider.appColor),
                                 ),
-                                enabledBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: ThemeProvider.greyColor)),
+                                enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                               ),
                             ),
                           ),
@@ -291,20 +250,14 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                               decoration: InputDecoration(
                                 filled: true,
                                 enabled: false,
-                                disabledBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: ThemeProvider.greyColor)),
+                                disabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                                 fillColor: ThemeProvider.whiteColor,
                                 hintText: 'Sell Price'.tr,
-                                contentPadding: const EdgeInsets.only(
-                                    bottom: 8.0, top: 14.0, left: 10),
+                                contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                                 focusedBorder: const OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: ThemeProvider.appColor),
+                                  borderSide: BorderSide(color: ThemeProvider.appColor),
                                 ),
-                                enabledBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: ThemeProvider.greyColor)),
+                                enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                               ),
                             ),
                           ),
@@ -314,29 +267,22 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5.0),
-                              border: Border.all(
-                                  color: Colors.grey, style: BorderStyle.solid),
+                              border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                             ),
                             child: InkWell(
                               onTap: () {
                                 showCupertinoModalPopup<void>(
                                   context: context,
-                                  builder: (BuildContext context) =>
-                                      CupertinoActionSheet(
+                                  builder: (BuildContext context) => CupertinoActionSheet(
                                     title: Text(
                                       'Choose From'.tr,
-                                      style: const TextStyle(
-                                          fontFamily: 'bold',
-                                          color: ThemeProvider.blackColor,
-                                          fontSize: 14),
+                                      style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.blackColor, fontSize: 14),
                                     ),
                                     actions: <CupertinoActionSheetAction>[
                                       CupertinoActionSheetAction(
                                         child: Text(
                                           'Available'.tr,
-                                          style: const TextStyle(
-                                              color: ThemeProvider.appColor,
-                                              fontSize: 15),
+                                          style: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                         ),
                                         onPressed: () {
                                           value.updateOfferStatus(1);
@@ -346,9 +292,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                       CupertinoActionSheetAction(
                                         child: Text(
                                           'Hide'.tr,
-                                          style: const TextStyle(
-                                              color: ThemeProvider.appColor,
-                                              fontSize: 15),
+                                          style: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                         ),
                                         onPressed: () {
                                           value.updateOfferStatus(0);
@@ -358,10 +302,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                       CupertinoActionSheetAction(
                                         child: Text(
                                           'Cancel'.tr,
-                                          style: const TextStyle(
-                                              fontFamily: 'bold',
-                                              color: ThemeProvider.redColor,
-                                              fontSize: 14),
+                                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.redColor, fontSize: 14),
                                         ),
                                         onPressed: () {
                                           Navigator.pop(context);
@@ -372,25 +313,19 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 );
                               },
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10.0, vertical: 10),
+                                padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'in Offers'.tr,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.greyColor,
-                                          fontSize: 14),
+                                      style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 14),
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          value.selectedOfferStatus == 1
-                                              ? 'Available'.tr
-                                              : 'Hide'.tr,
+                                          value.selectedOfferStatus == 1 ? 'Available'.tr : 'Hide'.tr,
                                           style: const TextStyle(fontSize: 17),
                                         ),
                                         const Icon(
@@ -410,29 +345,22 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5.0),
-                              border: Border.all(
-                                  color: Colors.grey, style: BorderStyle.solid),
+                              border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                             ),
                             child: InkWell(
                               onTap: () {
                                 showCupertinoModalPopup<void>(
                                   context: context,
-                                  builder: (BuildContext context) =>
-                                      CupertinoActionSheet(
+                                  builder: (BuildContext context) => CupertinoActionSheet(
                                     title: Text(
                                       'Choose From'.tr,
-                                      style: const TextStyle(
-                                          fontFamily: 'bold',
-                                          color: ThemeProvider.blackColor,
-                                          fontSize: 14),
+                                      style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.blackColor, fontSize: 14),
                                     ),
                                     actions: <CupertinoActionSheetAction>[
                                       CupertinoActionSheetAction(
                                         child: Text(
                                           'Available'.tr,
-                                          style: const TextStyle(
-                                              color: ThemeProvider.appColor,
-                                              fontSize: 15),
+                                          style: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                         ),
                                         onPressed: () {
                                           value.updateStackStatus(1);
@@ -443,9 +371,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                       CupertinoActionSheetAction(
                                         child: Text(
                                           'Hide'.tr,
-                                          style: const TextStyle(
-                                              color: ThemeProvider.appColor,
-                                              fontSize: 15),
+                                          style: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                         ),
                                         onPressed: () {
                                           value.updateStackStatus(0);
@@ -456,10 +382,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                       CupertinoActionSheetAction(
                                         child: Text(
                                           'Cancel'.tr,
-                                          style: const TextStyle(
-                                              fontFamily: 'bold',
-                                              color: ThemeProvider.redColor,
-                                              fontSize: 14),
+                                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.redColor, fontSize: 14),
                                         ),
                                         onPressed: () {
                                           Navigator.pop(context);
@@ -470,25 +393,19 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 );
                               },
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 10.0, vertical: 10),
+                                padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       'in Stock'.tr,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.greyColor,
-                                          fontSize: 14),
+                                      style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 14),
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          value.selectedStackStatus == 1
-                                              ? 'Available'.tr
-                                              : 'Hide'.tr,
+                                          value.selectedStackStatus == 1 ? 'Available'.tr : 'Hide'.tr,
                                           style: const TextStyle(fontSize: 17),
                                         ),
                                         const Icon(
@@ -563,8 +480,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                             children: [
                               Text(
                                 'Upload More Image'.tr,
-                                style: const TextStyle(
-                                    fontFamily: 'bold', fontSize: 14),
+                                style: const TextStyle(fontFamily: 'bold', fontSize: 14),
                               ),
                             ],
                           ),
@@ -586,24 +502,21 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                   onTap: () {
                                     showCupertinoModalPopup<void>(
                                       context: context,
-                                      builder: (BuildContext context) =>
-                                          CupertinoActionSheet(
+                                      builder: (BuildContext context) => CupertinoActionSheet(
                                         title: Text('Choose From'.tr),
                                         actions: <CupertinoActionSheetAction>[
                                           CupertinoActionSheetAction(
                                             isDefaultAction: true,
                                             onPressed: () {
                                               Navigator.pop(context);
-                                              value.selectFromGalleryOthers(
-                                                  'camera', index);
+                                              value.selectFromGalleryOthers('camera', index);
                                             },
                                             child: Text('Camera'.tr),
                                           ),
                                           CupertinoActionSheetAction(
                                             onPressed: () {
                                               Navigator.pop(context);
-                                              value.selectFromGalleryOthers(
-                                                  'gallery', index);
+                                              value.selectFromGalleryOthers('gallery', index);
                                             },
                                             child: Text('Gallery'.tr),
                                           ),
@@ -624,12 +537,9 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(5.0),
                                       child: FadeInImage(
-                                        image: NetworkImage(
-                                            '${Environments.apiBaseURL}storage/images/${value.gallery[index]}'),
-                                        placeholder: const AssetImage(
-                                            "assets/images/placeholder.jpeg"),
-                                        imageErrorBuilder:
-                                            (context, error, stackTrace) {
+                                        image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.gallery[index]}'),
+                                        placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                        imageErrorBuilder: (context, error, stackTrace) {
                                           return Image.asset(
                                             'assets/images/notfound.png',
                                             fit: BoxFit.cover,
@@ -673,33 +583,20 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 ),
                                 value.inGrams == true
                                     ? Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5),
+                                        padding: const EdgeInsets.symmetric(horizontal: 5),
                                         child: SizedBox(
                                           width: double.infinity,
                                           child: TextField(
                                             controller: value.gramTextEditor,
                                             decoration: InputDecoration(
                                               filled: true,
-                                              fillColor:
-                                                  ThemeProvider.whiteColor,
+                                              fillColor: ThemeProvider.whiteColor,
                                               hintText: 'Gram Value'.tr,
-                                              contentPadding:
-                                                  const EdgeInsets.only(
-                                                      bottom: 8.0,
-                                                      top: 14.0,
-                                                      left: 10),
-                                              focusedBorder:
-                                                  const UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color:
-                                                        ThemeProvider.appColor),
+                                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
+                                              focusedBorder: const UnderlineInputBorder(
+                                                borderSide: BorderSide(color: ThemeProvider.appColor),
                                               ),
-                                              enabledBorder:
-                                                  const UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: ThemeProvider
-                                                              .greyColor)),
+                                              enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                                             ),
                                           ),
                                         ),
@@ -736,33 +633,20 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 ),
                                 value.inKG == true
                                     ? Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5),
+                                        padding: const EdgeInsets.symmetric(horizontal: 5),
                                         child: SizedBox(
                                           width: double.infinity,
                                           child: TextField(
                                             controller: value.kgTextEditor,
                                             decoration: InputDecoration(
                                               filled: true,
-                                              fillColor:
-                                                  ThemeProvider.whiteColor,
+                                              fillColor: ThemeProvider.whiteColor,
                                               hintText: 'KG Value'.tr,
-                                              contentPadding:
-                                                  const EdgeInsets.only(
-                                                      bottom: 8.0,
-                                                      top: 14.0,
-                                                      left: 10),
-                                              focusedBorder:
-                                                  const UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color:
-                                                        ThemeProvider.appColor),
+                                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
+                                              focusedBorder: const UnderlineInputBorder(
+                                                borderSide: BorderSide(color: ThemeProvider.appColor),
                                               ),
-                                              enabledBorder:
-                                                  const UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: ThemeProvider
-                                                              .greyColor)),
+                                              enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                                             ),
                                           ),
                                         ),
@@ -797,33 +681,20 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 ),
                                 value.inLiter == true
                                     ? Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5),
+                                        padding: const EdgeInsets.symmetric(horizontal: 5),
                                         child: SizedBox(
                                           width: double.infinity,
                                           child: TextField(
                                             controller: value.literTextEditor,
                                             decoration: InputDecoration(
                                               filled: true,
-                                              fillColor:
-                                                  ThemeProvider.whiteColor,
+                                              fillColor: ThemeProvider.whiteColor,
                                               hintText: 'Liter Value'.tr,
-                                              contentPadding:
-                                                  const EdgeInsets.only(
-                                                      bottom: 8.0,
-                                                      top: 14.0,
-                                                      left: 10),
-                                              focusedBorder:
-                                                  const UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color:
-                                                        ThemeProvider.appColor),
+                                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
+                                              focusedBorder: const UnderlineInputBorder(
+                                                borderSide: BorderSide(color: ThemeProvider.appColor),
                                               ),
-                                              enabledBorder:
-                                                  const UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: ThemeProvider
-                                                              .greyColor)),
+                                              enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                                             ),
                                           ),
                                         ),
@@ -858,33 +729,20 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 ),
                                 value.inPCs == true
                                     ? Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5),
+                                        padding: const EdgeInsets.symmetric(horizontal: 5),
                                         child: SizedBox(
                                           width: double.infinity,
                                           child: TextField(
                                             controller: value.pcsTextEditor,
                                             decoration: InputDecoration(
                                               filled: true,
-                                              fillColor:
-                                                  ThemeProvider.whiteColor,
+                                              fillColor: ThemeProvider.whiteColor,
                                               hintText: 'PCs Value'.tr,
-                                              contentPadding:
-                                                  const EdgeInsets.only(
-                                                      bottom: 8.0,
-                                                      top: 14.0,
-                                                      left: 10),
-                                              focusedBorder:
-                                                  const UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color:
-                                                        ThemeProvider.appColor),
+                                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
+                                              focusedBorder: const UnderlineInputBorder(
+                                                borderSide: BorderSide(color: ThemeProvider.appColor),
                                               ),
-                                              enabledBorder:
-                                                  const UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: ThemeProvider
-                                                              .greyColor)),
+                                              enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                                             ),
                                           ),
                                         ),
@@ -919,33 +777,20 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 ),
                                 value.inML == true
                                     ? Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5),
+                                        padding: const EdgeInsets.symmetric(horizontal: 5),
                                         child: SizedBox(
                                           width: double.infinity,
                                           child: TextField(
                                             controller: value.mlTextEditor,
                                             decoration: InputDecoration(
                                               filled: true,
-                                              fillColor:
-                                                  ThemeProvider.whiteColor,
+                                              fillColor: ThemeProvider.whiteColor,
                                               hintText: 'ML Value'.tr,
-                                              contentPadding:
-                                                  const EdgeInsets.only(
-                                                      bottom: 8.0,
-                                                      top: 14.0,
-                                                      left: 10),
-                                              focusedBorder:
-                                                  const UnderlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color:
-                                                        ThemeProvider.appColor),
+                                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
+                                              focusedBorder: const UnderlineInputBorder(
+                                                borderSide: BorderSide(color: ThemeProvider.appColor),
                                               ),
-                                              enabledBorder:
-                                                  const UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: ThemeProvider
-                                                              .greyColor)),
+                                              enabledBorder: const UnderlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                                             ),
                                           ),
                                         ),
@@ -963,8 +808,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                             },
                             child: Container(
                               height: 55,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
+                              padding: const EdgeInsets.symmetric(horizontal: 20),
                               decoration: BoxDecoration(
                                 color: ThemeProvider.whiteColor,
                                 borderRadius: BorderRadius.circular(5),
@@ -976,8 +820,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                                 ],
                               ),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Expired Date'.tr,
@@ -1015,9 +858,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                           children: [
                             Text(
                               'SUBMIT'.tr,
-                              style: const TextStyle(
-                                  color: ThemeProvider.whiteColor,
-                                  fontSize: 17),
+                              style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                             ),
                           ],
                         ),
@@ -1041,9 +882,7 @@ class _CreateProductsScreenState extends State<CreateProductsScreen> {
                           children: [
                             Text(
                               'UPDATE'.tr,
-                              style: const TextStyle(
-                                  color: ThemeProvider.whiteColor,
-                                  fontSize: 17),
+                              style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                             ),
                           ],
                         ),

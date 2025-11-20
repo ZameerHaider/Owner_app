@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -26,9 +18,7 @@ import 'package:ultimate_salon_owner_flutter/app/controller/stylist_controller.d
 import 'package:ultimate_salon_owner_flutter/app/helper/router.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
 
-class ProfileController extends GetxController
-    with GetTickerProviderStateMixin
-    implements GetxService {
+class ProfileController extends GetxController with GetTickerProviderStateMixin implements GetxService {
   final ProfileParser parser;
 
   bool type = true;
@@ -112,8 +102,7 @@ class ProfileController extends GetxController
   void onAppPages(String name, String id) {
     debugPrint('$name = $id');
     Get.delete<AppPagesController>(force: true);
-    Get.toNamed(AppRouter.getAppPagesRoute(),
-        arguments: [name, id], preventDuplicates: false);
+    Get.toNamed(AppRouter.getAppPagesRoute(), arguments: [name, id], preventDuplicates: false);
   }
 
   Future<void> onLogout() async {

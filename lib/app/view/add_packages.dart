@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,8 +46,7 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                             onTap: () {
                               showCupertinoModalPopup<void>(
                                 context: context,
-                                builder: (BuildContext context) =>
-                                    CupertinoActionSheet(
+                                builder: (BuildContext context) => CupertinoActionSheet(
                                   title: Text('Choose From'.tr),
                                   actions: <CupertinoActionSheetAction>[
                                     CupertinoActionSheetAction(
@@ -89,12 +80,9 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                               child: SizedBox.fromSize(
                                 size: const Size.fromRadius(70),
                                 child: FadeInImage(
-                                  image: NetworkImage(
-                                      '${Environments.apiBaseURL}storage/images/${value.cover}'),
-                                  placeholder: const AssetImage(
-                                      "assets/images/placeholder.jpeg"),
-                                  imageErrorBuilder:
-                                      (context, error, stackTrace) {
+                                  image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.cover}'),
+                                  placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                  imageErrorBuilder: (context, error, stackTrace) {
                                     return Image.asset(
                                       'assets/images/notfound.png',
                                       fit: BoxFit.cover,
@@ -117,46 +105,34 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5.0),
-                          border: Border.all(
-                              color: Colors.grey, style: BorderStyle.solid),
+                          border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                         ),
                         child: InkWell(
                           onTap: () {
                             value.onSelectPackages();
                           },
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10.0, vertical: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 value.savedCategories.isEmpty
-                                    ? Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                            Text(
-                                              'Select Categories'.tr,
-                                              style:
-                                                  const TextStyle(fontSize: 17),
-                                            ),
-                                          ])
+                                    ? Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                                        Text(
+                                          'Select Categories'.tr,
+                                          style: const TextStyle(fontSize: 17),
+                                        ),
+                                      ])
                                     : Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: List.generate(
                                           value.savedCategories.length,
                                           (name) => Column(
                                             children: [
                                               Text(
-                                                value.savedCategories[name]
-                                                    .toString(),
-                                                style: const TextStyle(
-                                                    fontSize: 17),
+                                                value.savedCategories[name].toString(),
+                                                style: const TextStyle(fontSize: 17),
                                               ),
                                             ],
                                           ),
@@ -178,51 +154,34 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5.0),
-                                border: Border.all(
-                                    color: Colors.grey,
-                                    style: BorderStyle.solid),
+                                border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                               ),
                               child: InkWell(
                                 onTap: () {
                                   value.onSelectSpecialist();
                                 },
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0, vertical: 10),
+                                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       value.savedSpecialist.isEmpty
-                                          ? Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                  Text(
-                                                    'Select Specialist'.tr,
-                                                    style: const TextStyle(
-                                                        fontSize: 17),
-                                                  ),
-                                                ])
+                                          ? Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                                              Text(
+                                                'Select Specialist'.tr,
+                                                style: const TextStyle(fontSize: 17),
+                                              ),
+                                            ])
                                           : Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: List.generate(
                                                 value.savedSpecialist.length,
                                                 (firstName) => Row(
                                                   children: [
                                                     Text(
-                                                      value.savedSpecialist[
-                                                              firstName]
-                                                          .toString(),
-                                                      style: const TextStyle(
-                                                          fontSize: 17),
+                                                      value.savedSpecialist[firstName].toString(),
+                                                      style: const TextStyle(fontSize: 17),
                                                     ),
                                                   ],
                                                 ),
@@ -249,15 +208,11 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                             filled: true,
                             fillColor: ThemeProvider.whiteColor,
                             hintText: 'Packages Name'.tr,
-                            contentPadding: const EdgeInsets.only(
-                                bottom: 8.0, top: 14.0, left: 10),
+                            contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                             focusedBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ThemeProvider.appColor),
+                              borderSide: BorderSide(color: ThemeProvider.appColor),
                             ),
-                            enabledBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.greyColor)),
+                            enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                           ),
                         ),
                       ),
@@ -275,15 +230,11 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                             filled: true,
                             fillColor: ThemeProvider.whiteColor,
                             hintText: 'Price'.tr,
-                            contentPadding: const EdgeInsets.only(
-                                bottom: 8.0, top: 14.0, left: 10),
+                            contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                             focusedBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ThemeProvider.appColor),
+                              borderSide: BorderSide(color: ThemeProvider.appColor),
                             ),
-                            enabledBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.greyColor)),
+                            enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                           ),
                         ),
                       ),
@@ -301,15 +252,11 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                             filled: true,
                             fillColor: ThemeProvider.whiteColor,
                             hintText: 'Discount'.tr,
-                            contentPadding: const EdgeInsets.only(
-                                bottom: 8.0, top: 14.0, left: 10),
+                            contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                             focusedBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ThemeProvider.appColor),
+                              borderSide: BorderSide(color: ThemeProvider.appColor),
                             ),
-                            enabledBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.greyColor)),
+                            enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                           ),
                         ),
                       ),
@@ -324,15 +271,11 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                             filled: true,
                             fillColor: ThemeProvider.whiteColor,
                             hintText: 'Sell Price'.tr,
-                            contentPadding: const EdgeInsets.only(
-                                bottom: 8.0, top: 14.0, left: 10),
+                            contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                             focusedBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ThemeProvider.appColor),
+                              borderSide: BorderSide(color: ThemeProvider.appColor),
                             ),
-                            enabledBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.greyColor)),
+                            enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                           ),
                         ),
                       ),
@@ -348,15 +291,11 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                             filled: true,
                             fillColor: ThemeProvider.whiteColor,
                             hintText: 'Descriptions'.tr,
-                            contentPadding: const EdgeInsets.only(
-                                bottom: 8.0, top: 14.0, left: 10),
+                            contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                             focusedBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ThemeProvider.appColor),
+                              borderSide: BorderSide(color: ThemeProvider.appColor),
                             ),
-                            enabledBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.greyColor)),
+                            enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                           ),
                         ),
                       ),
@@ -371,15 +310,11 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                             filled: true,
                             fillColor: ThemeProvider.whiteColor,
                             hintText: 'Duration'.tr,
-                            contentPadding: const EdgeInsets.only(
-                                bottom: 8.0, top: 14.0, left: 10),
+                            contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                             focusedBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ThemeProvider.appColor),
+                              borderSide: BorderSide(color: ThemeProvider.appColor),
                             ),
-                            enabledBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.greyColor)),
+                            enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                           ),
                         ),
                       ),
@@ -390,8 +325,7 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                         children: [
                           Text(
                             'Upload More Image'.tr,
-                            style: const TextStyle(
-                                fontFamily: 'bold', fontSize: 14),
+                            style: const TextStyle(fontFamily: 'bold', fontSize: 14),
                           ),
                         ],
                       ),
@@ -413,24 +347,21 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                               onTap: () {
                                 showCupertinoModalPopup<void>(
                                   context: context,
-                                  builder: (BuildContext context) =>
-                                      CupertinoActionSheet(
+                                  builder: (BuildContext context) => CupertinoActionSheet(
                                     title: Text('Choose From'.tr),
                                     actions: <CupertinoActionSheetAction>[
                                       CupertinoActionSheetAction(
                                         isDefaultAction: true,
                                         onPressed: () {
                                           Navigator.pop(context);
-                                          value.selectFromGalleryOthers(
-                                              'camera', index);
+                                          value.selectFromGalleryOthers('camera', index);
                                         },
                                         child: Text('Camera'.tr),
                                       ),
                                       CupertinoActionSheetAction(
                                         onPressed: () {
                                           Navigator.pop(context);
-                                          value.selectFromGalleryOthers(
-                                              'gallery', index);
+                                          value.selectFromGalleryOthers('gallery', index);
                                         },
                                         child: Text('Gallery'.tr),
                                       ),
@@ -451,12 +382,9 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(5.0),
                                   child: FadeInImage(
-                                    image: NetworkImage(
-                                        '${Environments.apiBaseURL}storage/images/${value.gallery[index]}'),
-                                    placeholder: const AssetImage(
-                                        "assets/images/placeholder.jpeg"),
-                                    imageErrorBuilder:
-                                        (context, error, stackTrace) {
+                                    image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.gallery[index]}'),
+                                    placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                    imageErrorBuilder: (context, error, stackTrace) {
                                       return Image.asset(
                                         'assets/images/notfound.png',
                                         fit: BoxFit.cover,
@@ -481,8 +409,7 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
             ),
             bottomNavigationBar: value.action == 'new'
                 ? Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     child: InkWell(
                       onTap: () {
                         value.onSave();
@@ -496,9 +423,7 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                           children: [
                             Text(
                               'ADD PACKAGES'.tr,
-                              style: const TextStyle(
-                                  color: ThemeProvider.whiteColor,
-                                  fontSize: 17),
+                              style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                             ),
                           ],
                         ),
@@ -506,8 +431,7 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                     ),
                   )
                 : Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     child: InkWell(
                       onTap: () {
                         value.onUpdate();
@@ -526,9 +450,7 @@ class _AddPackagesScreenState extends State<AddPackagesScreen> {
                           children: [
                             Text(
                               'UPDATE PACKAGES'.tr,
-                              style: const TextStyle(
-                                  color: ThemeProvider.whiteColor,
-                                  fontSize: 17),
+                              style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                             ),
                           ],
                         ),

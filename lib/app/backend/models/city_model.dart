@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 class CityModal {
   int? id;
   String? name;
@@ -14,8 +6,7 @@ class CityModal {
   String? extraField;
   int? status;
 
-  CityModal(
-      {this.id, this.name, this.lat, this.lng, this.extraField, this.status});
+  CityModal({this.id, this.name, this.lat, this.lng, this.extraField, this.status});
 
   CityModal.fromJson(Map<String, dynamic> json) {
     id = int.parse(json['id'].toString());

@@ -1,14 +1,6 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skeletons/skeletons.dart';
+import 'package:skeletons_forked/skeletons_forked.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/history_controller.dart';
 import 'package:ultimate_salon_owner_flutter/app/env.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
@@ -42,14 +34,8 @@ class _HistoryScreenState extends State<HistoryScreen> {
               unselectedLabelColor: ThemeProvider.whiteColor,
               labelColor: ThemeProvider.whiteColor,
               indicatorColor: ThemeProvider.whiteColor,
-              labelStyle: const TextStyle(
-                  fontFamily: 'medium',
-                  fontSize: 16,
-                  color: ThemeProvider.whiteColor),
-              unselectedLabelStyle: const TextStyle(
-                  fontFamily: 'medium',
-                  fontSize: 16,
-                  color: ThemeProvider.whiteColor),
+              labelStyle: const TextStyle(fontFamily: 'medium', fontSize: 16, color: ThemeProvider.whiteColor),
+              unselectedLabelStyle: const TextStyle(fontFamily: 'medium', fontSize: 16, color: ThemeProvider.whiteColor),
               indicatorSize: TabBarIndicatorSize.tab,
               labelPadding: const EdgeInsets.all(8),
               tabs: [
@@ -71,8 +57,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   children: [
                     SingleChildScrollView(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                         child: value.productSalonList.isNotEmpty
                             ? Column(
                                 children: List.generate(
@@ -80,20 +65,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                   (index) => Column(
                                     children: [
                                       Banner(
-                                        message: value
-                                            .statusName[value
-                                                .productSalonList[index]
-                                                .status as int]
-                                            .tr,
+                                        message: value.statusName[value.productSalonList[index].status as int].tr,
                                         color: ThemeProvider.appColor,
                                         location: BannerLocation.topStart,
                                         child: Container(
                                           padding: const EdgeInsets.all(10),
-                                          margin: const EdgeInsets.symmetric(
-                                              vertical: 10),
+                                          margin: const EdgeInsets.symmetric(vertical: 10),
                                           decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(5),
+                                            borderRadius: BorderRadius.circular(5),
                                             color: ThemeProvider.whiteColor,
                                             boxShadow: const [
                                               BoxShadow(
@@ -104,42 +83,27 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                           ),
                                           child: InkWell(
                                             onTap: () {
-                                              value.onProductDetail(value
-                                                  .productSalonList[index]
-                                                  .id as int);
+                                              value.onProductDetail(value.productSalonList[index].id as int);
                                             },
                                             child: Column(
                                               children: [
                                                 Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
                                                     Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              right: 10),
+                                                      padding: const EdgeInsets.only(right: 10),
                                                       child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5),
-                                                        child:
-                                                            SizedBox.fromSize(
-                                                          size: const Size
-                                                              .fromRadius(25),
+                                                        borderRadius: BorderRadius.circular(5),
+                                                        child: SizedBox.fromSize(
+                                                          size: const Size.fromRadius(25),
                                                           child: FadeInImage(
                                                             image: NetworkImage(
                                                                 '${Environments.apiBaseURL}storage/images/${value.productSalonList[index].userInfo!.cover.toString()}'),
-                                                            placeholder:
-                                                                const AssetImage(
-                                                                    "assets/images/placeholder.jpeg"),
-                                                            imageErrorBuilder:
-                                                                (context, error,
-                                                                    stackTrace) {
-                                                              return Image
-                                                                  .asset(
+                                                            placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                                            imageErrorBuilder: (context, error, stackTrace) {
+                                                              return Image.asset(
                                                                 'assets/images/notfound.png',
-                                                                fit: BoxFit
-                                                                    .cover,
+                                                                fit: BoxFit.cover,
                                                                 height: 25,
                                                                 width: 25,
                                                               );
@@ -153,21 +117,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                     ),
                                                     Expanded(
                                                       child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
                                                         children: [
                                                           Text(
                                                             '${value.productSalonList[index].userInfo!.firstName}  ${value.productSalonList[index].userInfo!.lastName}',
-                                                            overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
-                                                            style: const TextStyle(
-                                                                fontFamily:
-                                                                    'bold',
-                                                                fontSize: 12,
-                                                                color: ThemeProvider
-                                                                    .blackColor),
+                                                            overflow: TextOverflow.ellipsis,
+                                                            style: const TextStyle(fontFamily: 'bold', fontSize: 12, color: ThemeProvider.blackColor),
                                                           ),
                                                           const SizedBox(
                                                             height: 5,
@@ -177,16 +132,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                               Expanded(
                                                                 child: Text(
                                                                   '${value.productSalonList[index].address!.address} ${value.productSalonList[index].address!.landmark} ${value.productSalonList[index].address!.pincode}',
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
+                                                                  overflow: TextOverflow.ellipsis,
                                                                   maxLines: 2,
-                                                                  style:
-                                                                      const TextStyle(
-                                                                    fontSize:
-                                                                        10,
-                                                                    color: ThemeProvider
-                                                                        .greyColor,
+                                                                  style: const TextStyle(
+                                                                    fontSize: 10,
+                                                                    color: ThemeProvider.greyColor,
                                                                   ),
                                                                 ),
                                                               ),
@@ -197,12 +147,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                           ),
                                                           Text(
                                                             '${'Order Id #'.tr} ${value.productSalonList[index].id}',
-                                                            style:
-                                                                const TextStyle(
+                                                            style: const TextStyle(
                                                               fontSize: 10,
-                                                              color:
-                                                                  ThemeProvider
-                                                                      .greyColor,
+                                                              color: ThemeProvider.greyColor,
                                                             ),
                                                           )
                                                         ],
@@ -212,14 +159,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                 ),
                                                 Container(
                                                   height: 1,
-                                                  margin: const EdgeInsets
-                                                      .symmetric(vertical: 5),
-                                                  decoration:
-                                                      const BoxDecoration(
+                                                  margin: const EdgeInsets.symmetric(vertical: 5),
+                                                  decoration: const BoxDecoration(
                                                     border: Border(
                                                       bottom: BorderSide(
-                                                        color: ThemeProvider
-                                                            .backgroundColor,
+                                                        color: ThemeProvider.backgroundColor,
                                                       ),
                                                     ),
                                                   ),
@@ -228,121 +172,63 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                   children: [
                                                     Expanded(
                                                       child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .start,
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                        mainAxisAlignment: MainAxisAlignment.start,
                                                         children: List.generate(
-                                                          value
-                                                              .productSalonList[
-                                                                  index]
-                                                              .orders!
-                                                              .length,
+                                                          value.productSalonList[index].orders!.length,
                                                           (subIndex) => Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
+                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                            crossAxisAlignment: CrossAxisAlignment.center,
                                                             children: [
                                                               RichText(
-                                                                text: TextSpan(
-                                                                    children: [
-                                                                      TextSpan(
-                                                                        text: value
-                                                                            .productSalonList[index]
-                                                                            .orders![subIndex]
-                                                                            .name
-                                                                            .toString(),
-                                                                        style:
-                                                                            const TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color:
-                                                                              ThemeProvider.blackColor,
-                                                                          fontFamily:
-                                                                              'regular',
-                                                                        ),
-                                                                      ),
-                                                                      const TextSpan(
-                                                                          text:
-                                                                              ' '),
-                                                                      const TextSpan(
-                                                                        text:
-                                                                            'X',
-                                                                        style:
-                                                                            TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color:
-                                                                              ThemeProvider.blackColor,
-                                                                          fontFamily:
-                                                                              'regular',
-                                                                        ),
-                                                                      ),
-                                                                      const TextSpan(
-                                                                          text:
-                                                                              ' '),
-                                                                      TextSpan(
-                                                                        text: value
-                                                                            .productSalonList[index]
-                                                                            .orders![subIndex]
-                                                                            .quantity
-                                                                            .toString(),
-                                                                        style:
-                                                                            const TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color:
-                                                                              ThemeProvider.blackColor,
-                                                                          fontFamily:
-                                                                              'regular',
-                                                                        ),
-                                                                      ),
-                                                                    ]),
+                                                                text: TextSpan(children: [
+                                                                  TextSpan(
+                                                                    text: value.productSalonList[index].orders![subIndex].name.toString(),
+                                                                    style: const TextStyle(
+                                                                      fontSize: 10,
+                                                                      color: ThemeProvider.blackColor,
+                                                                      fontFamily: 'regular',
+                                                                    ),
+                                                                  ),
+                                                                  const TextSpan(text: ' '),
+                                                                  const TextSpan(
+                                                                    text: 'X',
+                                                                    style: TextStyle(
+                                                                      fontSize: 10,
+                                                                      color: ThemeProvider.blackColor,
+                                                                      fontFamily: 'regular',
+                                                                    ),
+                                                                  ),
+                                                                  const TextSpan(text: ' '),
+                                                                  TextSpan(
+                                                                    text: value.productSalonList[index].orders![subIndex].quantity.toString(),
+                                                                    style: const TextStyle(
+                                                                      fontSize: 10,
+                                                                      color: ThemeProvider.blackColor,
+                                                                      fontFamily: 'regular',
+                                                                    ),
+                                                                  ),
+                                                                ]),
                                                               ),
                                                               RichText(
                                                                 text: TextSpan(
                                                                   children: [
                                                                     TextSpan(
-                                                                      text: value.currencySide ==
-                                                                              'left'
-                                                                          ? value.currencySymbol +
-                                                                              value.productSalonList[index].orders![subIndex].originalPrice
-                                                                                  .toString()
-                                                                          : value.productSalonList[index].orders![subIndex].originalPrice.toString() +
-                                                                              value.currencySymbol,
+                                                                      text: value.currencySide == 'left'
+                                                                          ? value.currencySymbol + value.productSalonList[index].orders![subIndex].originalPrice.toString()
+                                                                          : value.productSalonList[index].orders![subIndex].originalPrice.toString() + value.currencySymbol,
                                                                       style: const TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color: ThemeProvider
-                                                                              .blackColor,
-                                                                          fontFamily:
-                                                                              'regular',
-                                                                          decoration:
-                                                                              TextDecoration.lineThrough),
+                                                                          fontSize: 10,
+                                                                          color: ThemeProvider.blackColor,
+                                                                          fontFamily: 'regular',
+                                                                          decoration: TextDecoration.lineThrough),
                                                                     ),
-                                                                    const TextSpan(
-                                                                        text:
-                                                                            ' '),
+                                                                    const TextSpan(text: ' '),
                                                                     TextSpan(
-                                                                      text: value.currencySide ==
-                                                                              'left'
-                                                                          ? value.currencySymbol +
-                                                                              value.productSalonList[index].orders![subIndex].sellPrice
-                                                                                  .toString()
-                                                                          : value.productSalonList[index].orders![subIndex].sellPrice.toString() +
-                                                                              value.currencySymbol,
-                                                                      style: const TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color: ThemeProvider
-                                                                              .blackColor,
-                                                                          fontFamily:
-                                                                              'regular'),
+                                                                      text: value.currencySide == 'left'
+                                                                          ? value.currencySymbol + value.productSalonList[index].orders![subIndex].sellPrice.toString()
+                                                                          : value.productSalonList[index].orders![subIndex].sellPrice.toString() + value.currencySymbol,
+                                                                      style: const TextStyle(fontSize: 10, color: ThemeProvider.blackColor, fontFamily: 'regular'),
                                                                     ),
                                                                   ],
                                                                 ),
@@ -356,93 +242,51 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                 ),
                                                 Container(
                                                   height: 1,
-                                                  margin: const EdgeInsets
-                                                      .symmetric(vertical: 10),
-                                                  decoration:
-                                                      const BoxDecoration(
+                                                  margin: const EdgeInsets.symmetric(vertical: 10),
+                                                  decoration: const BoxDecoration(
                                                     border: Border(
                                                       bottom: BorderSide(
-                                                        color: ThemeProvider
-                                                            .backgroundColor,
+                                                        color: ThemeProvider.backgroundColor,
                                                       ),
                                                     ),
                                                   ),
                                                 ),
                                                 Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                   children: [
                                                     Text(
                                                       'Grand Total : '.tr,
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          color: ThemeProvider
-                                                              .blackColor,
-                                                          fontFamily: 'bold'),
+                                                      style: const TextStyle(fontSize: 12, color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                                     ),
                                                     Text(
-                                                      value.currencySide ==
-                                                              'left'
-                                                          ? value.currencySymbol +
-                                                              value
-                                                                  .productSalonList[
-                                                                      index]
-                                                                  .grandTotal
-                                                                  .toString()
-                                                          : value
-                                                                  .productSalonList[
-                                                                      index]
-                                                                  .grandTotal
-                                                                  .toString() +
-                                                              value
-                                                                  .currencySymbol,
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          fontFamily: 'bold',
-                                                          color: ThemeProvider
-                                                              .blackColor),
+                                                      value.currencySide == 'left'
+                                                          ? value.currencySymbol + value.productSalonList[index].grandTotal.toString()
+                                                          : value.productSalonList[index].grandTotal.toString() + value.currencySymbol,
+                                                      style: const TextStyle(fontSize: 12, fontFamily: 'bold', color: ThemeProvider.blackColor),
                                                     )
                                                   ],
                                                 ),
                                                 Container(
                                                   height: 1,
-                                                  margin: const EdgeInsets
-                                                      .symmetric(vertical: 10),
-                                                  decoration:
-                                                      const BoxDecoration(
+                                                  margin: const EdgeInsets.symmetric(vertical: 10),
+                                                  decoration: const BoxDecoration(
                                                     border: Border(
                                                       bottom: BorderSide(
-                                                        color: ThemeProvider
-                                                            .backgroundColor,
+                                                        color: ThemeProvider.backgroundColor,
                                                       ),
                                                     ),
                                                   ),
                                                 ),
                                                 Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                   children: [
                                                     Text(
                                                       'Order At : '.tr,
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          color: ThemeProvider
-                                                              .blackColor,
-                                                          fontFamily: 'bold'),
+                                                      style: const TextStyle(fontSize: 12, color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                                     ),
                                                     Text(
-                                                      value
-                                                          .productSalonList[
-                                                              index]
-                                                          .createdAt
-                                                          .toString(),
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          color: ThemeProvider
-                                                              .blackColor,
-                                                          fontFamily: 'bold'),
+                                                      value.productSalonList[index].createdAt.toString(),
+                                                      style: const TextStyle(fontSize: 12, color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                                     ),
                                                   ],
                                                 ),
@@ -460,14 +304,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Image.asset('assets/images/no-data.png',
-                                        width: 60, height: 60),
+                                    Image.asset('assets/images/no-data.png', width: 60, height: 60),
                                     const SizedBox(height: 30),
                                     Text(
                                       'No New Orders Found!'.tr,
-                                      style: const TextStyle(
-                                          fontFamily: 'bold',
-                                          color: ThemeProvider.appColor),
+                                      style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.appColor),
                                     ),
                                   ],
                                 ),
@@ -476,8 +317,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     ),
                     SingleChildScrollView(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                         child: value.productSalonListOld.isNotEmpty
                             ? Column(
                                 children: List.generate(
@@ -485,20 +325,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                   (index) => Column(
                                     children: [
                                       Banner(
-                                        message: value
-                                            .statusName[value
-                                                .productSalonListOld[index]
-                                                .status as int]
-                                            .tr,
+                                        message: value.statusName[value.productSalonListOld[index].status as int].tr,
                                         color: ThemeProvider.appColor,
                                         location: BannerLocation.topStart,
                                         child: Container(
                                           padding: const EdgeInsets.all(10),
-                                          margin: const EdgeInsets.symmetric(
-                                              vertical: 10),
+                                          margin: const EdgeInsets.symmetric(vertical: 10),
                                           decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(5),
+                                            borderRadius: BorderRadius.circular(5),
                                             color: ThemeProvider.whiteColor,
                                             boxShadow: const [
                                               BoxShadow(
@@ -509,42 +343,27 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                           ),
                                           child: InkWell(
                                             onTap: () {
-                                              value.onProductDetail(value
-                                                  .productSalonListOld[index]
-                                                  .id as int);
+                                              value.onProductDetail(value.productSalonListOld[index].id as int);
                                             },
                                             child: Column(
                                               children: [
                                                 Row(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
                                                     Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              right: 10),
+                                                      padding: const EdgeInsets.only(right: 10),
                                                       child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5),
-                                                        child:
-                                                            SizedBox.fromSize(
-                                                          size: const Size
-                                                              .fromRadius(25),
+                                                        borderRadius: BorderRadius.circular(5),
+                                                        child: SizedBox.fromSize(
+                                                          size: const Size.fromRadius(25),
                                                           child: FadeInImage(
                                                             image: NetworkImage(
                                                                 '${Environments.apiBaseURL}storage/images/${value.productSalonListOld[index].userInfo!.cover.toString()}'),
-                                                            placeholder:
-                                                                const AssetImage(
-                                                                    "assets/images/placeholder.jpeg"),
-                                                            imageErrorBuilder:
-                                                                (context, error,
-                                                                    stackTrace) {
-                                                              return Image
-                                                                  .asset(
+                                                            placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                                            imageErrorBuilder: (context, error, stackTrace) {
+                                                              return Image.asset(
                                                                 'assets/images/notfound.png',
-                                                                fit: BoxFit
-                                                                    .cover,
+                                                                fit: BoxFit.cover,
                                                                 height: 25,
                                                                 width: 25,
                                                               );
@@ -558,21 +377,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                     ),
                                                     Expanded(
                                                       child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
                                                         children: [
                                                           Text(
                                                             '${value.productSalonListOld[index].userInfo!.firstName}  ${value.productSalonListOld[index].userInfo!.lastName}',
-                                                            overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
-                                                            style: const TextStyle(
-                                                                fontFamily:
-                                                                    'bold',
-                                                                fontSize: 12,
-                                                                color: ThemeProvider
-                                                                    .blackColor),
+                                                            overflow: TextOverflow.ellipsis,
+                                                            style: const TextStyle(fontFamily: 'bold', fontSize: 12, color: ThemeProvider.blackColor),
                                                           ),
                                                           const SizedBox(
                                                             height: 5,
@@ -582,16 +392,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                               Expanded(
                                                                 child: Text(
                                                                   '${value.productSalonListOld[index].address!.address} ${value.productSalonListOld[index].address!.landmark} ${value.productSalonListOld[index].address!.pincode}',
-                                                                  overflow:
-                                                                      TextOverflow
-                                                                          .ellipsis,
+                                                                  overflow: TextOverflow.ellipsis,
                                                                   maxLines: 2,
-                                                                  style:
-                                                                      const TextStyle(
-                                                                    fontSize:
-                                                                        10,
-                                                                    color: ThemeProvider
-                                                                        .greyColor,
+                                                                  style: const TextStyle(
+                                                                    fontSize: 10,
+                                                                    color: ThemeProvider.greyColor,
                                                                   ),
                                                                 ),
                                                               ),
@@ -602,12 +407,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                           ),
                                                           Text(
                                                             '${'Order Id #'.tr} ${value.productSalonListOld[index].id}',
-                                                            style:
-                                                                const TextStyle(
+                                                            style: const TextStyle(
                                                               fontSize: 10,
-                                                              color:
-                                                                  ThemeProvider
-                                                                      .greyColor,
+                                                              color: ThemeProvider.greyColor,
                                                             ),
                                                           )
                                                         ],
@@ -617,14 +419,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                 ),
                                                 Container(
                                                   height: 1,
-                                                  margin: const EdgeInsets
-                                                      .symmetric(vertical: 5),
-                                                  decoration:
-                                                      const BoxDecoration(
+                                                  margin: const EdgeInsets.symmetric(vertical: 5),
+                                                  decoration: const BoxDecoration(
                                                     border: Border(
                                                       bottom: BorderSide(
-                                                        color: ThemeProvider
-                                                            .backgroundColor,
+                                                        color: ThemeProvider.backgroundColor,
                                                       ),
                                                     ),
                                                   ),
@@ -633,121 +432,63 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                   children: [
                                                     Expanded(
                                                       child: Column(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .start,
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                        mainAxisAlignment: MainAxisAlignment.start,
                                                         children: List.generate(
-                                                          value
-                                                              .productSalonListOld[
-                                                                  index]
-                                                              .orders!
-                                                              .length,
+                                                          value.productSalonListOld[index].orders!.length,
                                                           (subIndex) => Row(
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .center,
+                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                            crossAxisAlignment: CrossAxisAlignment.center,
                                                             children: [
                                                               RichText(
-                                                                text: TextSpan(
-                                                                    children: [
-                                                                      TextSpan(
-                                                                        text: value
-                                                                            .productSalonListOld[index]
-                                                                            .orders![subIndex]
-                                                                            .name
-                                                                            .toString(),
-                                                                        style:
-                                                                            const TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color:
-                                                                              ThemeProvider.blackColor,
-                                                                          fontFamily:
-                                                                              'regular',
-                                                                        ),
-                                                                      ),
-                                                                      const TextSpan(
-                                                                          text:
-                                                                              ' '),
-                                                                      const TextSpan(
-                                                                        text:
-                                                                            'X',
-                                                                        style:
-                                                                            TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color:
-                                                                              ThemeProvider.blackColor,
-                                                                          fontFamily:
-                                                                              'regular',
-                                                                        ),
-                                                                      ),
-                                                                      const TextSpan(
-                                                                          text:
-                                                                              ' '),
-                                                                      TextSpan(
-                                                                        text: value
-                                                                            .productSalonListOld[index]
-                                                                            .orders![subIndex]
-                                                                            .quantity
-                                                                            .toString(),
-                                                                        style:
-                                                                            const TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color:
-                                                                              ThemeProvider.blackColor,
-                                                                          fontFamily:
-                                                                              'regular',
-                                                                        ),
-                                                                      ),
-                                                                    ]),
+                                                                text: TextSpan(children: [
+                                                                  TextSpan(
+                                                                    text: value.productSalonListOld[index].orders![subIndex].name.toString(),
+                                                                    style: const TextStyle(
+                                                                      fontSize: 10,
+                                                                      color: ThemeProvider.blackColor,
+                                                                      fontFamily: 'regular',
+                                                                    ),
+                                                                  ),
+                                                                  const TextSpan(text: ' '),
+                                                                  const TextSpan(
+                                                                    text: 'X',
+                                                                    style: TextStyle(
+                                                                      fontSize: 10,
+                                                                      color: ThemeProvider.blackColor,
+                                                                      fontFamily: 'regular',
+                                                                    ),
+                                                                  ),
+                                                                  const TextSpan(text: ' '),
+                                                                  TextSpan(
+                                                                    text: value.productSalonListOld[index].orders![subIndex].quantity.toString(),
+                                                                    style: const TextStyle(
+                                                                      fontSize: 10,
+                                                                      color: ThemeProvider.blackColor,
+                                                                      fontFamily: 'regular',
+                                                                    ),
+                                                                  ),
+                                                                ]),
                                                               ),
                                                               RichText(
                                                                 text: TextSpan(
                                                                   children: [
                                                                     TextSpan(
-                                                                      text: value.currencySide ==
-                                                                              'left'
-                                                                          ? value.currencySymbol +
-                                                                              value.productSalonListOld[index].orders![subIndex].originalPrice
-                                                                                  .toString()
-                                                                          : value.productSalonListOld[index].orders![subIndex].originalPrice.toString() +
-                                                                              value.currencySymbol,
+                                                                      text: value.currencySide == 'left'
+                                                                          ? value.currencySymbol + value.productSalonListOld[index].orders![subIndex].originalPrice.toString()
+                                                                          : value.productSalonListOld[index].orders![subIndex].originalPrice.toString() + value.currencySymbol,
                                                                       style: const TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color: ThemeProvider
-                                                                              .blackColor,
-                                                                          fontFamily:
-                                                                              'regular',
-                                                                          decoration:
-                                                                              TextDecoration.lineThrough),
+                                                                          fontSize: 10,
+                                                                          color: ThemeProvider.blackColor,
+                                                                          fontFamily: 'regular',
+                                                                          decoration: TextDecoration.lineThrough),
                                                                     ),
-                                                                    const TextSpan(
-                                                                        text:
-                                                                            ' '),
+                                                                    const TextSpan(text: ' '),
                                                                     TextSpan(
-                                                                      text: value.currencySide ==
-                                                                              'left'
-                                                                          ? value.currencySymbol +
-                                                                              value.productSalonListOld[index].orders![subIndex].sellPrice
-                                                                                  .toString()
-                                                                          : value.productSalonListOld[index].orders![subIndex].sellPrice.toString() +
-                                                                              value.currencySymbol,
-                                                                      style: const TextStyle(
-                                                                          fontSize:
-                                                                              10,
-                                                                          color: ThemeProvider
-                                                                              .blackColor,
-                                                                          fontFamily:
-                                                                              'regular'),
+                                                                      text: value.currencySide == 'left'
+                                                                          ? value.currencySymbol + value.productSalonListOld[index].orders![subIndex].sellPrice.toString()
+                                                                          : value.productSalonListOld[index].orders![subIndex].sellPrice.toString() + value.currencySymbol,
+                                                                      style: const TextStyle(fontSize: 10, color: ThemeProvider.blackColor, fontFamily: 'regular'),
                                                                     ),
                                                                   ],
                                                                 ),
@@ -761,93 +502,51 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                                 ),
                                                 Container(
                                                   height: 1,
-                                                  margin: const EdgeInsets
-                                                      .symmetric(vertical: 10),
-                                                  decoration:
-                                                      const BoxDecoration(
+                                                  margin: const EdgeInsets.symmetric(vertical: 10),
+                                                  decoration: const BoxDecoration(
                                                     border: Border(
                                                       bottom: BorderSide(
-                                                        color: ThemeProvider
-                                                            .backgroundColor,
+                                                        color: ThemeProvider.backgroundColor,
                                                       ),
                                                     ),
                                                   ),
                                                 ),
                                                 Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                   children: [
                                                     Text(
                                                       'Grand Total : '.tr,
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          color: ThemeProvider
-                                                              .blackColor,
-                                                          fontFamily: 'bold'),
+                                                      style: const TextStyle(fontSize: 12, color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                                     ),
                                                     Text(
-                                                      value.currencySide ==
-                                                              'left'
-                                                          ? value.currencySymbol +
-                                                              value
-                                                                  .productSalonListOld[
-                                                                      index]
-                                                                  .grandTotal
-                                                                  .toString()
-                                                          : value
-                                                                  .productSalonListOld[
-                                                                      index]
-                                                                  .grandTotal
-                                                                  .toString() +
-                                                              value
-                                                                  .currencySymbol,
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          fontFamily: 'bold',
-                                                          color: ThemeProvider
-                                                              .blackColor),
+                                                      value.currencySide == 'left'
+                                                          ? value.currencySymbol + value.productSalonListOld[index].grandTotal.toString()
+                                                          : value.productSalonListOld[index].grandTotal.toString() + value.currencySymbol,
+                                                      style: const TextStyle(fontSize: 12, fontFamily: 'bold', color: ThemeProvider.blackColor),
                                                     )
                                                   ],
                                                 ),
                                                 Container(
                                                   height: 1,
-                                                  margin: const EdgeInsets
-                                                      .symmetric(vertical: 10),
-                                                  decoration:
-                                                      const BoxDecoration(
+                                                  margin: const EdgeInsets.symmetric(vertical: 10),
+                                                  decoration: const BoxDecoration(
                                                     border: Border(
                                                       bottom: BorderSide(
-                                                        color: ThemeProvider
-                                                            .backgroundColor,
+                                                        color: ThemeProvider.backgroundColor,
                                                       ),
                                                     ),
                                                   ),
                                                 ),
                                                 Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                   children: [
                                                     Text(
                                                       'Order At : '.tr,
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          color: ThemeProvider
-                                                              .blackColor,
-                                                          fontFamily: 'bold'),
+                                                      style: const TextStyle(fontSize: 12, color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                                     ),
                                                     Text(
-                                                      value
-                                                          .productSalonListOld[
-                                                              index]
-                                                          .createdAt
-                                                          .toString(),
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          color: ThemeProvider
-                                                              .blackColor,
-                                                          fontFamily: 'bold'),
+                                                      value.productSalonListOld[index].createdAt.toString(),
+                                                      style: const TextStyle(fontSize: 12, color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                                     ),
                                                   ],
                                                 ),
@@ -865,14 +564,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Image.asset('assets/images/no-data.png',
-                                        width: 60, height: 60),
+                                    Image.asset('assets/images/no-data.png', width: 60, height: 60),
                                     const SizedBox(height: 30),
                                     Text(
                                       'No Past Orders Found!'.tr,
-                                      style: const TextStyle(
-                                          fontFamily: 'bold',
-                                          color: ThemeProvider.appColor),
+                                      style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.appColor),
                                     ),
                                   ],
                                 ),

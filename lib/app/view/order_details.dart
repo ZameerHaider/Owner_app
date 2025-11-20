@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/order_details_controller.dart';
@@ -50,13 +42,11 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
           ),
           body: value.apiCalled == false
               ? const Center(
-                  child:
-                      CircularProgressIndicator(color: ThemeProvider.appColor),
+                  child: CircularProgressIndicator(color: ThemeProvider.appColor),
                 )
               : SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                     child: Column(
                       children: [
                         Row(
@@ -67,12 +57,9 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                               child: SizedBox.fromSize(
                                 size: const Size.fromRadius(30),
                                 child: FadeInImage(
-                                  image: NetworkImage(
-                                      '${Environments.apiBaseURL}storage/images/${value.appointmentInfo.userInfo!.cover.toString()}'),
-                                  placeholder: const AssetImage(
-                                      "assets/images/placeholder.jpeg"),
-                                  imageErrorBuilder:
-                                      (context, error, stackTrace) {
+                                  image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.appointmentInfo.userInfo!.cover.toString()}'),
+                                  placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                  imageErrorBuilder: (context, error, stackTrace) {
                                     return Image.asset(
                                       'assets/images/notfound.png',
                                       fit: BoxFit.cover,
@@ -94,18 +81,15 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   Text(
                                     '${value.appointmentInfo.userInfo!.firstName} ${value.appointmentInfo.userInfo!.lastName}',
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        fontFamily: 'bold', fontSize: 14),
+                                    style: const TextStyle(fontFamily: 'bold', fontSize: 14),
                                   ),
                                   Text(
-                                    value.appointmentInfo.userInfo!.email
-                                        .toString(),
+                                    value.appointmentInfo.userInfo!.email.toString(),
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
-                                    value.appointmentInfo.userInfo!.mobile
-                                        .toString(),
+                                    value.appointmentInfo.userInfo!.mobile.toString(),
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                 ],
@@ -113,12 +97,8 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                             ),
                             IconButton(
                               onPressed: () {
-                                value.onContactInfo(
-                                    '${value.appointmentInfo.userInfo!.firstName!} ${value.appointmentInfo.userInfo!.lastName!}',
-                                    value.appointmentInfo.userInfo!.mobile!,
-                                    value.appointmentInfo.userInfo!.email!,
-                                    value.appointmentInfo.userInfo!.id
-                                        .toString());
+                                value.onContactInfo('${value.appointmentInfo.userInfo!.firstName!} ${value.appointmentInfo.userInfo!.lastName!}',
+                                    value.appointmentInfo.userInfo!.mobile!, value.appointmentInfo.userInfo!.email!, value.appointmentInfo.userInfo!.id.toString());
                               },
                               icon: const Icon(Icons.info),
                               color: ThemeProvider.appColor,
@@ -134,10 +114,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                 child: Text(
                                   'Service At'.tr,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                      color: ThemeProvider.appColor,
-                                      fontFamily: 'bold',
-                                      fontSize: 15),
+                                  style: const TextStyle(color: ThemeProvider.appColor, fontFamily: 'bold', fontSize: 15),
                                 ),
                               ),
                             ],
@@ -154,10 +131,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                       ? 'At Salon'.tr
                                       : '${value.appointmentInfo.address!.house} ${value.appointmentInfo.address!.address} ${value.appointmentInfo.address!.landmark} ${value.appointmentInfo.address!.pincode}',
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                      color: ThemeProvider.greyColor,
-                                      fontFamily: 'bold',
-                                      fontSize: 13),
+                                  style: const TextStyle(color: ThemeProvider.greyColor, fontFamily: 'bold', fontSize: 13),
                                 ),
                               ),
                             ],
@@ -172,10 +146,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                 child: Text(
                                   'Booking Date & Time'.tr,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                      color: ThemeProvider.appColor,
-                                      fontFamily: 'bold',
-                                      fontSize: 15),
+                                  style: const TextStyle(color: ThemeProvider.appColor, fontFamily: 'bold', fontSize: 15),
                                 ),
                               ),
                             ],
@@ -190,9 +161,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   child: Text(
                                     'Booking Date'.tr,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.blackColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.blackColor, fontSize: 15),
                                   ),
                                 ),
                                 Expanded(
@@ -200,9 +169,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                     value.appointmentInfo.saveDate.toString(),
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.end,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.appColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                   ),
                                 ),
                               ],
@@ -214,9 +181,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   child: Text(
                                     'Booking Time'.tr,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.blackColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.blackColor, fontSize: 15),
                                   ),
                                 ),
                                 Expanded(
@@ -224,9 +189,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                     value.appointmentInfo.slot.toString(),
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.end,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.appColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                   ),
                                 ),
                               ],
@@ -246,10 +209,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   ? Text(
                                       'Services'.tr,
                                       overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.appColor,
-                                          fontFamily: 'bold',
-                                          fontSize: 15),
+                                      style: const TextStyle(color: ThemeProvider.appColor, fontFamily: 'bold', fontSize: 15),
                                     )
                                   : const SizedBox(),
                               const SizedBox(
@@ -259,82 +219,31 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: List.generate(
-                                    value.appointmentInfo.items!.services!
-                                        .length,
+                                    value.appointmentInfo.items!.services!.length,
                                     (serviceIndex) => Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.center,
                                           children: [
                                             Text(
-                                              value.appointmentInfo.items!
-                                                  .services![serviceIndex].name
-                                                  .toString(),
+                                              value.appointmentInfo.items!.services![serviceIndex].name.toString(),
                                               overflow: TextOverflow.ellipsis,
-                                              style: const TextStyle(
-                                                  fontFamily: 'regular',
-                                                  fontSize: 10,
-                                                  color:
-                                                      ThemeProvider.blackColor),
+                                              style: const TextStyle(fontFamily: 'regular', fontSize: 10, color: ThemeProvider.blackColor),
                                             ),
                                             RichText(
                                               text: TextSpan(
                                                 children: [
                                                   TextSpan(
-                                                    text: value.currencySide ==
-                                                            'left'
-                                                        ? value.currencySymbol +
-                                                            value
-                                                                .appointmentInfo
-                                                                .items!
-                                                                .services![
-                                                                    serviceIndex]
-                                                                .price
-                                                                .toString()
-                                                        : value
-                                                                .appointmentInfo
-                                                                .items!
-                                                                .services![
-                                                                    serviceIndex]
-                                                                .price
-                                                                .toString() +
-                                                            value
-                                                                .currencySymbol,
-                                                    style: const TextStyle(
-                                                        fontSize: 10,
-                                                        color: ThemeProvider
-                                                            .blackColor,
-                                                        decoration:
-                                                            TextDecoration
-                                                                .lineThrough),
+                                                    text: value.currencySide == 'left'
+                                                        ? value.currencySymbol + value.appointmentInfo.items!.services![serviceIndex].price.toString()
+                                                        : value.appointmentInfo.items!.services![serviceIndex].price.toString() + value.currencySymbol,
+                                                    style: const TextStyle(fontSize: 10, color: ThemeProvider.blackColor, decoration: TextDecoration.lineThrough),
                                                   ),
                                                   const TextSpan(text: ' '),
                                                   TextSpan(
-                                                    text: value.currencySide ==
-                                                            'left'
-                                                        ? value.currencySymbol +
-                                                            value
-                                                                .appointmentInfo
-                                                                .items!
-                                                                .services![
-                                                                    serviceIndex]
-                                                                .off
-                                                                .toString()
-                                                        : value
-                                                                .appointmentInfo
-                                                                .items!
-                                                                .services![
-                                                                    serviceIndex]
-                                                                .off
-                                                                .toString() +
-                                                            value
-                                                                .currencySymbol,
-                                                    style: const TextStyle(
-                                                        fontSize: 10,
-                                                        color: ThemeProvider
-                                                            .blackColor,
-                                                        fontFamily: 'bold'),
+                                                    text: value.currencySide == 'left'
+                                                        ? value.currencySymbol + value.appointmentInfo.items!.services![serviceIndex].off.toString()
+                                                        : value.appointmentInfo.items!.services![serviceIndex].off.toString() + value.currencySymbol,
+                                                    style: const TextStyle(fontSize: 10, color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                                   ),
                                                 ],
                                               ),
@@ -349,103 +258,42 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   ? Text(
                                       'Packages'.tr,
                                       overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                          color: ThemeProvider.appColor,
-                                          fontFamily: 'bold',
-                                          fontSize: 15),
+                                      style: const TextStyle(color: ThemeProvider.appColor, fontFamily: 'bold', fontSize: 15),
                                     )
                                   : const SizedBox(),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: List.generate(
-                                    value.appointmentInfo.items!.packages!
-                                        .length,
+                                    value.appointmentInfo.items!.packages!.length,
                                     (packageIndex) => Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.center,
                                           children: [
                                             Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment: CrossAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  value
-                                                      .appointmentInfo
-                                                      .items!
-                                                      .packages![packageIndex]
-                                                      .name
-                                                      .toString(),
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'regular',
-                                                      fontSize: 10,
-                                                      color: ThemeProvider
-                                                          .blackColor),
+                                                  value.appointmentInfo.items!.packages![packageIndex].name.toString(),
+                                                  overflow: TextOverflow.ellipsis,
+                                                  style: const TextStyle(fontFamily: 'regular', fontSize: 10, color: ThemeProvider.blackColor),
                                                 ),
                                                 RichText(
                                                   text: TextSpan(
                                                     children: [
                                                       TextSpan(
-                                                        text: value.currencySide ==
-                                                                'left'
-                                                            ? value.currencySymbol +
-                                                                value
-                                                                    .appointmentInfo
-                                                                    .items!
-                                                                    .packages![
-                                                                        packageIndex]
-                                                                    .price
-                                                                    .toString()
-                                                            : value
-                                                                    .appointmentInfo
-                                                                    .items!
-                                                                    .packages![
-                                                                        packageIndex]
-                                                                    .price
-                                                                    .toString() +
-                                                                value
-                                                                    .currencySymbol,
-                                                        style: const TextStyle(
-                                                            fontSize: 10,
-                                                            color: ThemeProvider
-                                                                .blackColor,
-                                                            decoration:
-                                                                TextDecoration
-                                                                    .lineThrough),
+                                                        text: value.currencySide == 'left'
+                                                            ? value.currencySymbol + value.appointmentInfo.items!.packages![packageIndex].price.toString()
+                                                            : value.appointmentInfo.items!.packages![packageIndex].price.toString() + value.currencySymbol,
+                                                        style: const TextStyle(fontSize: 10, color: ThemeProvider.blackColor, decoration: TextDecoration.lineThrough),
                                                       ),
                                                       const TextSpan(text: ' '),
                                                       TextSpan(
-                                                        text: value.currencySide ==
-                                                                'left'
-                                                            ? value.currencySymbol +
-                                                                value
-                                                                    .appointmentInfo
-                                                                    .items!
-                                                                    .packages![
-                                                                        packageIndex]
-                                                                    .off
-                                                                    .toString()
-                                                            : value
-                                                                    .appointmentInfo
-                                                                    .items!
-                                                                    .packages![
-                                                                        packageIndex]
-                                                                    .off
-                                                                    .toString() +
-                                                                value
-                                                                    .currencySymbol,
-                                                        style: const TextStyle(
-                                                            fontSize: 10,
-                                                            color: ThemeProvider
-                                                                .blackColor,
-                                                            fontFamily: 'bold'),
+                                                        text: value.currencySide == 'left'
+                                                            ? value.currencySymbol + value.appointmentInfo.items!.packages![packageIndex].off.toString()
+                                                            : value.appointmentInfo.items!.packages![packageIndex].off.toString() + value.currencySymbol,
+                                                        style: const TextStyle(fontSize: 10, color: ThemeProvider.blackColor, fontFamily: 'bold'),
                                                       ),
                                                     ],
                                                   ),
@@ -454,40 +302,16 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                             ),
                                             Column(
                                               children: List.generate(
-                                                  value
-                                                      .appointmentInfo
-                                                      .items!
-                                                      .packages![packageIndex]
-                                                      .services!
-                                                      .length,
+                                                  value.appointmentInfo.items!.packages![packageIndex].services!.length,
                                                   (packageServiceIndex) => Row(
                                                         children: [
                                                           const SizedBox(
                                                             width: 10,
                                                           ),
-                                                          const Text('-',
-                                                              style: TextStyle(
-                                                                  fontSize: 8,
-                                                                  fontFamily:
-                                                                      'regular',
-                                                                  color: ThemeProvider
-                                                                      .blackColor)),
+                                                          const Text('-', style: TextStyle(fontSize: 8, fontFamily: 'regular', color: ThemeProvider.blackColor)),
                                                           Text(
-                                                            value
-                                                                .appointmentInfo
-                                                                .items!
-                                                                .packages![
-                                                                    packageIndex]
-                                                                .services![
-                                                                    packageServiceIndex]
-                                                                .name
-                                                                .toString(),
-                                                            style: const TextStyle(
-                                                                fontSize: 8,
-                                                                fontFamily:
-                                                                    'regular',
-                                                                color: ThemeProvider
-                                                                    .blackColor),
+                                                            value.appointmentInfo.items!.packages![packageIndex].services![packageServiceIndex].name.toString(),
+                                                            style: const TextStyle(fontSize: 8, fontFamily: 'regular', color: ThemeProvider.blackColor),
                                                           )
                                                         ],
                                                       )),
@@ -506,10 +330,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                               Text(
                                 'Pricing'.tr,
                                 overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                    color: ThemeProvider.appColor,
-                                    fontFamily: 'bold',
-                                    fontSize: 15),
+                                style: const TextStyle(color: ThemeProvider.appColor, fontFamily: 'bold', fontSize: 15),
                               ),
                             ],
                           ),
@@ -523,25 +344,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   child: Text(
                                     'Discount'.tr,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                                 Expanded(
                                   child: Text(
                                     value.currencySide == 'left'
-                                        ? value.currencySymbol +
-                                            value.appointmentInfo.discount
-                                                .toString()
-                                        : value.appointmentInfo.discount
-                                                .toString() +
-                                            value.currencySymbol,
+                                        ? value.currencySymbol + value.appointmentInfo.discount.toString()
+                                        : value.appointmentInfo.discount.toString() + value.currencySymbol,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.end,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                               ],
@@ -553,25 +366,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   child: Text(
                                     'Wallet Discount'.tr,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                                 Expanded(
                                   child: Text(
                                     value.currencySide == 'left'
-                                        ? value.currencySymbol +
-                                            value.appointmentInfo.walletPrice
-                                                .toString()
-                                        : value.appointmentInfo.walletPrice
-                                                .toString() +
-                                            value.currencySymbol,
+                                        ? value.currencySymbol + value.appointmentInfo.walletPrice.toString()
+                                        : value.appointmentInfo.walletPrice.toString() + value.currencySymbol,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.end,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                               ],
@@ -583,25 +388,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   child: Text(
                                     'Distance Cost'.tr,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                                 Expanded(
                                   child: Text(
                                     value.currencySide == 'left'
-                                        ? value.currencySymbol +
-                                            value.appointmentInfo.distanceCost
-                                                .toString()
-                                        : value.appointmentInfo.distanceCost
-                                                .toString() +
-                                            value.currencySymbol,
+                                        ? value.currencySymbol + value.appointmentInfo.distanceCost.toString()
+                                        : value.appointmentInfo.distanceCost.toString() + value.currencySymbol,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.end,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                               ],
@@ -613,25 +410,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   child: Text(
                                     'Service Tax'.tr,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                                 Expanded(
                                   child: Text(
                                     value.currencySide == 'left'
-                                        ? value.currencySymbol +
-                                            value.appointmentInfo.serviceTax
-                                                .toString()
-                                        : value.appointmentInfo.serviceTax
-                                                .toString() +
-                                            value.currencySymbol,
+                                        ? value.currencySymbol + value.appointmentInfo.serviceTax.toString()
+                                        : value.appointmentInfo.serviceTax.toString() + value.currencySymbol,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.end,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                               ],
@@ -643,25 +432,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   child: Text(
                                     'Total'.tr,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                                 Expanded(
                                   child: Text(
                                     value.currencySide == 'left'
-                                        ? value.currencySymbol +
-                                            value.appointmentInfo.total
-                                                .toString()
-                                        : value.appointmentInfo.total
-                                                .toString() +
-                                            value.currencySymbol,
+                                        ? value.currencySymbol + value.appointmentInfo.total.toString()
+                                        : value.appointmentInfo.total.toString() + value.currencySymbol,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.end,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                               ],
@@ -673,20 +454,15 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                   child: Text(
                                     'Payment'.tr,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                                 Expanded(
                                   child: Text(
-                                    value.paymentName[
-                                        value.appointmentInfo.payMethod as int],
+                                    value.paymentName[value.appointmentInfo.payMethod as int],
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.end,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 15),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 15),
                                   ),
                                 ),
                               ],
@@ -702,26 +478,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                 child: Text(
                                   'Total Amount'.tr,
                                   overflow: TextOverflow.ellipsis,
-                                  style: const TextStyle(
-                                      color: ThemeProvider.blackColor,
-                                      fontSize: 15),
+                                  style: const TextStyle(color: ThemeProvider.blackColor, fontSize: 15),
                                 ),
                               ),
                               Expanded(
                                 child: Text(
                                   value.currencySide == 'left'
-                                      ? value.currencySymbol +
-                                          value.appointmentInfo.grandTotal
-                                              .toString()
-                                      : value.appointmentInfo.grandTotal
-                                              .toString() +
-                                          value.currencySymbol,
+                                      ? value.currencySymbol + value.appointmentInfo.grandTotal.toString()
+                                      : value.appointmentInfo.grandTotal.toString() + value.currencySymbol,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.end,
-                                  style: const TextStyle(
-                                      color: ThemeProvider.appColor,
-                                      fontFamily: 'bold',
-                                      fontSize: 15),
+                                  style: const TextStyle(color: ThemeProvider.appColor, fontFamily: 'bold', fontSize: 15),
                                 ),
                               ),
                             ],
@@ -735,10 +502,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
               ? const SizedBox()
               : Container(
                   padding: const EdgeInsets.all(16),
-                  child: value.appointmentInfo.status == 2 ||
-                          value.appointmentInfo.status == 4 ||
-                          value.appointmentInfo.status == 5 ||
-                          value.appointmentInfo.status == 6
+                  child: value.appointmentInfo.status == 2 || value.appointmentInfo.status == 4 || value.appointmentInfo.status == 5 || value.appointmentInfo.status == 6
                       ? Text(
                           '${'Your Appoinments Status'.tr} : ${value.orderStatus}',
                           textAlign: TextAlign.center,
@@ -756,24 +520,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                         value.onUpdateAppointmentStatus(1);
                                       },
                                       style: ElevatedButton.styleFrom(
-                                          foregroundColor:
-                                              ThemeProvider.whiteColor,
-                                          backgroundColor:
-                                              ThemeProvider.appColor,
+                                          foregroundColor: ThemeProvider.whiteColor,
+                                          backgroundColor: ThemeProvider.appColor,
                                           shadowColor: ThemeProvider.blackColor,
                                           elevation: 3,
                                           shape: (RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
+                                            borderRadius: BorderRadius.circular(50),
                                           )),
                                           padding: const EdgeInsets.all(0)),
                                       child: Text(
                                         'Accept'.tr,
-                                        style: const TextStyle(
-                                            letterSpacing: 1,
-                                            fontSize: 16,
-                                            color: ThemeProvider.whiteColor,
-                                            fontFamily: 'bold'),
+                                        style: const TextStyle(letterSpacing: 1, fontSize: 16, color: ThemeProvider.whiteColor, fontFamily: 'bold'),
                                       )),
                                 )),
                                 const SizedBox(width: 10),
@@ -786,24 +543,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                         value.onUpdateAppointmentStatus(2);
                                       },
                                       style: ElevatedButton.styleFrom(
-                                          foregroundColor:
-                                              ThemeProvider.whiteColor,
-                                          backgroundColor:
-                                              ThemeProvider.greyColor,
+                                          foregroundColor: ThemeProvider.whiteColor,
+                                          backgroundColor: ThemeProvider.greyColor,
                                           shadowColor: ThemeProvider.blackColor,
                                           elevation: 3,
                                           shape: (RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
+                                            borderRadius: BorderRadius.circular(50),
                                           )),
                                           padding: const EdgeInsets.all(0)),
                                       child: Text(
                                         'Decline'.tr,
-                                        style: const TextStyle(
-                                            letterSpacing: 1,
-                                            fontSize: 16,
-                                            color: ThemeProvider.whiteColor,
-                                            fontFamily: 'bold'),
+                                        style: const TextStyle(letterSpacing: 1, fontSize: 16, color: ThemeProvider.whiteColor, fontFamily: 'bold'),
                                       )),
                                 )),
                               ],
@@ -820,11 +570,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                           Radius.circular(8),
                                         ),
                                         boxShadow: [
-                                          BoxShadow(
-                                              color: ThemeProvider.blackColor
-                                                  .withOpacity(0.2),
-                                              offset: const Offset(0, 1),
-                                              blurRadius: 3),
+                                          BoxShadow(color: ThemeProvider.blackColor.withOpacity(0.2), offset: const Offset(0, 1), blurRadius: 3),
                                         ],
                                       ),
                                       child: DropdownButton<String>(
@@ -834,15 +580,11 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                         icon: const Icon(
                                           Icons.keyboard_arrow_down,
                                         ),
-                                        iconEnabledColor:
-                                            ThemeProvider.blackColor,
+                                        iconEnabledColor: ThemeProvider.blackColor,
                                         onChanged: (String? newValue) {
-                                          value.onSelectStatus(
-                                              newValue.toString());
+                                          value.onSelectStatus(newValue.toString());
                                         },
-                                        items: value.selectStatus
-                                            .map<DropdownMenuItem<String>>(
-                                                (String value) {
+                                        items: value.selectStatus.map<DropdownMenuItem<String>>((String value) {
                                           return DropdownMenuItem<String>(
                                             value: value,
                                             child: Text(value),
@@ -860,24 +602,17 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                                         value.updateStatus();
                                       },
                                       style: ElevatedButton.styleFrom(
-                                          foregroundColor:
-                                              ThemeProvider.whiteColor,
-                                          backgroundColor:
-                                              ThemeProvider.appColor,
+                                          foregroundColor: ThemeProvider.whiteColor,
+                                          backgroundColor: ThemeProvider.appColor,
                                           shadowColor: ThemeProvider.blackColor,
                                           elevation: 3,
                                           shape: (RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
+                                            borderRadius: BorderRadius.circular(50),
                                           )),
                                           padding: const EdgeInsets.all(0)),
                                       child: Text(
                                         'Update Status'.tr,
-                                        style: const TextStyle(
-                                            letterSpacing: 1,
-                                            fontSize: 16,
-                                            color: ThemeProvider.whiteColor,
-                                            fontFamily: 'bold'),
+                                        style: const TextStyle(letterSpacing: 1, fontSize: 16, color: ThemeProvider.whiteColor, fontFamily: 'bold'),
                                       )),
                                 )),
                               ],

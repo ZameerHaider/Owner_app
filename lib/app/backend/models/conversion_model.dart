@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:jiffy/jiffy.dart';
 
 class ChatConversionModel {
@@ -51,7 +43,7 @@ class ChatConversionModel {
     receiverType = json['receiver_type'].toString();
     lastMessage = json['last_message'];
     lastMessageType = json['last_message_type'];
-    updatedAt = Jiffy(json['updated_at']).yMMMMd;
+    updatedAt = Jiffy.parse(json['updated_at']).yMMMMd;
   }
 
   Map<String, dynamic> toJson() {

@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,8 +9,7 @@ class IndividualProfileScreen extends StatefulWidget {
   const IndividualProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<IndividualProfileScreen> createState() =>
-      _IndividualProfileScreenState();
+  State<IndividualProfileScreen> createState() => _IndividualProfileScreenState();
 }
 
 class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
@@ -30,8 +21,7 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
           backgroundColor: ThemeProvider.whiteColor,
           body: value.apiCalled == false
               ? const Center(
-                  child:
-                      CircularProgressIndicator(color: ThemeProvider.appColor),
+                  child: CircularProgressIndicator(color: ThemeProvider.appColor),
                 )
               : SingleChildScrollView(
                   child: Column(
@@ -45,10 +35,8 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                             width: double.infinity,
                             margin: const EdgeInsets.only(bottom: 20),
                             child: FadeInImage(
-                              image: NetworkImage(
-                                  '${Environments.apiBaseURL}storage/images/${value.backgroundCover}'),
-                              placeholder: const AssetImage(
-                                  "assets/images/placeholder.jpeg"),
+                              image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.backgroundCover}'),
+                              placeholder: const AssetImage("assets/images/placeholder.jpeg"),
                               imageErrorBuilder: (context, error, stackTrace) {
                                 return Image.asset(
                                   'assets/images/notfound.png',
@@ -65,11 +53,9 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                           Align(
                             alignment: Alignment.topCenter,
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 70, right: 15),
+                              padding: const EdgeInsets.only(top: 70, right: 15),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   IconButton(
                                     onPressed: () {
@@ -86,25 +72,21 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                                       onPressed: () {
                                         showCupertinoModalPopup<void>(
                                           context: context,
-                                          builder: (BuildContext context) =>
-                                              CupertinoActionSheet(
+                                          builder: (BuildContext context) => CupertinoActionSheet(
                                             title: Text('Choose From'.tr),
-                                            actions: <
-                                                CupertinoActionSheetAction>[
+                                            actions: <CupertinoActionSheetAction>[
                                               CupertinoActionSheetAction(
                                                 isDefaultAction: true,
                                                 onPressed: () {
                                                   Navigator.pop(context);
-                                                  value.selectFromGallery(
-                                                      'camera');
+                                                  value.selectFromGallery('camera');
                                                 },
                                                 child: Text('Camera'.tr),
                                               ),
                                               CupertinoActionSheetAction(
                                                 onPressed: () {
                                                   Navigator.pop(context);
-                                                  value.selectFromGallery(
-                                                      'gallery');
+                                                  value.selectFromGallery('gallery');
                                                 },
                                                 child: Text('Gallery'.tr),
                                               ),
@@ -141,37 +123,27 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
-                                  border: Border.all(
-                                      color: ThemeProvider.appColor,
-                                      style: BorderStyle.solid),
+                                  border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                                 ),
                                 child: InkWell(
                                   onTap: () {
                                     value.onSelectCategories();
                                   },
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20.0, vertical: 11),
+                                    padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 11),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: List.generate(
-                                            value.individualInfo.webCatesData!
-                                                .length,
+                                            value.individualInfo.webCatesData!.length,
                                             (index) => Column(
                                               children: [
                                                 Text(
-                                                  value.individualInfo
-                                                      .webCatesData![index].name
-                                                      .toString(),
-                                                  style: const TextStyle(
-                                                      fontSize: 17),
+                                                  value.individualInfo.webCatesData![index].name.toString(),
+                                                  style: const TextStyle(fontSize: 17),
                                                 ),
                                               ],
                                             ),
@@ -198,20 +170,13 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Brief Of Salon'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -227,20 +192,13 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Enter Address..'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -250,31 +208,21 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100.0),
-                                  border: Border.all(
-                                      color: ThemeProvider.appColor,
-                                      style: BorderStyle.solid),
+                                  border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                                 ),
                                 child: InkWell(
                                   onTap: () {
                                     value.onSelectCities();
                                   },
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20.0, vertical: 11),
+                                    padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 11),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          value.individualInfo.cityData!.name
-                                                          .toString() ==
-                                                      '' ||
-                                                  value.individualInfo.cityData!
-                                                      .name!.isEmpty
+                                          value.individualInfo.cityData!.name.toString() == '' || value.individualInfo.cityData!.name!.isEmpty
                                               ? 'Select'.tr
-                                              : value
-                                                  .individualInfo.cityData!.name
-                                                  .toString(),
+                                              : value.individualInfo.cityData!.name.toString(),
                                           style: const TextStyle(fontSize: 17),
                                         ),
                                         const Icon(
@@ -297,21 +245,13 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'ZIP Code'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(100),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -326,21 +266,13 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Latitude'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(100),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -355,32 +287,22 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Longitude'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(100),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
                             ),
                             const SizedBox(height: 30),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Have Popular ?'.tr,
@@ -397,11 +319,9 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Have Shop ?'.tr,
@@ -418,11 +338,9 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Have Home ?'.tr,
@@ -442,15 +360,11 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Opening Hour'.tr,
-                                    style: const TextStyle(
-                                        fontSize: 14,
-                                        fontFamily: 'bold',
-                                        color: ThemeProvider.blackColor),
+                                    style: const TextStyle(fontSize: 14, fontFamily: 'bold', color: ThemeProvider.blackColor),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -468,65 +382,40 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                               children: List.generate(
                                 value.timesList.length,
                                 (index) => Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 5),
+                                  padding: const EdgeInsets.symmetric(vertical: 5),
                                   child: Row(
                                     children: [
-                                      const Icon(Icons.circle,
-                                          color: ThemeProvider.greenColor,
-                                          size: 15),
+                                      const Icon(Icons.circle, color: ThemeProvider.greenColor, size: 15),
                                       const SizedBox(width: 10),
                                       Expanded(
                                         child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                                             SizedBox(
                                               width: 100,
                                               child: Text(
-                                                value.getDayName(value
-                                                    .timesList[index]
-                                                    .day as int),
+                                                value.getDayName(value.timesList[index].day as int),
                                                 overflow: TextOverflow.ellipsis,
-                                                style: const TextStyle(
-                                                    color:
-                                                        ThemeProvider.appColor,
-                                                    fontSize: 14),
+                                                style: const TextStyle(color: ThemeProvider.appColor, fontSize: 14),
                                               ),
                                             ),
                                             Text(
                                               '${value.timesList[index].openTime} - ${value.timesList[index].closeTime}',
                                               overflow: TextOverflow.ellipsis,
-                                              style: const TextStyle(
-                                                  color:
-                                                      ThemeProvider.blackColor,
-                                                  fontSize: 14),
+                                              style: const TextStyle(color: ThemeProvider.blackColor, fontSize: 14),
                                             ),
                                             SizedBox(
                                               height: 23.0,
                                               width: 70,
                                               child: ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    backgroundColor:
-                                                        ThemeProvider
-                                                            .orangeColor),
+                                                style: ElevatedButton.styleFrom(backgroundColor: ThemeProvider.orangeColor),
                                                 onPressed: () {
-                                                  value.onEditTime(
-                                                      value.getDayName(value
-                                                          .timesList[index]
-                                                          .day as int),
-                                                      value.timesList[index]
-                                                          .openTime
-                                                          .toString(),
-                                                      value.timesList[index]
-                                                          .closeTime
-                                                          .toString());
+                                                  value.onEditTime(value.getDayName(value.timesList[index].day as int), value.timesList[index].openTime.toString(),
+                                                      value.timesList[index].closeTime.toString());
                                                 },
                                                 child: Text(
                                                   'Edit'.tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 10,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 10, fontFamily: 'bold'),
                                                 ),
                                               ),
                                             )
@@ -560,8 +449,7 @@ class _IndividualProfileScreenState extends State<IndividualProfileScreen> {
                   children: [
                     Text(
                       'SUBMIT'.tr,
-                      style: const TextStyle(
-                          color: ThemeProvider.whiteColor, fontSize: 17),
+                      style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                     ),
                   ],
                 ),

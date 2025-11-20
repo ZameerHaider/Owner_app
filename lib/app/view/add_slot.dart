@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/add_slot_controller.dart';
@@ -40,8 +32,7 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
           ),
           body: value.apiCalled == false
               ? const Center(
-                  child:
-                      CircularProgressIndicator(color: ThemeProvider.appColor),
+                  child: CircularProgressIndicator(color: ThemeProvider.appColor),
                 )
               : SingleChildScrollView(
                   child: Padding(
@@ -53,31 +44,21 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100.0),
-                            border: Border.all(
-                                color: ThemeProvider.appColor,
-                                style: BorderStyle.solid),
+                            border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                           ),
                           child: DropdownButton<String>(
                             value: value.dayName,
                             isExpanded: true,
                             icon: const Icon(Icons.expand_more),
                             elevation: 16,
-                            style:
-                                const TextStyle(color: ThemeProvider.appColor),
+                            style: const TextStyle(color: ThemeProvider.appColor),
                             underline: const SizedBox(),
                             onChanged: (String? newValue) {
                               debugPrint(newValue);
                               value.onUpdateDayName(newValue.toString());
                             },
-                            items: <String>[
-                              'Sunday'.tr,
-                              'Monday'.tr,
-                              'Tuesday'.tr,
-                              'Wednesday'.tr,
-                              'Thursday'.tr,
-                              'Friday'.tr,
-                              'Saturday'.tr
-                            ].map<DropdownMenuItem<String>>((String selected) {
+                            items: <String>['Sunday'.tr, 'Monday'.tr, 'Tuesday'.tr, 'Wednesday'.tr, 'Thursday'.tr, 'Friday'.tr, 'Saturday'.tr]
+                                .map<DropdownMenuItem<String>>((String selected) {
                               return DropdownMenuItem<String>(
                                 value: selected,
                                 child: Text(selected),
@@ -92,20 +73,15 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                           child: Container(
                             width: double.infinity,
                             margin: const EdgeInsets.symmetric(vertical: 10),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 12),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100.0),
-                              border: Border.all(
-                                  color: ThemeProvider.appColor,
-                                  style: BorderStyle.solid),
+                              border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                value.openTime == ''
-                                    ? Text('Open Time'.tr)
-                                    : Text(value.openTime.toString()),
+                                value.openTime == '' ? Text('Open Time'.tr) : Text(value.openTime.toString()),
                                 const Icon(Icons.expand_more),
                               ],
                             ),
@@ -118,20 +94,15 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                           child: Container(
                             width: double.infinity,
                             margin: const EdgeInsets.symmetric(vertical: 10),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 12),
+                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100.0),
-                              border: Border.all(
-                                  color: ThemeProvider.appColor,
-                                  style: BorderStyle.solid),
+                              border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                value.closeTime == ''
-                                    ? Text('Close Time'.tr)
-                                    : Text(value.closeTime.toString()),
+                                value.closeTime == '' ? Text('Close Time'.tr) : Text(value.closeTime.toString()),
                                 const Icon(Icons.expand_more),
                               ],
                             ),
@@ -143,18 +114,15 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                               children: List.generate(
                             value.slotList.length,
                             (index) => Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
                               child: Stack(
                                 clipBehavior: Clip.none,
                                 children: [
                                   Chip(
-                                    backgroundColor:
-                                        ThemeProvider.backgroundColor,
+                                    backgroundColor: ThemeProvider.backgroundColor,
                                     label: Text(
                                       '${value.slotList[index].startTime} to ${value.slotList[index].endTime}',
-                                      style: const TextStyle(
-                                          fontFamily: 'regular'),
+                                      style: const TextStyle(fontFamily: 'regular'),
                                     ),
                                   ),
                                   Positioned(
@@ -165,8 +133,7 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                                           context: context,
                                           builder: (BuildContext context) {
                                             return AlertDialog(
-                                              contentPadding:
-                                                  const EdgeInsets.all(20),
+                                              contentPadding: const EdgeInsets.all(20),
                                               content: SingleChildScrollView(
                                                 child: Column(
                                                   children: [
@@ -181,16 +148,12 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                                                     ),
                                                     Text(
                                                       'Are you sure'.tr,
-                                                      style: const TextStyle(
-                                                          fontSize: 24,
-                                                          fontFamily:
-                                                              'semi-bold'),
+                                                      style: const TextStyle(fontSize: 24, fontFamily: 'semi-bold'),
                                                     ),
                                                     const SizedBox(
                                                       height: 10,
                                                     ),
-                                                    Text('to delete this slot ?'
-                                                        .tr),
+                                                    Text('to delete this slot ?'.tr),
                                                     const SizedBox(
                                                       height: 20,
                                                     ),
@@ -199,35 +162,20 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                                                         Expanded(
                                                           child: ElevatedButton(
                                                             onPressed: () {
-                                                              Navigator.pop(
-                                                                  context);
+                                                              Navigator.pop(context);
                                                             },
-                                                            style:
-                                                                ElevatedButton
-                                                                    .styleFrom(
-                                                              foregroundColor:
-                                                                  ThemeProvider
-                                                                      .backgroundColor,
-                                                              backgroundColor:
-                                                                  ThemeProvider
-                                                                      .redColor,
-                                                              minimumSize:
-                                                                  const Size
-                                                                      .fromHeight(35),
-                                                              shape:
-                                                                  RoundedRectangleBorder(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            5),
+                                                            style: ElevatedButton.styleFrom(
+                                                              foregroundColor: ThemeProvider.backgroundColor,
+                                                              backgroundColor: ThemeProvider.redColor,
+                                                              minimumSize: const Size.fromHeight(35),
+                                                              shape: RoundedRectangleBorder(
+                                                                borderRadius: BorderRadius.circular(5),
                                                               ),
                                                             ),
                                                             child: Text(
                                                               'Cancel'.tr,
-                                                              style:
-                                                                  const TextStyle(
-                                                                color: ThemeProvider
-                                                                    .whiteColor,
+                                                              style: const TextStyle(
+                                                                color: ThemeProvider.whiteColor,
                                                                 fontSize: 16,
                                                               ),
                                                             ),
@@ -239,37 +187,21 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                                                         Expanded(
                                                           child: ElevatedButton(
                                                             onPressed: () {
-                                                              Navigator.pop(
-                                                                  context);
-                                                              value.onDestroy(
-                                                                  index);
+                                                              Navigator.pop(context);
+                                                              value.onDestroy(index);
                                                             },
-                                                            style:
-                                                                ElevatedButton
-                                                                    .styleFrom(
-                                                              foregroundColor:
-                                                                  ThemeProvider
-                                                                      .backgroundColor,
-                                                              backgroundColor:
-                                                                  ThemeProvider
-                                                                      .greenColor,
-                                                              minimumSize:
-                                                                  const Size
-                                                                      .fromHeight(35),
-                                                              shape:
-                                                                  RoundedRectangleBorder(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            5),
+                                                            style: ElevatedButton.styleFrom(
+                                                              foregroundColor: ThemeProvider.backgroundColor,
+                                                              backgroundColor: ThemeProvider.greenColor,
+                                                              minimumSize: const Size.fromHeight(35),
+                                                              shape: RoundedRectangleBorder(
+                                                                borderRadius: BorderRadius.circular(5),
                                                               ),
                                                             ),
                                                             child: Text(
                                                               'Delete'.tr,
-                                                              style:
-                                                                  const TextStyle(
-                                                                color: ThemeProvider
-                                                                    .whiteColor,
+                                                              style: const TextStyle(
+                                                                color: ThemeProvider.whiteColor,
                                                                 fontSize: 16,
                                                               ),
                                                             ),
@@ -288,8 +220,7 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                                         height: 20,
                                         width: 20,
                                         child: CircleAvatar(
-                                          backgroundColor:
-                                              ThemeProvider.redColor,
+                                          backgroundColor: ThemeProvider.redColor,
                                           child: Icon(
                                             Icons.close,
                                             color: ThemeProvider.whiteColor,
@@ -326,9 +257,7 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                       child: Center(
                         child: Text(
                           'Add'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),
@@ -352,9 +281,7 @@ class _AddSlotScreenState extends State<AddSlotScreen> {
                       child: Center(
                         child: Text(
                           'Save & Submit'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),

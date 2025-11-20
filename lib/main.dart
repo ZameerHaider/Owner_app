@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/helper/init.dart';
@@ -19,9 +11,7 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MainBinding().dependencies();
-  await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-      name: 'ultimate-salon-flutter');
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform, name: 'ultimate-salon-flutter');
   runApp(const MyApp());
 }
 

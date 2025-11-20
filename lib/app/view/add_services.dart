@@ -1,15 +1,7 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skeletons/skeletons.dart';
+import 'package:skeletons_forked/skeletons_forked.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/add_services_controller.dart';
 import 'package:ultimate_salon_owner_flutter/app/env.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
@@ -52,8 +44,7 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                         onTap: () {
                           showCupertinoModalPopup<void>(
                             context: context,
-                            builder: (BuildContext context) =>
-                                CupertinoActionSheet(
+                            builder: (BuildContext context) => CupertinoActionSheet(
                               title: Text('Choose From'.tr),
                               actions: <CupertinoActionSheetAction>[
                                 CupertinoActionSheetAction(
@@ -87,10 +78,8 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                           child: SizedBox.fromSize(
                             size: const Size.fromRadius(70),
                             child: FadeInImage(
-                              image: NetworkImage(
-                                  '${Environments.apiBaseURL}storage/images/${value.cover}'),
-                              placeholder: const AssetImage(
-                                  "assets/images/placeholder.jpeg"),
+                              image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.cover}'),
+                              placeholder: const AssetImage("assets/images/placeholder.jpeg"),
                               imageErrorBuilder: (context, error, stackTrace) {
                                 return Image.asset(
                                   'assets/images/notfound.png',
@@ -116,15 +105,11 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                               filled: true,
                               fillColor: ThemeProvider.whiteColor,
                               hintText: 'Service Name'.tr,
-                              contentPadding: const EdgeInsets.only(
-                                  bottom: 8.0, top: 14.0, left: 10),
+                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                               focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.appColor),
+                                borderSide: BorderSide(color: ThemeProvider.appColor),
                               ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                             ),
                           ),
                         ),
@@ -134,38 +119,30 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                                color: Colors.grey, style: BorderStyle.solid),
+                            border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                           ),
                           child: InkWell(
                             onTap: () {
                               value.onServiceCategories();
                             },
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10.0, vertical: 10),
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     'Categories'.tr,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 14),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 14),
                                   ),
                                   Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       value.selectedServicesName == ''
                                           ? Text(
                                               'Select Categories'.tr,
-                                              style:
-                                                  const TextStyle(fontSize: 17),
+                                              style: const TextStyle(fontSize: 17),
                                             )
-                                          : Text(value.selectedServicesName,
-                                              style: const TextStyle(
-                                                  fontSize: 17)),
+                                          : Text(value.selectedServicesName, style: const TextStyle(fontSize: 17)),
                                       const Icon(
                                         Icons.expand_more,
                                         color: ThemeProvider.greyColor,
@@ -191,15 +168,11 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                               filled: true,
                               fillColor: ThemeProvider.whiteColor,
                               hintText: 'Service Price'.tr,
-                              contentPadding: const EdgeInsets.only(
-                                  bottom: 8.0, top: 14.0, left: 10),
+                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                               focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.appColor),
+                                borderSide: BorderSide(color: ThemeProvider.appColor),
                               ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                             ),
                           ),
                         ),
@@ -217,15 +190,11 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                               filled: true,
                               fillColor: ThemeProvider.whiteColor,
                               hintText: 'Discount %'.tr,
-                              contentPadding: const EdgeInsets.only(
-                                  bottom: 8.0, top: 14.0, left: 10),
+                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                               focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.appColor),
+                                borderSide: BorderSide(color: ThemeProvider.appColor),
                               ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                             ),
                           ),
                         ),
@@ -239,20 +208,14 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                             decoration: InputDecoration(
                               filled: true,
                               enabled: false,
-                              disabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              disabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                               fillColor: ThemeProvider.whiteColor,
                               hintText: 'Sell Price'.tr,
-                              contentPadding: const EdgeInsets.only(
-                                  bottom: 8.0, top: 14.0, left: 10),
+                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                               focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.appColor),
+                                borderSide: BorderSide(color: ThemeProvider.appColor),
                               ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                             ),
                           ),
                         ),
@@ -266,20 +229,14 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               filled: true,
-                              disabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              disabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                               fillColor: ThemeProvider.whiteColor,
                               hintText: 'Service Duration'.tr,
-                              contentPadding: const EdgeInsets.only(
-                                  bottom: 8.0, top: 14.0, left: 10),
+                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                               focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.appColor),
+                                borderSide: BorderSide(color: ThemeProvider.appColor),
                               ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                             ),
                           ),
                         ),
@@ -293,20 +250,14 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                             maxLines: 5,
                             decoration: InputDecoration(
                               filled: true,
-                              disabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              disabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                               fillColor: ThemeProvider.whiteColor,
                               hintText: 'Description'.tr,
-                              contentPadding: const EdgeInsets.only(
-                                  bottom: 8.0, top: 14.0, left: 10),
+                              contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 10),
                               focusedBorder: const OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: ThemeProvider.appColor),
+                                borderSide: BorderSide(color: ThemeProvider.appColor),
                               ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ThemeProvider.greyColor)),
+                              enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: ThemeProvider.greyColor)),
                             ),
                           ),
                         ),
@@ -316,29 +267,22 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                                color: Colors.grey, style: BorderStyle.solid),
+                            border: Border.all(color: Colors.grey, style: BorderStyle.solid),
                           ),
                           child: InkWell(
                             onTap: () {
                               showCupertinoModalPopup<void>(
                                 context: context,
-                                builder: (BuildContext context) =>
-                                    CupertinoActionSheet(
+                                builder: (BuildContext context) => CupertinoActionSheet(
                                   title: Text(
                                     'Choose From'.tr,
-                                    style: const TextStyle(
-                                        fontFamily: 'bold',
-                                        color: ThemeProvider.blackColor,
-                                        fontSize: 14),
+                                    style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.blackColor, fontSize: 14),
                                   ),
                                   actions: <CupertinoActionSheetAction>[
                                     CupertinoActionSheetAction(
                                       child: Text(
                                         'Available'.tr,
-                                        style: const TextStyle(
-                                            color: ThemeProvider.appColor,
-                                            fontSize: 15),
+                                        style: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                       ),
                                       onPressed: () {
                                         value.updateStatus(1);
@@ -348,9 +292,7 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                                     CupertinoActionSheetAction(
                                       child: Text(
                                         'Hide'.tr,
-                                        style: const TextStyle(
-                                            color: ThemeProvider.appColor,
-                                            fontSize: 15),
+                                        style: const TextStyle(color: ThemeProvider.appColor, fontSize: 15),
                                       ),
                                       onPressed: () {
                                         value.updateStatus(0);
@@ -360,10 +302,7 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                                     CupertinoActionSheetAction(
                                       child: Text(
                                         'Cancel'.tr,
-                                        style: const TextStyle(
-                                            fontFamily: 'bold',
-                                            color: ThemeProvider.redColor,
-                                            fontSize: 14),
+                                        style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.redColor, fontSize: 14),
                                       ),
                                       onPressed: () {
                                         Navigator.pop(context);
@@ -374,25 +313,19 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                               );
                             },
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 10.0, vertical: 10),
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     'Status'.tr,
-                                    style: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 14),
+                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 14),
                                   ),
                                   Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        value.selectedStatus == 1
-                                            ? 'Available'.tr
-                                            : 'Hide'.tr,
+                                        value.selectedStatus == 1 ? 'Available'.tr : 'Hide'.tr,
                                         style: const TextStyle(fontSize: 17),
                                       ),
                                       const Icon(
@@ -413,8 +346,7 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                           children: [
                             Text(
                               'Upload More Image'.tr,
-                              style: const TextStyle(
-                                  fontFamily: 'bold', fontSize: 14),
+                              style: const TextStyle(fontFamily: 'bold', fontSize: 14),
                             ),
                           ],
                         ),
@@ -436,24 +368,21 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                                 onTap: () {
                                   showCupertinoModalPopup<void>(
                                     context: context,
-                                    builder: (BuildContext context) =>
-                                        CupertinoActionSheet(
+                                    builder: (BuildContext context) => CupertinoActionSheet(
                                       title: Text('Choose From'.tr),
                                       actions: <CupertinoActionSheetAction>[
                                         CupertinoActionSheetAction(
                                           isDefaultAction: true,
                                           onPressed: () {
                                             Navigator.pop(context);
-                                            value.selectFromGalleryOthers(
-                                                'camera', index);
+                                            value.selectFromGalleryOthers('camera', index);
                                           },
                                           child: Text('Camera'.tr),
                                         ),
                                         CupertinoActionSheetAction(
                                           onPressed: () {
                                             Navigator.pop(context);
-                                            value.selectFromGalleryOthers(
-                                                'gallery', index);
+                                            value.selectFromGalleryOthers('gallery', index);
                                           },
                                           child: Text('Gallery'.tr),
                                         ),
@@ -474,12 +403,9 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(5.0),
                                     child: FadeInImage(
-                                      image: NetworkImage(
-                                          '${Environments.apiBaseURL}storage/images/${value.gallery[index].toString()}'),
-                                      placeholder: const AssetImage(
-                                          "assets/images/placeholder.jpeg"),
-                                      imageErrorBuilder:
-                                          (context, error, stackTrace) {
+                                      image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.gallery[index].toString()}'),
+                                      placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                      imageErrorBuilder: (context, error, stackTrace) {
                                         return Image.asset(
                                           'assets/images/notfound.png',
                                           fit: BoxFit.cover,
@@ -518,8 +444,7 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                       children: [
                         Text(
                           'SUBMIT'.tr,
-                          style: const TextStyle(
-                              color: ThemeProvider.whiteColor, fontSize: 17),
+                          style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                         ),
                       ],
                     ),
@@ -543,8 +468,7 @@ class _AddServicesScreenState extends State<AddServicesScreen> {
                       children: [
                         Text(
                           'UPDATE'.tr,
-                          style: const TextStyle(
-                              color: ThemeProvider.whiteColor, fontSize: 17),
+                          style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                         ),
                       ],
                     ),

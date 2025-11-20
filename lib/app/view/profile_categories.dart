@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,8 +21,7 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
           backgroundColor: ThemeProvider.whiteColor,
           body: value.apiCalled == false
               ? const Center(
-                  child:
-                      CircularProgressIndicator(color: ThemeProvider.appColor),
+                  child: CircularProgressIndicator(color: ThemeProvider.appColor),
                 )
               : SingleChildScrollView(
                   child: Column(
@@ -39,9 +30,7 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                         height: 300,
                         margin: const EdgeInsets.only(bottom: 50),
                         decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/h4.jpg'),
-                              fit: BoxFit.cover),
+                          image: DecorationImage(image: AssetImage('assets/images/h4.jpg'), fit: BoxFit.cover),
                         ),
                         child: Stack(
                           clipBehavior: Clip.none,
@@ -72,8 +61,7 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                 onTap: () {
                                   showCupertinoModalPopup<void>(
                                     context: context,
-                                    builder: (BuildContext context) =>
-                                        CupertinoActionSheet(
+                                    builder: (BuildContext context) => CupertinoActionSheet(
                                       title: Text('Choose From'.tr),
                                       actions: <CupertinoActionSheetAction>[
                                         CupertinoActionSheetAction(
@@ -104,9 +92,7 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: ThemeProvider.appColor,
-                                        width: 3),
+                                    border: Border.all(color: ThemeProvider.appColor, width: 3),
                                     borderRadius: BorderRadius.circular(100),
                                   ),
                                   child: ClipRRect(
@@ -114,12 +100,9 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                     child: SizedBox.fromSize(
                                       size: const Size.fromRadius(40),
                                       child: FadeInImage(
-                                        image: NetworkImage(
-                                            '${Environments.apiBaseURL}storage/images/${value.cover}'),
-                                        placeholder: const AssetImage(
-                                            "assets/images/placeholder.jpeg"),
-                                        imageErrorBuilder:
-                                            (context, error, stackTrace) {
+                                        image: NetworkImage('${Environments.apiBaseURL}storage/images/${value.cover}'),
+                                        placeholder: const AssetImage("assets/images/placeholder.jpeg"),
+                                        imageErrorBuilder: (context, error, stackTrace) {
                                           return Image.asset(
                                             'assets/images/notfound.png',
                                             fit: BoxFit.cover,
@@ -149,37 +132,27 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
-                                  border: Border.all(
-                                      color: ThemeProvider.appColor,
-                                      style: BorderStyle.solid),
+                                  border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                                 ),
                                 child: InkWell(
                                   onTap: () {
                                     value.onSelectCategories();
                                   },
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20.0, vertical: 11),
+                                    padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 11),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: List.generate(
-                                            value.profileInfo.webCatesData!
-                                                .length,
+                                            value.profileInfo.webCatesData!.length,
                                             (index) => Column(
                                               children: [
                                                 Text(
-                                                  value.profileInfo
-                                                      .webCatesData![index].name
-                                                      .toString(),
-                                                  style: const TextStyle(
-                                                      fontSize: 17),
+                                                  value.profileInfo.webCatesData![index].name.toString(),
+                                                  style: const TextStyle(fontSize: 17),
                                                 ),
                                                 // if (index !=
                                                 //     (value.profileInfo.webCatesData!
@@ -210,21 +183,13 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Enter Salon Name'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(100),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -240,20 +205,13 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Brief Of Salon'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -269,20 +227,13 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Enter Address..'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -292,30 +243,21 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100.0),
-                                  border: Border.all(
-                                      color: ThemeProvider.appColor,
-                                      style: BorderStyle.solid),
+                                  border: Border.all(color: ThemeProvider.appColor, style: BorderStyle.solid),
                                 ),
                                 child: InkWell(
                                   onTap: () {
                                     value.onSelectCities();
                                   },
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20.0, vertical: 11),
+                                    padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 11),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          value.profileInfo.cityData!.name
-                                                          .toString() ==
-                                                      '' ||
-                                                  value.profileInfo.cityData!
-                                                      .name!.isEmpty
+                                          value.profileInfo.cityData!.name.toString() == '' || value.profileInfo.cityData!.name!.isEmpty
                                               ? 'Select'.tr
-                                              : value.profileInfo.cityData!.name
-                                                  .toString(),
+                                              : value.profileInfo.cityData!.name.toString(),
                                           style: const TextStyle(fontSize: 17),
                                         ),
                                         const Icon(
@@ -338,21 +280,13 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'ZIP Code'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(100),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -367,21 +301,13 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Latitude'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(100),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
@@ -396,32 +322,22 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                                     filled: true,
                                     fillColor: ThemeProvider.whiteColor,
                                     hintText: 'Longitude'.tr,
-                                    hintStyle: const TextStyle(
-                                        color: ThemeProvider.greyColor,
-                                        fontSize: 12),
-                                    contentPadding: const EdgeInsets.only(
-                                        bottom: 8.0, top: 14.0, left: 20),
+                                    hintStyle: const TextStyle(color: ThemeProvider.greyColor, fontSize: 12),
+                                    contentPadding: const EdgeInsets.only(bottom: 8.0, top: 14.0, left: 20),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(100),
-                                      borderSide: const BorderSide(
-                                          color: ThemeProvider.appColor),
+                                      borderSide: const BorderSide(color: ThemeProvider.appColor),
                                     ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        borderSide: const BorderSide(
-                                            color: ThemeProvider.appColor)),
+                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(100), borderSide: const BorderSide(color: ThemeProvider.appColor)),
                                   ),
                                 ),
                               ),
                             ),
                             const SizedBox(height: 30),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Have Multiple Stylist ?'.tr,
@@ -438,11 +354,9 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Have Shop ?'.tr,
@@ -459,11 +373,9 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Have Home ?'.tr,
@@ -483,15 +395,11 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     'Opening Hour'.tr,
-                                    style: const TextStyle(
-                                        fontSize: 14,
-                                        fontFamily: 'bold',
-                                        color: ThemeProvider.blackColor),
+                                    style: const TextStyle(fontSize: 14, fontFamily: 'bold', color: ThemeProvider.blackColor),
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -509,65 +417,40 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                               children: List.generate(
                                 value.timesList.length,
                                 (index) => Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 5),
+                                  padding: const EdgeInsets.symmetric(vertical: 5),
                                   child: Row(
                                     children: [
-                                      const Icon(Icons.circle,
-                                          color: ThemeProvider.greenColor,
-                                          size: 15),
+                                      const Icon(Icons.circle, color: ThemeProvider.greenColor, size: 15),
                                       const SizedBox(width: 10),
                                       Expanded(
                                         child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                                             SizedBox(
                                               width: 100,
                                               child: Text(
-                                                value.getDayName(value
-                                                    .timesList[index]
-                                                    .day as int),
+                                                value.getDayName(value.timesList[index].day as int),
                                                 overflow: TextOverflow.ellipsis,
-                                                style: const TextStyle(
-                                                    color:
-                                                        ThemeProvider.appColor,
-                                                    fontSize: 14),
+                                                style: const TextStyle(color: ThemeProvider.appColor, fontSize: 14),
                                               ),
                                             ),
                                             Text(
                                               '${value.timesList[index].openTime} - ${value.timesList[index].closeTime}',
                                               overflow: TextOverflow.ellipsis,
-                                              style: const TextStyle(
-                                                  color:
-                                                      ThemeProvider.blackColor,
-                                                  fontSize: 14),
+                                              style: const TextStyle(color: ThemeProvider.blackColor, fontSize: 14),
                                             ),
                                             SizedBox(
                                               height: 23.0,
                                               width: 70,
                                               child: ElevatedButton(
-                                                style: ElevatedButton.styleFrom(
-                                                    backgroundColor:
-                                                        ThemeProvider
-                                                            .orangeColor),
+                                                style: ElevatedButton.styleFrom(backgroundColor: ThemeProvider.orangeColor),
                                                 onPressed: () {
-                                                  value.onEditTime(
-                                                      value.getDayName(value
-                                                          .timesList[index]
-                                                          .day as int),
-                                                      value.timesList[index]
-                                                          .openTime
-                                                          .toString(),
-                                                      value.timesList[index]
-                                                          .closeTime
-                                                          .toString());
+                                                  value.onEditTime(value.getDayName(value.timesList[index].day as int), value.timesList[index].openTime.toString(),
+                                                      value.timesList[index].closeTime.toString());
                                                 },
                                                 child: Text(
                                                   'Edit'.tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 10,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 10, fontFamily: 'bold'),
                                                 ),
                                               ),
                                             )
@@ -601,8 +484,7 @@ class _ProfileCategoriesState extends State<ProfileCategoriesScreen> {
                   children: [
                     Text(
                       'SUBMIT'.tr,
-                      style: const TextStyle(
-                          color: ThemeProvider.whiteColor, fontSize: 17),
+                      style: const TextStyle(color: ThemeProvider.whiteColor, fontSize: 17),
                     ),
                   ],
                 ),

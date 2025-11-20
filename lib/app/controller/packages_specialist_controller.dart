@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:ultimate_salon_owner_flutter/app/backend/api/handler.dart';
@@ -13,8 +5,7 @@ import 'package:ultimate_salon_owner_flutter/app/backend/models/salon_model.dart
 import 'package:ultimate_salon_owner_flutter/app/backend/parse/packages_specialist_parse.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/add_packages_controller.dart';
 
-class PackagesSpecialistController extends GetxController
-    implements GetxService {
+class PackagesSpecialistController extends GetxController implements GetxService {
   final PackagesSpecialistParser parser;
 
   String title = 'Specialist'.tr;
@@ -44,8 +35,7 @@ class PackagesSpecialistController extends GetxController
   }
 
   Future<void> getBySalonId() async {
-    var response = await parser
-        .getBySalonId({"id": parser.sharedPreferencesManager.getString('uid')});
+    var response = await parser.getBySalonId({"id": parser.sharedPreferencesManager.getString('uid')});
     apiCalled = true;
     if (response.statusCode == 200) {
       Map<String, dynamic> myMap = Map<String, dynamic>.from(response.body);
@@ -76,12 +66,10 @@ class PackagesSpecialistController extends GetxController
     if (status == false) {
       // remove
       selectedSpecialist.remove(id);
-      selectedSpecialistName.remove(
-          '${_salonList[itemIndex].firstName} ${_salonList[itemIndex].lastName}');
+      selectedSpecialistName.remove('${_salonList[itemIndex].firstName} ${_salonList[itemIndex].lastName}');
     } else {
       selectedSpecialist.add(id);
-      selectedSpecialistName.add(
-          '${_salonList[itemIndex].firstName} ${_salonList[itemIndex].lastName}');
+      selectedSpecialistName.add('${_salonList[itemIndex].firstName} ${_salonList[itemIndex].lastName}');
       // add
     }
     debugPrint(selectedSpecialist.toString());
@@ -89,8 +77,7 @@ class PackagesSpecialistController extends GetxController
   }
 
   Future<void> onAdd() async {
-    Get.find<AddPackagesController>().onSaveSpecialistCate(
-        selectedSpecialist.join(','), selectedSpecialistName);
+    Get.find<AddPackagesController>().onSaveSpecialistCate(selectedSpecialist.join(','), selectedSpecialistName);
     var context = Get.context as BuildContext;
     Navigator.of(context).pop(true);
   }

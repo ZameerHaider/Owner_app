@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -26,9 +18,7 @@ class ContactUsController extends GetxController implements GetxService {
   ContactUsController({required this.parser});
 
   Future<void> saveContacts() async {
-    if (emailContanct.text == '' ||
-        nameContact.text == '' ||
-        messageContanct.text == '') {
+    if (emailContanct.text == '' || nameContact.text == '' || messageContanct.text == '') {
       showToast('All fields are required');
       return;
     }
@@ -40,13 +30,7 @@ class ContactUsController extends GetxController implements GetxService {
     update();
     DateTime now = DateTime.now();
     String ymd = now.toIso8601String().split('T').first;
-    var param = {
-      'name': nameContact.text,
-      'email': emailContanct.text,
-      'message': messageContanct.text,
-      'status': '0',
-      'date': ymd.toString()
-    };
+    var param = {'name': nameContact.text, 'email': emailContanct.text, 'message': messageContanct.text, 'status': '0', 'date': ymd.toString()};
 
     Response response = await parser.saveContact(param);
     if (response.statusCode == 200) {
@@ -73,8 +57,7 @@ class ContactUsController extends GetxController implements GetxService {
       'from_mail': emailContanct.text,
       'from_username': nameContact.text,
       'from_message': messageContanct.text,
-      'to_respond':
-          'We have received your request, we will respond on your issue soon'.tr
+      'to_respond': 'We have received your request, we will respond on your issue soon'.tr
     };
     Response response = await parser.sendToMail(param);
     if (response.statusCode == 200) {
@@ -96,8 +79,7 @@ class ContactUsController extends GetxController implements GetxService {
                     },
                     child: Text(
                       'Okay'.tr,
-                      style: const TextStyle(
-                          color: ThemeProvider.appColor, fontFamily: 'bold'),
+                      style: const TextStyle(color: ThemeProvider.appColor, fontFamily: 'bold'),
                     ),
                   )
                 ],

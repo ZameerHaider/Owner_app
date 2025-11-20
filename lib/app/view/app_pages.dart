@@ -1,14 +1,7 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skeletons/skeletons.dart';
+import 'package:skeletons_forked/skeletons_forked.dart';
+
 import 'package:ultimate_salon_owner_flutter/app/controller/app_pages_controller.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -67,8 +60,7 @@ class _AppPagesScreenState extends State<AppPagesScreen> {
               Row(
                 children: [
                   const SkeletonAvatar(
-                    style: SkeletonAvatarStyle(
-                        shape: BoxShape.circle, width: 50, height: 50),
+                    style: SkeletonAvatarStyle(shape: BoxShape.circle, width: 50, height: 50),
                   ),
                   const SizedBox(width: 8),
                   Expanded(
@@ -113,21 +105,15 @@ class _AppPagesScreenState extends State<AppPagesScreen> {
                 children: [
                   Row(
                     children: const [
-                      SkeletonAvatar(
-                          style: SkeletonAvatarStyle(width: 20, height: 20)),
+                      SkeletonAvatar(style: SkeletonAvatarStyle(width: 20, height: 20)),
                       SizedBox(width: 8),
-                      SkeletonAvatar(
-                          style: SkeletonAvatarStyle(width: 20, height: 20)),
+                      SkeletonAvatar(style: SkeletonAvatarStyle(width: 20, height: 20)),
                       SizedBox(width: 8),
-                      SkeletonAvatar(
-                          style: SkeletonAvatarStyle(width: 20, height: 20)),
+                      SkeletonAvatar(style: SkeletonAvatarStyle(width: 20, height: 20)),
                     ],
                   ),
                   SkeletonLine(
-                    style: SkeletonLineStyle(
-                        height: 16,
-                        width: 64,
-                        borderRadius: BorderRadius.circular(8)),
+                    style: SkeletonLineStyle(height: 16, width: 64, borderRadius: BorderRadius.circular(8)),
                   )
                 ],
               )

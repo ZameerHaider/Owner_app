@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,15 +15,7 @@ class SlotController extends GetxController implements GetxService {
   List<SlotListModel> get slotList => _slotList;
   bool apiCalled = false;
 
-  List<String> dayList = [
-    'Sunday'.tr,
-    'Monday'.tr,
-    'Tuesday'.tr,
-    'Wednesday'.tr,
-    'Thursday'.tr,
-    'Friday'.tr,
-    'Saturday'.tr
-  ];
+  List<String> dayList = ['Sunday'.tr, 'Monday'.tr, 'Tuesday'.tr, 'Wednesday'.tr, 'Thursday'.tr, 'Friday'.tr, 'Saturday'.tr];
   SlotController({required this.parser});
 
   @override
@@ -98,11 +82,7 @@ class SlotController extends GetxController implements GetxService {
       barrierDismissible: false,
     );
 
-    var param = {
-      "id": _slotList[index].id,
-      "week_id": _slotList[index].weekId,
-      "slots": jsonEncode(_slotList[index].slots)
-    };
+    var param = {"id": _slotList[index].id, "week_id": _slotList[index].weekId, "slots": jsonEncode(_slotList[index].slots)};
     Response response = await parser.onUpdateSlots(param);
     Get.back();
     if (response.statusCode == 200) {

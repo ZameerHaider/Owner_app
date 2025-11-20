@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 class AddressModel {
   int? id;
   int? uid;
@@ -19,18 +11,7 @@ class AddressModel {
   String? extraField;
   int? status;
 
-  AddressModel(
-      {this.id,
-      this.uid,
-      this.title,
-      this.address,
-      this.house,
-      this.landmark,
-      this.pincode,
-      this.lat,
-      this.lng,
-      this.extraField,
-      this.status});
+  AddressModel({this.id, this.uid, this.title, this.address, this.house, this.landmark, this.pincode, this.lat, this.lng, this.extraField, this.status});
 
   AddressModel.fromJson(Map<String, dynamic> json) {
     id = int.parse(json['id'].toString());

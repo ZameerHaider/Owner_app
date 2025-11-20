@@ -1,14 +1,6 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:skeletons/skeletons.dart';
+import 'package:skeletons_forked/skeletons_forked.dart';
 import 'package:ultimate_salon_owner_flutter/app/controller/salon_categories_controller.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
 
@@ -78,9 +70,7 @@ class _SalonCategoriesScreen extends State<SalonCategoriesScreen> {
                       child: Center(
                         child: Text(
                           'Update'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),
@@ -100,9 +90,7 @@ class _SalonCategoriesScreen extends State<SalonCategoriesScreen> {
                       child: Center(
                         child: Text(
                           'Cancel'.tr,
-                          style: const TextStyle(
-                              fontFamily: 'bold',
-                              color: ThemeProvider.whiteColor),
+                          style: const TextStyle(fontFamily: 'bold', color: ThemeProvider.whiteColor),
                         ),
                       ),
                     ),

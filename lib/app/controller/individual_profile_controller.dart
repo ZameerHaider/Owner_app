@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -22,8 +14,7 @@ import 'package:ultimate_salon_owner_flutter/app/helper/router.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/toast.dart';
 
-class IndividualProfileController extends GetxController
-    implements GetxService {
+class IndividualProfileController extends GetxController implements GetxService {
   final IndividualProfileParser parser;
 
   final aboutTextEditor = TextEditingController();
@@ -43,15 +34,7 @@ class IndividualProfileController extends GetxController
   bool haveHome = false;
   List<TimingModel> _timesList = <TimingModel>[];
   List<TimingModel> get timesList => _timesList;
-  List<String> dayList = [
-    'Sunday'.tr,
-    'Monday'.tr,
-    'Tuesday'.tr,
-    'Wednesday'.tr,
-    'Thursday'.tr,
-    'Friday'.tr,
-    'Saturday'.tr
-  ];
+  List<String> dayList = ['Sunday'.tr, 'Monday'.tr, 'Tuesday'.tr, 'Wednesday'.tr, 'Thursday'.tr, 'Friday'.tr, 'Saturday'.tr];
 
   bool apiCalled = false;
 
@@ -99,9 +82,7 @@ class IndividualProfileController extends GetxController
   }
 
   void selectFromGallery(String kind) async {
-    _selectedImage = await ImagePicker().pickImage(
-        source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera,
-        imageQuality: 25);
+    _selectedImage = await ImagePicker().pickImage(source: kind == 'gallery' ? ImageSource.gallery : ImageSource.camera, imageQuality: 25);
     update();
     if (_selectedImage != null) {
       Get.dialog(
@@ -243,14 +224,12 @@ class IndividualProfileController extends GetxController
 
   void onSelectCategories() {
     Get.delete<IndividualprofileCategoriesController>(force: true);
-    Get.toNamed(AppRouter.getIndividualProfileCategoriesRoute(),
-        arguments: [individualInfo.categories]);
+    Get.toNamed(AppRouter.getIndividualProfileCategoriesRoute(), arguments: [individualInfo.categories]);
   }
 
   void onSelectCities() {
     Get.delete<IndividualCitiesController>(force: true);
-    Get.toNamed(AppRouter.getIndividualCitiesRoute(),
-        arguments: [individualInfo.cid]);
+    Get.toNamed(AppRouter.getIndividualCitiesRoute(), arguments: [individualInfo.cid]);
   }
 
   String getDayName(int dayNumber) {
@@ -264,11 +243,7 @@ class IndividualProfileController extends GetxController
 
   void onSaveTime(int dayNumber, String openTime, String closeTime) {
     debugPrint('get Data');
-    var param = {
-      "day": dayNumber,
-      "open_time": openTime,
-      "close_time": closeTime
-    };
+    var param = {"day": dayNumber, "open_time": openTime, "close_time": closeTime};
     TimingModel data = TimingModel.fromJson(param);
     _timesList.add(data);
     debugPrint(jsonEncode(timesList).toString());
@@ -277,8 +252,7 @@ class IndividualProfileController extends GetxController
 
   void onEditTime(String dayName, String openTime, String closeTime) {
     Get.delete<AddTimingController>(force: true);
-    Get.toNamed(AppRouter.getAddTimingRoute(),
-        arguments: ['edit', dayName, openTime, closeTime]);
+    Get.toNamed(AppRouter.getAddTimingRoute(), arguments: ['edit', dayName, openTime, closeTime]);
   }
 
   void updateTime(int dayNumber, String openTime, String closeTime) {

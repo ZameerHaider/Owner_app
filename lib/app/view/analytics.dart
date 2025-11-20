@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -26,8 +18,7 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
   final ScrollController _scrollControllerProducts = ScrollController();
   @override
   void initState() {
-    _tooltipBehavior =
-        TooltipBehavior(enable: true, header: '', canShowMarker: false);
+    _tooltipBehavior = TooltipBehavior(enable: true, header: '', canShowMarker: false);
     super.initState();
   }
 
@@ -37,52 +28,20 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
       Map<int, Widget> myTabs = <int, Widget>{
         0: Text(
           "Daily".tr,
-          style: TextStyle(
-              color:
-                  Get.find<AnalyticsController>().segmentedControlGroupValue ==
-                          0
-                      ? ThemeProvider.whiteColor
-                      : ThemeProvider.blackColor),
+          style: TextStyle(color: Get.find<AnalyticsController>().segmentedControlGroupValue == 0 ? ThemeProvider.whiteColor : ThemeProvider.blackColor),
         ),
-        1: Text("Monthly".tr,
-            style: TextStyle(
-                color: Get.find<AnalyticsController>()
-                            .segmentedControlGroupValue ==
-                        1
-                    ? ThemeProvider.whiteColor
-                    : ThemeProvider.blackColor)),
-        2: Text("Yearly".tr,
-            style: TextStyle(
-                color: Get.find<AnalyticsController>()
-                            .segmentedControlGroupValue ==
-                        2
-                    ? ThemeProvider.whiteColor
-                    : ThemeProvider.blackColor)),
+        1: Text("Monthly".tr, style: TextStyle(color: Get.find<AnalyticsController>().segmentedControlGroupValue == 1 ? ThemeProvider.whiteColor : ThemeProvider.blackColor)),
+        2: Text("Yearly".tr, style: TextStyle(color: Get.find<AnalyticsController>().segmentedControlGroupValue == 2 ? ThemeProvider.whiteColor : ThemeProvider.blackColor)),
       };
       Map<int, Widget> myTabsProducts = <int, Widget>{
         0: Text(
           "Daily".tr,
-          style: TextStyle(
-              color: Get.find<AnalyticsController>()
-                          .segmentedControlGroupValueProducts ==
-                      0
-                  ? ThemeProvider.whiteColor
-                  : ThemeProvider.blackColor),
+          style: TextStyle(color: Get.find<AnalyticsController>().segmentedControlGroupValueProducts == 0 ? ThemeProvider.whiteColor : ThemeProvider.blackColor),
         ),
         1: Text("Monthly".tr,
-            style: TextStyle(
-                color: Get.find<AnalyticsController>()
-                            .segmentedControlGroupValueProducts ==
-                        1
-                    ? ThemeProvider.whiteColor
-                    : ThemeProvider.blackColor)),
+            style: TextStyle(color: Get.find<AnalyticsController>().segmentedControlGroupValueProducts == 1 ? ThemeProvider.whiteColor : ThemeProvider.blackColor)),
         2: Text("Yearly".tr,
-            style: TextStyle(
-                color: Get.find<AnalyticsController>()
-                            .segmentedControlGroupValueProducts ==
-                        2
-                    ? ThemeProvider.whiteColor
-                    : ThemeProvider.blackColor)),
+            style: TextStyle(color: Get.find<AnalyticsController>().segmentedControlGroupValueProducts == 2 ? ThemeProvider.whiteColor : ThemeProvider.blackColor)),
       };
       return DefaultTabController(
         length: 2,
@@ -101,21 +60,13 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                 unselectedLabelColor: ThemeProvider.blackColor,
                 labelColor: ThemeProvider.appColor,
                 indicatorColor: ThemeProvider.appColor,
-                labelStyle: const TextStyle(
-                    fontFamily: 'medium',
-                    fontSize: 16,
-                    color: ThemeProvider.whiteColor),
-                unselectedLabelStyle: const TextStyle(
-                    fontFamily: 'medium',
-                    fontSize: 16,
-                    color: ThemeProvider.whiteColor),
+                labelStyle: const TextStyle(fontFamily: 'medium', fontSize: 16, color: ThemeProvider.whiteColor),
+                unselectedLabelStyle: const TextStyle(fontFamily: 'medium', fontSize: 16, color: ThemeProvider.whiteColor),
                 indicatorSize: TabBarIndicatorSize.tab,
                 labelPadding: const EdgeInsets.all(8),
                 tabs: [
-                  Text('Appointment'.tr,
-                      style: const TextStyle(color: ThemeProvider.whiteColor)),
-                  Text('Products Order'.tr,
-                      style: const TextStyle(color: ThemeProvider.whiteColor)),
+                  Text('Appointment'.tr, style: const TextStyle(color: ThemeProvider.whiteColor)),
+                  Text('Products Order'.tr, style: const TextStyle(color: ThemeProvider.whiteColor)),
                 ],
               )),
           body: TabBarView(
@@ -129,10 +80,7 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                       alignment: Alignment.topLeft,
                       child: Text(
                         'Earnings'.tr,
-                        style: const TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'medium',
-                            color: ThemeProvider.blackColor),
+                        style: const TextStyle(fontSize: 18, fontFamily: 'medium', color: ThemeProvider.blackColor),
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -152,8 +100,7 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   IconButton(
@@ -184,35 +131,23 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                               ),
                               value.list.isNotEmpty
                                   ? Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              value.currencySide == 'left'
-                                                  ? '${value.currencySymbol} ${value.totalPrice}'
-                                                  : '${value.totalPrice} ${value.currencySymbol}',
-                                              style: const TextStyle(
-                                                  fontSize: 14,
-                                                  color: ThemeProvider.appColor,
-                                                  fontFamily: 'bold'),
+                                              value.currencySide == 'left' ? '${value.currencySymbol} ${value.totalPrice}' : '${value.totalPrice} ${value.currencySymbol}',
+                                              style: const TextStyle(fontSize: 14, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                             ),
                                             const SizedBox(
                                               height: 5,
                                             ),
                                             Text(
                                               'Total'.toUpperCase().tr,
-                                              style: const TextStyle(
-                                                  fontSize: 12,
-                                                  color: ThemeProvider.appColor,
-                                                  fontFamily: 'bold'),
+                                              style: const TextStyle(fontSize: 12, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                             )
                                           ],
                                         ),
@@ -220,31 +155,19 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                           width: 20,
                                         ),
                                         Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              value.currencySide == 'left'
-                                                  ? '${value.currencySymbol} ${value.averagePrice}'
-                                                  : '${value.averagePrice} ${value.currencySymbol}',
-                                              style: const TextStyle(
-                                                  fontSize: 14,
-                                                  color:
-                                                      ThemeProvider.greyColor,
-                                                  fontFamily: 'bold'),
+                                              value.currencySide == 'left' ? '${value.currencySymbol} ${value.averagePrice}' : '${value.averagePrice} ${value.currencySymbol}',
+                                              style: const TextStyle(fontSize: 14, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                             ),
                                             const SizedBox(
                                               height: 5,
                                             ),
                                             Text(
                                               'Average'.toUpperCase().tr,
-                                              style: const TextStyle(
-                                                  fontSize: 12,
-                                                  color:
-                                                      ThemeProvider.greyColor,
-                                                  fontFamily: 'bold'),
+                                              style: const TextStyle(fontSize: 12, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                             )
                                           ],
                                         ),
@@ -263,25 +186,19 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                           DataColumn(
                                             label: Text(
                                               'Day'.tr,
-                                              style: const TextStyle(
-                                                  fontFamily: 'bold',
-                                                  fontSize: 10),
+                                              style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                             ),
                                           ),
                                           DataColumn(
                                             label: Text(
                                               'Bookings'.tr,
-                                              style: const TextStyle(
-                                                  fontFamily: 'bold',
-                                                  fontSize: 10),
+                                              style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                             ),
                                           ),
                                           DataColumn(
                                             label: Text(
                                               'Earnings'.tr,
-                                              style: const TextStyle(
-                                                  fontFamily: 'bold',
-                                                  fontSize: 10),
+                                              style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                             ),
                                           ),
                                         ],
@@ -289,15 +206,9 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                           for (var item in value.list)
                                             DataRow(
                                               cells: <DataCell>[
-                                                DataCell(Text(
-                                                    item.dayName.toString())),
-                                                DataCell(Text(
-                                                    item.count.toString())),
-                                                DataCell(Text(value
-                                                            .currencySide ==
-                                                        'left'
-                                                    ? '${value.currencySymbol} ${item.total}'
-                                                    : '${item.total} ${value.currencySymbol}')),
+                                                DataCell(Text(item.dayName.toString())),
+                                                DataCell(Text(item.count.toString())),
+                                                DataCell(Text(value.currencySide == 'left' ? '${value.currencySymbol} ${item.total}' : '${item.total} ${value.currencySymbol}')),
                                               ],
                                             ),
                                         ],
@@ -311,10 +222,8 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       IconButton(
                                           onPressed: () {
@@ -341,37 +250,25 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                         ),
                                   value.monthList.isNotEmpty
                                       ? Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   value.currencySide == 'left'
                                                       ? '${value.currencySymbol} ${value.totalPriceMonth}'
                                                       : '${value.totalPriceMonth} ${value.currencySymbol}',
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      color: ThemeProvider
-                                                          .appColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 14, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
                                                 Text(
                                                   'Total'.toUpperCase().tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
-                                                      color: ThemeProvider
-                                                          .appColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 12, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                                 )
                                               ],
                                             ),
@@ -379,31 +276,21 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               width: 20,
                                             ),
                                             Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   value.currencySide == 'left'
                                                       ? '${value.currencySymbol} ${value.averagePriceMonth}'
                                                       : '${value.averagePriceMonth} ${value.currencySymbol}',
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      color: ThemeProvider
-                                                          .greyColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 14, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
                                                 Text(
                                                   'Average'.toUpperCase().tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
-                                                      color: ThemeProvider
-                                                          .greyColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 12, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                                 )
                                               ],
                                             ),
@@ -422,25 +309,19 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               DataColumn(
                                                 label: Text(
                                                   'Months'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                               DataColumn(
                                                 label: Text(
                                                   'Bookings'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                               DataColumn(
                                                 label: Text(
                                                   'Earnings'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                             ],
@@ -448,16 +329,10 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               for (var item in value.monthList)
                                                 DataRow(
                                                   cells: <DataCell>[
-                                                    DataCell(Text(value
-                                                            .monthsListNames[
-                                                        item.dayName as int])),
-                                                    DataCell(Text(
-                                                        item.count.toString())),
-                                                    DataCell(Text(value
-                                                                .currencySide ==
-                                                            'left'
-                                                        ? '${value.currencySymbol} ${item.total}'
-                                                        : '${item.total} ${value.currencySymbol}')),
+                                                    DataCell(Text(value.monthsListNames[item.dayName as int])),
+                                                    DataCell(Text(item.count.toString())),
+                                                    DataCell(
+                                                        Text(value.currencySide == 'left' ? '${value.currencySymbol} ${item.total}' : '${item.total} ${value.currencySymbol}')),
                                                   ],
                                                 ),
                                             ],
@@ -480,37 +355,25 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                         ),
                                   value.yearlyList.isNotEmpty
                                       ? Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   value.currencySide == 'left'
                                                       ? '${value.currencySymbol} ${value.totalPriceYearly}'
                                                       : '${value.totalPriceYearly} ${value.currencySymbol}',
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      color: ThemeProvider
-                                                          .appColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 14, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
                                                 Text(
                                                   'Total'.toUpperCase().tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
-                                                      color: ThemeProvider
-                                                          .appColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 12, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                                 )
                                               ],
                                             ),
@@ -518,31 +381,21 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               width: 20,
                                             ),
                                             Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   value.currencySide == 'left'
                                                       ? '${value.currencySymbol} ${value.averagePriceYearly}'
                                                       : '${value.averagePriceYearly} ${value.currencySymbol}',
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      color: ThemeProvider
-                                                          .greyColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 14, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
                                                 Text(
                                                   'Average'.toUpperCase().tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
-                                                      color: ThemeProvider
-                                                          .greyColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 12, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                                 )
                                               ],
                                             ),
@@ -561,25 +414,19 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               DataColumn(
                                                 label: Text(
                                                   'Months'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                               DataColumn(
                                                 label: Text(
                                                   'Bookings'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                               DataColumn(
                                                 label: Text(
                                                   'Earnings'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                             ],
@@ -587,15 +434,10 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               for (var item in value.yearlyList)
                                                 DataRow(
                                                   cells: <DataCell>[
-                                                    DataCell(Text(item.dayName
-                                                        .toString())),
-                                                    DataCell(Text(
-                                                        item.count.toString())),
-                                                    DataCell(Text(value
-                                                                .currencySide ==
-                                                            'left'
-                                                        ? '${value.currencySymbol} ${item.total}'
-                                                        : '${item.total} ${value.currencySymbol}')),
+                                                    DataCell(Text(item.dayName.toString())),
+                                                    DataCell(Text(item.count.toString())),
+                                                    DataCell(
+                                                        Text(value.currencySide == 'left' ? '${value.currencySymbol} ${item.total}' : '${item.total} ${value.currencySymbol}')),
                                                   ],
                                                 ),
                                             ],
@@ -616,10 +458,7 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                       alignment: Alignment.topLeft,
                       child: Text(
                         'Earnings'.tr,
-                        style: const TextStyle(
-                            fontSize: 18,
-                            fontFamily: 'medium',
-                            color: ThemeProvider.blackColor),
+                        style: const TextStyle(fontSize: 18, fontFamily: 'medium', color: ThemeProvider.blackColor),
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -639,8 +478,7 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   IconButton(
@@ -671,35 +509,25 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                               ),
                               value.listProducts.isNotEmpty
                                   ? Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               value.currencySide == 'left'
                                                   ? '${value.currencySymbol} ${value.totalPriceProducts}'
                                                   : '${value.totalPriceProducts} ${value.currencySymbol}',
-                                              style: const TextStyle(
-                                                  fontSize: 14,
-                                                  color: ThemeProvider.appColor,
-                                                  fontFamily: 'bold'),
+                                              style: const TextStyle(fontSize: 14, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                             ),
                                             const SizedBox(
                                               height: 5,
                                             ),
                                             Text(
                                               'Total'.toUpperCase().tr,
-                                              style: const TextStyle(
-                                                  fontSize: 12,
-                                                  color: ThemeProvider.appColor,
-                                                  fontFamily: 'bold'),
+                                              style: const TextStyle(fontSize: 12, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                             )
                                           ],
                                         ),
@@ -707,31 +535,21 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                           width: 20,
                                         ),
                                         Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               value.currencySide == 'left'
                                                   ? '${value.currencySymbol} ${value.averagePriceProducts}'
                                                   : '${value.averagePriceProducts} ${value.currencySymbol}',
-                                              style: const TextStyle(
-                                                  fontSize: 14,
-                                                  color:
-                                                      ThemeProvider.greyColor,
-                                                  fontFamily: 'bold'),
+                                              style: const TextStyle(fontSize: 14, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                             ),
                                             const SizedBox(
                                               height: 5,
                                             ),
                                             Text(
                                               'Average'.toUpperCase().tr,
-                                              style: const TextStyle(
-                                                  fontSize: 12,
-                                                  color:
-                                                      ThemeProvider.greyColor,
-                                                  fontFamily: 'bold'),
+                                              style: const TextStyle(fontSize: 12, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                             )
                                           ],
                                         ),
@@ -750,25 +568,19 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                           DataColumn(
                                             label: Text(
                                               'Day'.tr,
-                                              style: const TextStyle(
-                                                  fontFamily: 'bold',
-                                                  fontSize: 10),
+                                              style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                             ),
                                           ),
                                           DataColumn(
                                             label: Text(
                                               'Orders'.tr,
-                                              style: const TextStyle(
-                                                  fontFamily: 'bold',
-                                                  fontSize: 10),
+                                              style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                             ),
                                           ),
                                           DataColumn(
                                             label: Text(
                                               'Earnings'.tr,
-                                              style: const TextStyle(
-                                                  fontFamily: 'bold',
-                                                  fontSize: 10),
+                                              style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                             ),
                                           ),
                                         ],
@@ -776,15 +588,9 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                           for (var item in value.listProducts)
                                             DataRow(
                                               cells: <DataCell>[
-                                                DataCell(Text(
-                                                    item.dayName.toString())),
-                                                DataCell(Text(
-                                                    item.count.toString())),
-                                                DataCell(Text(value
-                                                            .currencySide ==
-                                                        'left'
-                                                    ? '${value.currencySymbol} ${item.total}'
-                                                    : '${item.total} ${value.currencySymbol}')),
+                                                DataCell(Text(item.dayName.toString())),
+                                                DataCell(Text(item.count.toString())),
+                                                DataCell(Text(value.currencySide == 'left' ? '${value.currencySymbol} ${item.total}' : '${item.total} ${value.currencySymbol}')),
                                               ],
                                             ),
                                         ],
@@ -798,18 +604,15 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       IconButton(
                                           onPressed: () {
                                             value.backYearProducts();
                                           },
                                           icon: const Icon(Icons.chevron_left)),
-                                      Text(
-                                          value.currenyYearProducts.toString()),
+                                      Text(value.currenyYearProducts.toString()),
                                       IconButton(
                                           onPressed: () {
                                             value.nextYearProducts();
@@ -829,37 +632,25 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                         ),
                                   value.monthListProducts.isNotEmpty
                                       ? Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   value.currencySide == 'left'
                                                       ? '${value.currencySymbol} ${value.totalPriceMonthProducts}'
                                                       : '${value.totalPriceMonthProducts} ${value.currencySymbol}',
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      color: ThemeProvider
-                                                          .appColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 14, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
                                                 Text(
                                                   'Total'.toUpperCase().tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
-                                                      color: ThemeProvider
-                                                          .appColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 12, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                                 )
                                               ],
                                             ),
@@ -867,31 +658,21 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               width: 20,
                                             ),
                                             Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   value.currencySide == 'left'
                                                       ? '${value.currencySymbol} ${value.averagePriceMonthProducts}'
                                                       : '${value.averagePriceMonthProducts} ${value.currencySymbol}',
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      color: ThemeProvider
-                                                          .greyColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 14, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
                                                 Text(
                                                   'Average'.toUpperCase().tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
-                                                      color: ThemeProvider
-                                                          .greyColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 12, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                                 )
                                               ],
                                             ),
@@ -910,43 +691,30 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               DataColumn(
                                                 label: Text(
                                                   'Months'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                               DataColumn(
                                                 label: Text(
                                                   'Orders'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                               DataColumn(
                                                 label: Text(
                                                   'Earnings'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                             ],
                                             rows: <DataRow>[
-                                              for (var item
-                                                  in value.monthListProducts)
+                                              for (var item in value.monthListProducts)
                                                 DataRow(
                                                   cells: <DataCell>[
-                                                    DataCell(Text(value
-                                                            .monthsListNames[
-                                                        item.dayName as int])),
-                                                    DataCell(Text(
-                                                        item.count.toString())),
-                                                    DataCell(Text(value
-                                                                .currencySide ==
-                                                            'left'
-                                                        ? '${value.currencySymbol} ${item.total}'
-                                                        : '${item.total} ${value.currencySymbol}')),
+                                                    DataCell(Text(value.monthsListNames[item.dayName as int])),
+                                                    DataCell(Text(item.count.toString())),
+                                                    DataCell(
+                                                        Text(value.currencySide == 'left' ? '${value.currencySymbol} ${item.total}' : '${item.total} ${value.currencySymbol}')),
                                                   ],
                                                 ),
                                             ],
@@ -969,37 +737,25 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                         ),
                                   value.yearlyListProducts.isNotEmpty
                                       ? Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   value.currencySide == 'left'
                                                       ? '${value.currencySymbol} ${value.totalPriceYearlyProducts}'
                                                       : '${value.totalPriceYearlyProducts} ${value.currencySymbol}',
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      color: ThemeProvider
-                                                          .appColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 14, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
                                                 Text(
                                                   'Total'.toUpperCase().tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
-                                                      color: ThemeProvider
-                                                          .appColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 12, color: ThemeProvider.appColor, fontFamily: 'bold'),
                                                 )
                                               ],
                                             ),
@@ -1007,31 +763,21 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               width: 20,
                                             ),
                                             Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 Text(
                                                   value.currencySide == 'left'
                                                       ? '${value.currencySymbol} ${value.averagePriceYearlyProducts}'
                                                       : '${value.averagePriceYearlyProducts} ${value.currencySymbol}',
-                                                  style: const TextStyle(
-                                                      fontSize: 14,
-                                                      color: ThemeProvider
-                                                          .greyColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 14, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                                 ),
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
                                                 Text(
                                                   'Average'.toUpperCase().tr,
-                                                  style: const TextStyle(
-                                                      fontSize: 12,
-                                                      color: ThemeProvider
-                                                          .greyColor,
-                                                      fontFamily: 'bold'),
+                                                  style: const TextStyle(fontSize: 12, color: ThemeProvider.greyColor, fontFamily: 'bold'),
                                                 )
                                               ],
                                             ),
@@ -1050,42 +796,30 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                                               DataColumn(
                                                 label: Text(
                                                   'Months'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                               DataColumn(
                                                 label: Text(
                                                   'Orders'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                               DataColumn(
                                                 label: Text(
                                                   'Earnings'.tr,
-                                                  style: const TextStyle(
-                                                      fontFamily: 'bold',
-                                                      fontSize: 10),
+                                                  style: const TextStyle(fontFamily: 'bold', fontSize: 10),
                                                 ),
                                               ),
                                             ],
                                             rows: <DataRow>[
-                                              for (var item
-                                                  in value.yearlyListProducts)
+                                              for (var item in value.yearlyListProducts)
                                                 DataRow(
                                                   cells: <DataCell>[
-                                                    DataCell(Text(item.dayName
-                                                        .toString())),
-                                                    DataCell(Text(
-                                                        item.count.toString())),
-                                                    DataCell(Text(value
-                                                                .currencySide ==
-                                                            'left'
-                                                        ? '${value.currencySymbol} ${item.total}'
-                                                        : '${item.total} ${value.currencySymbol}')),
+                                                    DataCell(Text(item.dayName.toString())),
+                                                    DataCell(Text(item.count.toString())),
+                                                    DataCell(
+                                                        Text(value.currencySide == 'left' ? '${value.currencySymbol} ${item.total}' : '${item.total} ${value.currencySymbol}')),
                                                   ],
                                                 ),
                                             ],
@@ -1107,18 +841,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
   SfCartesianChart _buildChart() {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      title: ChartTitle(
-          text:
-              '${'Total number of bookings'.tr} ${Get.find<AnalyticsController>().getName()}',
-          textStyle: const TextStyle(fontSize: 10)),
+      title: ChartTitle(text: '${'Total number of bookings'.tr} ${Get.find<AnalyticsController>().getName()}', textStyle: const TextStyle(fontSize: 10)),
       primaryXAxis: CategoryAxis(
         majorGridLines: const MajorGridLines(width: 0),
       ),
-      primaryYAxis: NumericAxis(
-          axisLine: const AxisLine(width: 0),
-          labelFormat:
-              '{value}${Get.find<AnalyticsController>().currencySymbol}',
-          majorTickLines: const MajorTickLines(size: 0)),
+      primaryYAxis:
+          NumericAxis(axisLine: const AxisLine(width: 0), labelFormat: '{value}${Get.find<AnalyticsController>().currencySymbol}', majorTickLines: const MajorTickLines(size: 0)),
       series: _getWeekData(),
       tooltipBehavior: _tooltipBehavior,
     );
@@ -1127,18 +855,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
   SfCartesianChart _buildChartProducts() {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      title: ChartTitle(
-          text:
-              '${'Total number of orders'.tr} ${Get.find<AnalyticsController>().getName()}',
-          textStyle: const TextStyle(fontSize: 10)),
+      title: ChartTitle(text: '${'Total number of orders'.tr} ${Get.find<AnalyticsController>().getName()}', textStyle: const TextStyle(fontSize: 10)),
       primaryXAxis: CategoryAxis(
         majorGridLines: const MajorGridLines(width: 0),
       ),
-      primaryYAxis: NumericAxis(
-          axisLine: const AxisLine(width: 0),
-          labelFormat:
-              '{value}${Get.find<AnalyticsController>().currencySymbol}',
-          majorTickLines: const MajorTickLines(size: 0)),
+      primaryYAxis:
+          NumericAxis(axisLine: const AxisLine(width: 0), labelFormat: '{value}${Get.find<AnalyticsController>().currencySymbol}', majorTickLines: const MajorTickLines(size: 0)),
       series: _getWeekDataProducts(),
       tooltipBehavior: _tooltipBehavior,
     );
@@ -1147,18 +869,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
   SfCartesianChart _buildChartForMonths() {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      title: ChartTitle(
-          text:
-              '${'Total number of bookings'.tr} ${Get.find<AnalyticsController>().currenyYear}',
-          textStyle: const TextStyle(fontSize: 10)),
+      title: ChartTitle(text: '${'Total number of bookings'.tr} ${Get.find<AnalyticsController>().currenyYear}', textStyle: const TextStyle(fontSize: 10)),
       primaryXAxis: CategoryAxis(
         majorGridLines: const MajorGridLines(width: 0),
       ),
-      primaryYAxis: NumericAxis(
-          axisLine: const AxisLine(width: 0),
-          labelFormat:
-              '{value}${Get.find<AnalyticsController>().currencySymbol}',
-          majorTickLines: const MajorTickLines(size: 0)),
+      primaryYAxis:
+          NumericAxis(axisLine: const AxisLine(width: 0), labelFormat: '{value}${Get.find<AnalyticsController>().currencySymbol}', majorTickLines: const MajorTickLines(size: 0)),
       series: _getMonthsData(),
       tooltipBehavior: _tooltipBehavior,
     );
@@ -1167,18 +883,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
   SfCartesianChart _buildChartForMonthsProducts() {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      title: ChartTitle(
-          text:
-              '${'Total number of orders'.tr} ${Get.find<AnalyticsController>().currenyYear}',
-          textStyle: const TextStyle(fontSize: 10)),
+      title: ChartTitle(text: '${'Total number of orders'.tr} ${Get.find<AnalyticsController>().currenyYear}', textStyle: const TextStyle(fontSize: 10)),
       primaryXAxis: CategoryAxis(
         majorGridLines: const MajorGridLines(width: 0),
       ),
-      primaryYAxis: NumericAxis(
-          axisLine: const AxisLine(width: 0),
-          labelFormat:
-              '{value}${Get.find<AnalyticsController>().currencySymbol}',
-          majorTickLines: const MajorTickLines(size: 0)),
+      primaryYAxis:
+          NumericAxis(axisLine: const AxisLine(width: 0), labelFormat: '{value}${Get.find<AnalyticsController>().currencySymbol}', majorTickLines: const MajorTickLines(size: 0)),
       series: _getMonthsDataProducts(),
       tooltipBehavior: _tooltipBehavior,
     );
@@ -1187,17 +897,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
   SfCartesianChart _buildChartForYearly() {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      title: ChartTitle(
-          text: 'Total number of bookings'.tr,
-          textStyle: const TextStyle(fontSize: 10)),
+      title: ChartTitle(text: 'Total number of bookings'.tr, textStyle: const TextStyle(fontSize: 10)),
       primaryXAxis: CategoryAxis(
         majorGridLines: const MajorGridLines(width: 0),
       ),
-      primaryYAxis: NumericAxis(
-          axisLine: const AxisLine(width: 0),
-          labelFormat:
-              '{value}${Get.find<AnalyticsController>().currencySymbol}',
-          majorTickLines: const MajorTickLines(size: 0)),
+      primaryYAxis:
+          NumericAxis(axisLine: const AxisLine(width: 0), labelFormat: '{value}${Get.find<AnalyticsController>().currencySymbol}', majorTickLines: const MajorTickLines(size: 0)),
       series: _getYearlyData(),
       tooltipBehavior: _tooltipBehavior,
     );
@@ -1206,17 +911,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
   SfCartesianChart _buildChartForYearlyProducts() {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      title: ChartTitle(
-          text: 'Total number of orders'.tr,
-          textStyle: const TextStyle(fontSize: 10)),
+      title: ChartTitle(text: 'Total number of orders'.tr, textStyle: const TextStyle(fontSize: 10)),
       primaryXAxis: CategoryAxis(
         majorGridLines: const MajorGridLines(width: 0),
       ),
-      primaryYAxis: NumericAxis(
-          axisLine: const AxisLine(width: 0),
-          labelFormat:
-              '{value}${Get.find<AnalyticsController>().currencySymbol}',
-          majorTickLines: const MajorTickLines(size: 0)),
+      primaryYAxis:
+          NumericAxis(axisLine: const AxisLine(width: 0), labelFormat: '{value}${Get.find<AnalyticsController>().currencySymbol}', majorTickLines: const MajorTickLines(size: 0)),
       series: _getYearlyDataProducts(),
       tooltipBehavior: _tooltipBehavior,
     );
@@ -1226,17 +926,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
     return <ColumnSeries<ChartSampleData, String>>[
       ColumnSeries<ChartSampleData, String>(
         dataSource: <ChartSampleData>[
-          for (var item in Get.find<AnalyticsController>().list)
-            ChartSampleData(
-                x: item.dayName,
-                y: item.total,
-                pointColor: ThemeProvider.appColor),
+          for (var item in Get.find<AnalyticsController>().list) ChartSampleData(x: item.dayName, y: item.total, pointColor: ThemeProvider.appColor),
         ],
         xValueMapper: (ChartSampleData sales, _) => sales.x as String,
         yValueMapper: (ChartSampleData sales, _) => sales.y,
         pointColorMapper: (ChartSampleData sales, _) => sales.pointColor,
-        dataLabelSettings: const DataLabelSettings(
-            isVisible: true, textStyle: TextStyle(fontSize: 10)),
+        dataLabelSettings: const DataLabelSettings(isVisible: true, textStyle: TextStyle(fontSize: 10)),
       )
     ];
   }
@@ -1245,17 +940,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
     return <ColumnSeries<ChartSampleData, String>>[
       ColumnSeries<ChartSampleData, String>(
         dataSource: <ChartSampleData>[
-          for (var item in Get.find<AnalyticsController>().listProducts)
-            ChartSampleData(
-                x: item.dayName,
-                y: item.total,
-                pointColor: ThemeProvider.appColor),
+          for (var item in Get.find<AnalyticsController>().listProducts) ChartSampleData(x: item.dayName, y: item.total, pointColor: ThemeProvider.appColor),
         ],
         xValueMapper: (ChartSampleData sales, _) => sales.x as String,
         yValueMapper: (ChartSampleData sales, _) => sales.y,
         pointColorMapper: (ChartSampleData sales, _) => sales.pointColor,
-        dataLabelSettings: const DataLabelSettings(
-            isVisible: true, textStyle: TextStyle(fontSize: 10)),
+        dataLabelSettings: const DataLabelSettings(isVisible: true, textStyle: TextStyle(fontSize: 10)),
       )
     ];
   }
@@ -1265,17 +955,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
       ColumnSeries<ChartSampleData, String>(
         dataSource: <ChartSampleData>[
           for (var item in Get.find<AnalyticsController>().monthList)
-            ChartSampleData(
-                x: Get.find<AnalyticsController>()
-                    .monthsListNames[item.dayName as int],
-                y: item.total,
-                pointColor: ThemeProvider.appColor),
+            ChartSampleData(x: Get.find<AnalyticsController>().monthsListNames[item.dayName as int], y: item.total, pointColor: ThemeProvider.appColor),
         ],
         xValueMapper: (ChartSampleData sales, _) => sales.x as String,
         yValueMapper: (ChartSampleData sales, _) => sales.y,
         pointColorMapper: (ChartSampleData sales, _) => sales.pointColor,
-        dataLabelSettings: const DataLabelSettings(
-            isVisible: true, textStyle: TextStyle(fontSize: 10)),
+        dataLabelSettings: const DataLabelSettings(isVisible: true, textStyle: TextStyle(fontSize: 10)),
       )
     ];
   }
@@ -1285,17 +970,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
       ColumnSeries<ChartSampleData, String>(
         dataSource: <ChartSampleData>[
           for (var item in Get.find<AnalyticsController>().monthListProducts)
-            ChartSampleData(
-                x: Get.find<AnalyticsController>()
-                    .monthsListNames[item.dayName as int],
-                y: item.total,
-                pointColor: ThemeProvider.appColor),
+            ChartSampleData(x: Get.find<AnalyticsController>().monthsListNames[item.dayName as int], y: item.total, pointColor: ThemeProvider.appColor),
         ],
         xValueMapper: (ChartSampleData sales, _) => sales.x as String,
         yValueMapper: (ChartSampleData sales, _) => sales.y,
         pointColorMapper: (ChartSampleData sales, _) => sales.pointColor,
-        dataLabelSettings: const DataLabelSettings(
-            isVisible: true, textStyle: TextStyle(fontSize: 10)),
+        dataLabelSettings: const DataLabelSettings(isVisible: true, textStyle: TextStyle(fontSize: 10)),
       )
     ];
   }
@@ -1304,17 +984,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
     return <ColumnSeries<ChartSampleData, String>>[
       ColumnSeries<ChartSampleData, String>(
         dataSource: <ChartSampleData>[
-          for (var item in Get.find<AnalyticsController>().yearlyList)
-            ChartSampleData(
-                x: item.dayName.toString(),
-                y: item.total,
-                pointColor: ThemeProvider.appColor),
+          for (var item in Get.find<AnalyticsController>().yearlyList) ChartSampleData(x: item.dayName.toString(), y: item.total, pointColor: ThemeProvider.appColor),
         ],
         xValueMapper: (ChartSampleData sales, _) => sales.x as String,
         yValueMapper: (ChartSampleData sales, _) => sales.y,
         pointColorMapper: (ChartSampleData sales, _) => sales.pointColor,
-        dataLabelSettings: const DataLabelSettings(
-            isVisible: true, textStyle: TextStyle(fontSize: 10)),
+        dataLabelSettings: const DataLabelSettings(isVisible: true, textStyle: TextStyle(fontSize: 10)),
       )
     ];
   }
@@ -1323,17 +998,12 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
     return <ColumnSeries<ChartSampleData, String>>[
       ColumnSeries<ChartSampleData, String>(
         dataSource: <ChartSampleData>[
-          for (var item in Get.find<AnalyticsController>().yearlyListProducts)
-            ChartSampleData(
-                x: item.dayName.toString(),
-                y: item.total,
-                pointColor: ThemeProvider.appColor),
+          for (var item in Get.find<AnalyticsController>().yearlyListProducts) ChartSampleData(x: item.dayName.toString(), y: item.total, pointColor: ThemeProvider.appColor),
         ],
         xValueMapper: (ChartSampleData sales, _) => sales.x as String,
         yValueMapper: (ChartSampleData sales, _) => sales.y,
         pointColorMapper: (ChartSampleData sales, _) => sales.pointColor,
-        dataLabelSettings: const DataLabelSettings(
-            isVisible: true, textStyle: TextStyle(fontSize: 10)),
+        dataLabelSettings: const DataLabelSettings(isVisible: true, textStyle: TextStyle(fontSize: 10)),
       )
     ];
   }

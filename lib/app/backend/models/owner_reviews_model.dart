@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'package:jiffy/jiffy.dart';
 
 class OwnerReviewsModel {
@@ -19,16 +11,7 @@ class OwnerReviewsModel {
   String? createdAt;
   User? user;
 
-  OwnerReviewsModel(
-      {this.id,
-      this.uid,
-      this.freelancerId,
-      this.notes,
-      this.rating,
-      this.status,
-      this.extraField,
-      this.createdAt,
-      this.user});
+  OwnerReviewsModel({this.id, this.uid, this.freelancerId, this.notes, this.rating, this.status, this.extraField, this.createdAt, this.user});
 
   OwnerReviewsModel.fromJson(Map<String, dynamic> json) {
     id = int.parse(json['id'].toString());
@@ -38,7 +21,7 @@ class OwnerReviewsModel {
     rating = double.parse(json['rating'].toString());
     status = int.parse(json['status'].toString());
     extraField = json['extra_field'];
-    createdAt = Jiffy(json['created_at']).yMMMMd;
+    createdAt = Jiffy.parse(json['created_at']).yMMMMd;
     user = json['user'] != null ? User.fromJson(json['user']) : null;
   }
 

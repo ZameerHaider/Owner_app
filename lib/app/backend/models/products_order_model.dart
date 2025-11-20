@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 
 import 'package:jiffy/jiffy.dart';
@@ -81,10 +73,7 @@ class ProductSalonModel {
     dateTime = json['date_time'];
     paidMethod = int.parse(json['paid_method'].toString());
     orderTo = json['order_to'];
-    if (json.containsKey('orders') &&
-        json['orders'] != null &&
-        json['orders'] != 'NA' &&
-        json['orders'] != '') {
+    if (json.containsKey('orders') && json['orders'] != null && json['orders'] != 'NA' && json['orders'] != '') {
       orders = <ProductsListModel>[];
       var order = jsonDecode(json['orders']);
       order.forEach((element) {
@@ -92,9 +81,7 @@ class ProductSalonModel {
       });
     }
     notes = json['notes'];
-    address = json['address'] != null
-        ? AddressModel.fromJson(jsonDecode(json['address']))
-        : null;
+    address = json['address'] != null ? AddressModel.fromJson(jsonDecode(json['address'])) : null;
     total = double.parse(json['total'].toString());
     tax = double.parse(json['tax'].toString());
     grandTotal = double.parse(json['grand_total'].toString());
@@ -109,24 +96,18 @@ class ProductSalonModel {
     status = int.parse(json['status'].toString());
     payStatus = int.parse(json['payStatus'].toString());
     extraField = json['extra_field'];
-    createdAt = Jiffy(json['created_at']).yMMMMd;
+    createdAt = Jiffy.parse(json['created_at']).yMMMMd;
     type = json['type'];
     if (json.containsKey('salonInfo')) {
-      salonInfo = json['salonInfo'] != null
-          ? SalonInfo.fromJson(json['salonInfo'])
-          : null;
+      salonInfo = json['salonInfo'] != null ? SalonInfo.fromJson(json['salonInfo']) : null;
     }
 
     if (json.containsKey('freelancerInfo')) {
-      freelancerInfo = json['freelancerInfo'] != null
-          ? FreelancerInfo.fromJson(json['freelancerInfo'])
-          : null;
+      freelancerInfo = json['freelancerInfo'] != null ? FreelancerInfo.fromJson(json['freelancerInfo']) : null;
     }
 
     if (json.containsKey('userInfo')) {
-      userInfo = json['userInfo'] != null
-          ? UserModel.fromJson(json['userInfo'])
-          : null;
+      userInfo = json['userInfo'] != null ? UserModel.fromJson(json['userInfo']) : null;
     }
   }
 
@@ -194,8 +175,7 @@ class FreelancerInfo {
   String? cover;
   String? type;
 
-  FreelancerInfo(
-      {this.id, this.firstName, this.lastName, this.cover, this.type});
+  FreelancerInfo({this.id, this.firstName, this.lastName, this.cover, this.type});
 
   FreelancerInfo.fromJson(Map<String, dynamic> json) {
     id = int.parse(json['id'].toString());

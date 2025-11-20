@@ -1,11 +1,3 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Ultimate Salon Full App Flutter V2
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2023-present initappz.
-*/
 import 'dart:convert';
 
 import 'package:ultimate_salon_owner_flutter/app/backend/models/slots_model.dart';
@@ -18,13 +10,7 @@ class SlotListModel {
   String? extraField;
   int? status;
 
-  SlotListModel(
-      {this.id,
-      this.uid,
-      this.weekId,
-      this.slots,
-      this.extraField,
-      this.status});
+  SlotListModel({this.id, this.uid, this.weekId, this.slots, this.extraField, this.status});
 
   SlotListModel.fromJson(Map<String, dynamic> json) {
     id = int.parse(json['id'].toString());
