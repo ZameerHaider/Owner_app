@@ -527,14 +527,14 @@ class SignUpController extends GetxController implements GetxService {
   }
 
   Future<void> onRegister() async {
-    if (emailVerified == false) {
-      showToast('Please verify email'.tr);
-      return;
-    }
-    if (phoneVerified == false) {
-      showToast('Please verify phone number'.tr);
-      return;
-    }
+    // if (emailVerified == false) {
+    //   showToast('Please verify email'.tr);
+    //   return;
+    // }
+    // if (phoneVerified == false) {
+    //   showToast('Please verify phone number'.tr);
+    //   return;
+    // }
     if (emailTextEditor.text == '' ||
         emailTextEditor.text.isEmpty ||
         firstNameTextEditor.text == '' ||

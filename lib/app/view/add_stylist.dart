@@ -161,18 +161,20 @@ class _AddStylistScreenState extends State<AddStylistScreen> {
                                         style: const TextStyle(fontSize: 17),
                                       ),
                                     ])
-                                  : Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: List.generate(
-                                        value.savedCategories.length,
-                                        (name) => Column(
-                                          children: [
-                                            Text(
-                                              value.savedCategories[name].toString(),
-                                              style: const TextStyle(fontSize: 17),
-                                            ),
-                                          ],
+                                  : Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: List.generate(
+                                          value.savedCategories.length,
+                                          (name) => Column(
+                                            children: [
+                                              Text(
+                                                value.savedCategories[name].toString(),
+                                                style: const TextStyle(fontSize: 17),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),

@@ -241,8 +241,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                         flex: 1,
                                         child: CountryCodePicker(
                                           onChanged: (e) => value.updateCountryCode(e.dialCode.toString()),
-                                          initialSelection: 'IN',
-                                          favorite: const ['+91', 'IN'],
+                                          initialSelection: 'PK',
+                                          favorite: const ['+92', 'PK'],
                                           showCountryOnly: false,
                                           showOnlyCountryWhenClosed: false,
                                           alignLeft: false,
