@@ -189,23 +189,23 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    value.onSignUp();
-                                  },
-                                  child: Text(
-                                    "Don't have an Account? Sign Up".tr,
-                                    style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 13),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                          // Padding(
+                          //   padding: const EdgeInsets.only(top: 10),
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     children: [
+                          //       InkWell(
+                          //         onTap: () {
+                          //           value.onSignUp();
+                          //         },
+                          //         child: Text(
+                          //           "Don't have an Account? Sign Up".tr,
+                          //           style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 13),
+                          //         ),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                         ],
                       )
                     : value.loginVersion == 1
@@ -344,23 +344,23 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        value.onSignUp();
-                                      },
-                                      child: Text(
-                                        "Don't have an Account? Sign Up".tr,
-                                        style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 13),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              // Padding(
+                              //   padding: const EdgeInsets.only(top: 10),
+                              //   child: Row(
+                              //     mainAxisAlignment: MainAxisAlignment.center,
+                              //     children: [
+                              //       InkWell(
+                              //         onTap: () {
+                              //           value.onSignUp();
+                              //         },
+                              //         child: Text(
+                              //           "Don't have an Account? Sign Up".tr,
+                              //           style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 13),
+                              //         ),
+                              //       ),
+                              //     ],
+                              //   ),
+                              // ),
                             ],
                           )
                         : Column(
@@ -467,23 +467,23 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        value.onSignUp();
-                                      },
-                                      child: Text(
-                                        "Don't have an Account? Sign Up".tr,
-                                        style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 13),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              // Padding(
+                              //   padding: const EdgeInsets.only(top: 10),
+                              //   child: Row(
+                              //     mainAxisAlignment: MainAxisAlignment.center,
+                              //     children: [
+                              //       InkWell(
+                              //         onTap: () {
+                              //           value.onSignUp();
+                              //         },
+                              //         child: Text(
+                              //           "Don't have an Account? Sign Up".tr,
+                              //           style: const TextStyle(color: ThemeProvider.greyColor, fontSize: 13),
+                              //         ),
+                              //       ),
+                              //     ],
+                              //   ),
+                              // ),
                             ],
                           ),
               ),
