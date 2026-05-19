@@ -6,12 +6,12 @@ import 'package:ultimate_salon_owner_flutter/app/util/constance.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/theme.dart';
 import 'package:ultimate_salon_owner_flutter/app/util/translator.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+// import 'firebase_options 1.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MainBinding().dependencies();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform, name: 'ultimate-salon-flutter');
+  await Firebase.initializeApp(name: 'ultimate-salon-flutter');
   runApp(const MyApp());
 }
 

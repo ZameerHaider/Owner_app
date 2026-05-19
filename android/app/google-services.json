@@ -1,79 +1,45 @@
 {
   "project_info": {
-    "project_number": "1022022823127",
-    "project_id": "ultimate-salon-flutter",
-    "storage_bucket": "ultimate-salon-flutter.appspot.com"
+    "project_number": "168252012700",
+    "project_id": "salon-fyp-15e91",
+    "storage_bucket": "salon-fyp-15e91.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1022022823127:android:2a4c007646e78c1df3d492",
+        "mobilesdk_app_id": "1:168252012700:android:2dbb24810ee2d7989e5559",
         "android_client_info": {
           "package_name": "io.initappz.ultimate.salon.owner"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "1022022823127-nthqqk7f0hp5i0lmthvobelum5ou7phe.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDbQPu7NP8F-rSsXIsSvbVIb8UQ0zVSUEY"
+          "current_key": "AIzaSyAPMsjKzeLE1nnxzlW81lS7ZDQN4QjV-oA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1022022823127-nthqqk7f0hp5i0lmthvobelum5ou7phe.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1022022823127-fchj97baoac3hp1fv77oapku1tgjbvds.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "io.initappz.ultimate.salon.owner"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1022022823127:android:6d692ddf8e49dc33f3d492",
+        "mobilesdk_app_id": "1:168252012700:android:2ac04168d9d3befe9e5559",
         "android_client_info": {
           "package_name": "io.initappz.ultimate.salon.user"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "1022022823127-nthqqk7f0hp5i0lmthvobelum5ou7phe.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDbQPu7NP8F-rSsXIsSvbVIb8UQ0zVSUEY"
+          "current_key": "AIzaSyAPMsjKzeLE1nnxzlW81lS7ZDQN4QjV-oA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1022022823127-nthqqk7f0hp5i0lmthvobelum5ou7phe.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1022022823127-fchj97baoac3hp1fv77oapku1tgjbvds.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "io.initappz.ultimate.salon.owner"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
