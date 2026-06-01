@@ -18,12 +18,12 @@ dependencies:
   get: ^4.6.5
   skeletons_forked: ^0.0.4
   image_picker: ^1.0.0
-  syncfusion_flutter_calendar: ^31.1.19
+  syncfusion_flutter_calendar: ^32.1.23
   jiffy: ^6.4.4
   flutter_html: ^3.0.0-alpha.5
   connectivity_plus: ^7.0.0
   google_nav_bar: ^5.0.6
-  syncfusion_flutter_charts: ^31.1.19
+  syncfusion_flutter_charts: ^32.2.9
   flutter_otp_text_field: ^1.1.1
   webview_flutter: ^4.2.2
   country_code_picker: ^3.0.0
